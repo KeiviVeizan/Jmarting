@@ -1,0 +1,354 @@
+---
+const MoreInformationAboutUs =[
+    {
+        id:1,
+        title:"Historia y Futuro",
+        descrition:"Todo comenzó con el descubrimiento de Marcel Guerbet del primer medio de contraste orgánico yodado en 1901. La compañía fue fundada más tarde en 1926 por André Guerbet. Desde entonces se ha expandido  significativamente, gracias al descubrimiento de innovaciones que han  dejado su huella en las tecnologías de imagen médica y los medios de  contraste asociados a ellas. En la actualidad, Guerbet vende una amplia  gama de soluciones para diagnóstico e imagenología intervencionista.",
+        image:"",
+    },
+    {
+        id:2,
+        title:"Nuestra Misión",
+        descrition:"Somos una empresa importadora de medios de contraste radiológico y  equipos, que ofrece productos de alta calidad para Imagenología Médica,  contribuyendo a mejorar sustancialmente el diagnóstico de enfermedades  en beneficio de la salud de la sociedad boliviana.",
+        image:"/images/mision.png",
+    },
+    {
+        id:3,
+        title:"Nuestra Visión",
+        descrition:"Somos una empresa importadora de medios de contraste radiológico y  equipos, que ofrece productos de alta calidad para Imagenología Médica,  contribuyendo a mejorar sustancialmente el diagnóstico de enfermedades  en beneficio de la salud de la sociedad boliviana.",
+        image:"/images/vision.png",
+    },
+];
+const InformationAfiliados =[
+    {
+        id:1,
+        image:"/images/logo-guerbet.png",
+        link:"https://www.guerbet.com/"
+    },
+        {
+        id:2,
+        image:"/images/logo-aptissen.webp",
+        link:"https://www.aptissen.com/"
+    },
+        {
+        id:3,
+        image:"/images/logo-mhj.png",
+        link:"https://mhjpharma.com/"
+    },
+        {
+        id:4,
+        image:"/images/logo-farmavone.png",
+        link:"https://farmavone.com.py/en/"
+    },
+        {
+        id:5,
+        image:"/images/logo-temi.png",
+        link:"https://www.temislostalo.com.ar/"
+    },
+];
+const InformationTeamWork =[
+    {
+        id:1,
+        name:"Remy Varela",
+        cargo:"Representante médico",
+        image:"/images/user.png",
+        link:""
+
+    },
+    {
+        id:2,
+        name:"Natalia Varela",
+        cargo:"Encargada de Ventas",
+        image:"/images/user.png",
+        link:""
+    },
+    {
+        id:3,
+        name:"Keivi",
+        cargo:"Aña",
+        image:"/images/user.png",
+        link:""
+    },
+    {
+        id:4,
+        name:"Abida",
+        cargo:"Wawa",
+        image:"/images/user.png",
+        link:""
+    },
+    {
+        id:5,
+        name:"Juanjo",
+        cargo:"Bebe",
+        image:"/images/user.png",
+        link:""
+    },
+    {
+        id:6,
+        name:"Alpaca",
+        cargo:"Aniel",
+        image:"/images/user.png",
+        link:""
+    }
+];
+
+
+import Encabezado from "../Components/Encabezado.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de Nosotros</title>
+</head>
+<body>
+    <BaseLayout>
+        <Encabezado image="/images/Acerca-de-nosotros.png" title="ACERCA DE NOSOTROS"/>
+        <section class="section1-about-inf">
+            {
+                MoreInformationAboutUs.map((about)=>(
+                    <article class={`about-inf about-inf${about.id}`}>
+                        <div class="about-inf-text">
+                            <h3>{about.title}</h3>
+                            <p>{about.descrition}</p>
+                        </div>
+                        <img src={about.image} alt="Imagen de Acerca de Nosotros">
+                    </article> 
+                ))
+            }
+        </section>
+        <section class="section2-about-inf">
+            <h2>
+                Nuestras Empresas Afiliadas
+            </h2>
+            <article class="section2-inf-bottom">
+                {
+                    InformationAfiliados.map((afiliados)=>(
+                        <div class={`afiliados-inf afiliados-inf${afiliados.id}`}>
+                            <a href={afiliados.link} target="_blank">
+                                <img src={afiliados.image} alt="Imagen de Las empresas afiliadas">
+                            </a>
+                        </div>
+                    ))
+                }
+            </article>
+        </section>
+        <section class="section3-about-inf">
+            <h2>
+                    Equipo de Trabajo
+            </h2>
+            <article class="team-work">
+                {
+                    InformationTeamWork.map((teamwork)=>(
+                        <div class={`team-work-inf team-work-inf${teamwork.id}`}>
+                            <img src={teamwork.image} alt="Imagen del equipo de trabajo">
+                            <h4>{teamwork.name}</h4>
+                            <div class="cargo-work">
+                                <p>{teamwork.cargo}</p>
+                                <a href={teamwork.link}>
+                                    <img src="/images/linkedin-work.png" alt="Linkedin">
+                                </a>
+                            </div>
+                        </div>
+                    ))
+                }
+            </article>
+        </section>
+        <section class="section4-about-inf">
+            <h2>Preguntas Frecuentes</h2>
+            <article>
+                Aca van las preguntas frecuentes
+            </article>
+        </section>
+    </BaseLayout>
+</body>
+</html>
+<style>
+    body{
+        background: #F2F2F2;
+    }
+    body h2{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .section1-about-inf{
+		width: 90%;
+		margin:auto;
+	}
+	.about-inf{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2rem 0rem;
+	}
+	.about-inf h3{
+		font-family: "Lato", sans-serif;
+		font-weight: 900;
+	}
+	.about-inf p{
+		font-family: "Lato", sans-serif;
+		font-weight: 300;
+	}
+	.about-inf img{
+		width: 18rem;
+		border-radius: 1rem;
+		box-shadow: 10px 10px 20px  #3E458D;
+	}
+    .section2-inf-bottom{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+    }
+    .afiliados-inf{
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1px solid #3E458D;
+        margin: 1.2rem;
+        transition: transform 0.5s ease;
+    }
+    .afiliados-inf a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+    }
+    
+    .afiliados-inf img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .afiliados-inf2 img, .afiliados-inf3 img, .afiliados-inf4 img{
+        width: 80%;
+    }
+    .afiliados-inf:hover{
+        transform: scale(1.1) ;
+
+    }
+    .team-work {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .team-work-inf{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #3E458D;
+        padding: 1rem;
+        border-radius: 4rem;
+        margin: 1rem;
+        background-color: white;
+    }
+    .team-work-inf img{
+        width: 15rem;
+    }
+    .team-work-inf h4{
+        font-family: "Lato", sans-serif;
+		font-weight: 900;
+        padding: 0;
+        margin: 0;
+        bottom: 0;
+    }
+    .cargo-work {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        bottom: 0;
+    }
+    .cargo-work p{
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+    }
+    .cargo-work img{
+        width: 25px;
+        transition: transform 0.5s ease;
+    }
+    .cargo-work img:hover{
+        transform: scale(1.2);
+    }
+
+    @media(min-width:375px){
+        .about-inf img{
+			width: 20em;
+		}
+    }
+    @media (min-width:425px){
+		.about-inf img{
+			width: 22rem;
+		}
+	}
+    @media(min-width:768px){
+		.about-inf img{
+			margin-top: 2rem;
+		}
+		.about-inf-text{
+			width: 75%;
+		}
+	}
+@media (min-width:1024px){
+		.about-inf{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			
+		}
+		.about-inf2{
+			flex-direction: row-reverse;
+			text-align: right;
+
+		}
+		.about-inf-text{
+			width: 50%;	
+		}
+        .team-work{
+            width: 80%;
+            margin: auto;
+        }
+        .team-work-inf{
+            width: 200px;
+            border-radius: 2rem;
+            box-shadow: 0px 10px 12px #3E458D;
+            transition: transform .7s ease;
+        }
+        .team-work-inf:hover{
+            transform: scale(1.05);
+        }
+        .team-work-inf img{
+            width: 12rem;
+        }
+        .cargo-work img{
+            width: 25px;
+        }
+	}
+	@media (min-width:1440px){
+		.about-inf{
+			margin: 8rem 0rem;
+		}
+		.about-inf img{
+			width: 35rem;
+		}
+		.about-inf-text{
+			width: 40%;
+		}
+		.about-inf-text h3{
+			font-size: 2rem;
+		}
+		.about-inf-text p{
+			font-size: 1.5rem;
+        }
+	}
+</style>

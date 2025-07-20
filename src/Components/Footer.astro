@@ -1,0 +1,162 @@
+---
+const footerInformationRigth = [
+    {
+        id: 1,
+        title: 'Productos',
+        options: [
+            {name: "Guerbet", href: "/"},
+            {name: "Aptissen", href: "/"},
+            {name: "Mhj", href: "/"},
+            {name: "Farmavone", href:"/"},
+            {name: "Temistac", href:"/"},
+        ]
+    },
+    {
+        id: 2,
+        title: 'Soporte',
+        options: [
+            {name: "Farmacovigilancia", href: "/farmacovigilancia"},
+            {name: "Hacer Pedido", href: "/"},
+            {name: "OptiProtect", href: "/"},
+            {name: "Quejas y Reclamos", href:"/"},    
+        ]
+    },
+    {
+        id: 3,
+        title: 'Compañía',
+        options: [
+            {name: "Acerca de Nosotros" , href:"/about-us"},
+            {name: "Noticias y Eventos", href:"/notice&events"},
+        ]
+    }
+];
+---
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>footer</title>
+</head>
+<body>
+    <hr>
+  <footer>
+    <div class="footer-left">
+        <img src="../../public/logo-principal.png" alt="Logo-Jmarting">
+        <p>
+            Trabajamos con empresas reconocidas alrededor del mundo para garatizar la calidad y variedad.
+        </p>
+        <ul>
+            <li><a href=""><img src="../../public/images/logo-instagram.png" alt="Instagram"></a></li>
+            <li><a href=""><img src="../../public/images/logo-linkedin.png" alt="Linkeding"></a></li>
+            <li><a href=""><img src="../../public/images/logo-whatsapp.png" alt="Whatsapp"></a></li>
+            <li><a href=""><img src="../../public/images/logo-facebook.png" alt="Facebook"></a></li>
+        </ul>
+    </div>
+    <div class="footer-rigth">
+        <div class="information-rigth">
+            {footerInformationRigth.map((footer) =>(
+                <div class={`footer-rigth-inf footer-rigth-inf${footer.id}`}>
+                    <h3>{footer.title}</h3>
+                    <div class="description-right">
+                        <ul>
+                            {
+                                footer.options?.map((options) =>(
+                                    <li>
+                                        <a href={options.href}>{options.name}</a>
+                                    </li>
+                                )) 
+                            }
+                        </ul>
+                    </div>
+                </div>
+            ))
+
+            }
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
+<style>
+    hr{
+        width: 95%;
+        border-top: .1rem solid #3E458D;
+        0rem;        
+    }
+    footer{
+        width: 95%;
+        margin: auto;
+    }
+    .information-rigth{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+        gap: 1rem;
+    }
+    footer ul{
+        padding: 0%;
+        list-style-type: none;
+    }
+    footer a{
+        text-decoration: none;
+        color: #2D2D2D; 
+    }
+    .footer-rigth{
+        text-align: left;
+    }
+    .footer-rigth-inf li{
+        max-width: 90%;
+        line-height: 1.5rem;
+    }
+    .footer-rigth-inf li{
+        transition: transform 0.5s ease;
+    }
+    .footer-rigth-inf li:hover{
+        transform: scale(1.07);
+    }
+    .footer-rigth-inf h3{
+        color: #3E458D;
+    }
+    .footer-left{
+        max-width: 95%;
+        margin: auto;
+    }
+    .footer-left ul{
+        display: flex;
+        flex-direction: row;
+    }
+    .footer-left p{
+        color: #2D2D2D;
+    }
+    .footer-left a img{
+        width: 24px;
+        margin-right:1rem;
+        transition: transform .7s ease, box-shadow 0.3s ease;
+    }
+    .footer-left a img:hover{
+        transform: scale(1.5);
+        box-shadow: 0 4px 18px rgba(41, 18, 158, 0.5);
+    }
+    .footer-left img{
+        width: 12rem;
+        margin-top: 1rem;
+    }
+    @media (min-width:768px){
+        footer{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-left{
+            max-width: 50%;
+            margin: 0;
+        }
+        .footer-left p{
+            max-width: 20rem;
+        }
+        .footer-rigth{
+            width: 50%;
+        }
+
+    }
+</style>

@@ -1,0 +1,18 @@
+---
+import Footer from "../Components/Footer.astro"
+import Header from "../Components/Header.astro"
+---
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component header, footer</title>
+</head>
+<body>
+  <Header client:load/>
+  <main>
+    <slot/>
+  </main>
+  <Footer/>
+</body>
+</html>
