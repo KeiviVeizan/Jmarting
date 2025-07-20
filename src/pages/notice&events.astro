@@ -1,4 +1,42 @@
 ---
+const MoreInformationNotice =[
+  {
+    id:1,
+    title:"SIMPOSIO DE RADIOLOGÍA TORÁCICA PARA TECNÓLOGOS EN RADIOLOGÍA",
+    description:"Del 26 al 30 de Septiembre de 2011. Auditorio «Cooperativa Madre Maestra».Tarija-Bolivia",
+    image:"/images/noticias-section.png",
+    link:"",
+  },
+  {
+    id:2,
+    title:"XII CONGRESO BOLIVIANO DE RADIOLOGÍA",
+    description:"29 y 30 de Septiembre y 1 de Octubre de 2011. Radiología Pediátrica – Radiología de Abdomen – Ecografía Gineco-obstétrica. Se llevará acabo en el Hotel Radisson en la ciudad de La Paz.",
+    image:"/images/noticias-section.png",
+    link:"",
+  },
+  {
+    id:3,
+    title:"CONGRESO INTERNACIONAL - ADELANTOS EN IMAGENOLOGÍA PARA TECNÓLOGOS EN RADIOLOGÍA",
+    description:"9,10 y 11 de Noviembre. La Paz,2011.",
+    image:"/images/noticias-section.png",
+    link:"",
+  },
+  {
+    id:4,
+    title:"PRIMER CURSO EN NEURO-IMAGENOLOGÍA PARA TECNÓLOGOS EN RADIOLOGÍA",
+    description:"22 y 23 de Julio. En el Auditorio Instituto Gastroeneterológico. Para mayor información contactarse con Osman Miranda 71297020. La Paz, 2011.",
+    image:"/images/noticias-section.png",
+    link:"",
+  },
+  {
+    id:5,
+    title:"PRIMER CURSO DE IMAGENOLOGÍA EN GINECO-OBSTETRICIA",
+    description:"4, 5 y 6 de Mayo de 2011 en el Auditórium del Instituto Gastroenterológico Boliviano Japonés a hrs 18:00 a 20:00. Evento organizado por la Jefatura de Enseñanza de la especialidad de Imagenología del Hospital de Clínicas.",
+    image:"/images/noticias-section.png",
+    link:"",
+  },
+]
+
 import Encabezado from "../Components/Encabezado.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -8,11 +46,108 @@ const { title = 'Default Title' } = Astro.props;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png+xml" href="/logo-simple.png"/>
   <title>Noticias y Eventos</title>
 </head>
 <body>
     <BaseLayout>
     <Encabezado image="/images/noticias-section.png" title="NOTICIAS Y EVENTOS"/>
+    <section class="notice-information">
+      <h2>Eventos Pasados</h2>
+      <article class="past-event">
+        {
+          MoreInformationNotice.map((notice)=>(
+            <div class={`event-inf event-inf${notice.id}`}>
+              <div class="event-inf-text">
+                <h3>{notice.title}</h3>
+                <p>{notice.description}</p>
+              </div>
+              <img src={notice.image} alt="Imagen de la noticia">
+            </div>
+          ))
+        }
+      </article>
+    </section>
     </BaseLayout>
 </body>
 </html>
+<style>
+  .past-event{
+		width: 90%;
+		margin:auto;
+	}
+	.event-inf{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2rem 0rem;
+	}
+	.event-inf h3{
+		font-family: "Lato", sans-serif;
+		font-weight: 900;
+		font-size: 1.5rem;
+	}
+	.event-inf p{
+		font-family: "Lato", sans-serif;
+		font-weight: 300;
+	}
+	.event-inf img{
+		width: 18rem;
+		border-radius: 1rem;
+		box-shadow: 10px 10px 20px  #3E458D;
+	}
+
+
+
+  @media (min-width:375px){
+		.event-inf img{
+			width: 20rem;
+		}
+	}
+	@media (min-width:425px){
+		.event-inf img{
+			width: 22rem;
+		}
+	}
+	@media(min-width:768px){
+		.event-inf img{
+			margin-top: 2rem;
+		}
+		.event-inf-text{
+			width: 75%;
+		}
+  @media (min-width:1024px){
+		.event-inf{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			
+		}
+		.event-inf2{
+			flex-direction: row-reverse;
+			text-align: right;
+
+		}
+		.event-inf-text{
+			width: 50%;	
+		}
+	}
+	@media (min-width:1440px){
+		.event-inf{
+			margin: 8rem 0rem;
+		}
+		.event-inf img{
+			width: 35rem;
+		}
+		.event-inf-text{
+			width: 40%;
+		}
+		.event-inf-text h3{
+			font-size: 2rem;
+		}
+		.event-inf-text p{
+			font-size: 1.5rem;
+		}
+	}
+	}
+</style>
