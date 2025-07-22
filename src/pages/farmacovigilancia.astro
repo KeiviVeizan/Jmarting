@@ -1,4 +1,38 @@
 ---
+const MoreInformationForm = [
+  {
+    id:1,
+    image:"/images/reporte-producto.png",
+    title:"Reportes de efecto del producto",
+    link:"https://www.facebook.com"
+  },
+  {
+    id:2,
+    image:"/images/reporte-medicas.png",
+    title:"Formulario para empresas médicas",
+    link:""
+  },
+  {
+    id:3,
+    image:"/images/reporte-profesional-salud.png",
+    title:"Formulario de profesional de salud",
+    link:""
+  },
+  {
+    id:4,
+    image:"",
+    title:"Farmacovigilancia AGEMED",
+    link:"/"
+  },
+  {
+    id:5,
+    image:"/images/reporte-quejas-reclamos.png",
+    title:"Quejas y Reclamos",
+    link:""
+  }
+]
+
+
 import Encabezado from "../Components/Encabezado.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
@@ -12,6 +46,88 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 <body>
     <BaseLayout>
     <Encabezado image="/images/farmacovigilancia-section.png" title="FARMACOVIGILANCIA"/>
+    <section class="farma-inf">
+      {MoreInformationForm.map((form)=>(
+        <a href={form.link} class="inf-link">
+          <article class={` inf-farma inf-farma${form.id}`}>
+          <img src={form.image} alt="Imagen de formulario">
+          <div class="form-before"></div>
+          <div class="form-title">
+            <h3>{form.title}</h3>
+          </div>
+        </article>
+        </a>
+      )) 
+      }
+    </section>
     </BaseLayout>
 </body>
 </html>
+<style>
+  .farma-inf{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .inf-farma a{
+    width: 18rem;
+    height: 10rem;
+    object-fit: cover;
+    z-index: 3;
+
+  }
+  .inf-farma{
+    position: relative;
+    width: 250px;
+    height: 25vh;
+    min-height: 180px;
+    max-height: 400px;
+    overflow: hidden;
+    margin: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 14px #3e3e3e;
+    transition: transform .5s ease ;
+  }
+  .inf-farma:hover{
+    transform: scale(1.2);
+  }
+  .inf-farma img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+  }
+  .form-title{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .form-title h3{
+    color: white;
+    font-size: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    padding: 0 1rem;
+  }
+  .form-before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1d;
+    opacity: 0.7;
+    z-index: -1;
+  }
+  .inf-link{
+    text-decoration: none;
+    display: inline-block;
+  }
+</style>
