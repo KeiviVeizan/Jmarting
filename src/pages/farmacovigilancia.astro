@@ -48,14 +48,14 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     <Encabezado image="/images/farmacovigilancia-section.png" title="FARMACOVIGILANCIA"/>
     <section class="farma-inf">
       {MoreInformationForm.map((form)=>(
-        <a href={form.link} class="inf-link">
+        <a href={form.link} class="inf-link" target="_blank">
           <article class={` inf-farma inf-farma${form.id}`}>
-          <img src={form.image} alt="Imagen de formulario">
-          <div class="form-before"></div>
-          <div class="form-title">
-            <h3>{form.title}</h3>
-          </div>
-        </article>
+            <img src={form.image} alt="Imagen de formulario">
+            <div class="form-before"></div>
+            <div class="form-title">
+             <h3>{form.title}</h3>
+            </div>
+          </article>
         </a>
       )) 
       }
@@ -68,6 +68,8 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 90%;
+    margin: auto;
   }
   .inf-farma a{
     width: 18rem;
@@ -129,5 +131,19 @@ import BaseLayout from "../layouts/BaseLayout.astro"
   .inf-link{
     text-decoration: none;
     display: inline-block;
+  }
+
+  @media(min-width:375px){
+    .inf-farma{
+      width: 20rem;
+    }
+    .inf-farma a{
+      width: 20rem;
+    }
+  }
+    @media(min-width:425px){
+    .inf-farma, .inf-farma a|{
+      width: 22rem;
+    }
   }
 </style>

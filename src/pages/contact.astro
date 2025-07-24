@@ -1,4 +1,30 @@
 ---
+
+
+const MoreInformationContact =[
+  {
+    id:1,
+    title:"Oficina central",
+    description:"Telefono",
+    number:"/",
+    mail:"",
+  },
+{
+    id:2,
+    title:"",
+    description:"",
+    number:""
+
+  },
+{
+    id:3,
+    title:"",
+    description:"",
+    number:""
+
+  },
+
+]
 import Encabezado from "../Components/Encabezado.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -14,6 +40,23 @@ const { title = 'Default Title' } = Astro.props;
 <body>
     <BaseLayout>
         <Encabezado image="/images/contacto-section.png" title="CONTACTO"/>
+        <section class="inf1-contacto">
+          <article>
+            <h5>COntactate</h5>
+          </article>
+          <article>
+            <form action="" method="get">
+            <fieldset>
+                <legend>Nos contactamos contigo</legend>
+                <input type="text" name="nombre" placeholder="Nombre" required="True">
+                <input type="email" placeholder="Correo Electronico" name="correo" required="True">
+                <input type="number" placeholder="Numero de Telefono" name="telefono" required="true">
+                <textarea name="Mensaje" id="" placeholder="Mensaje" rows="3"></textarea>
+                <input type="submit" value="Enviar">
+              </fieldset>
+            </form>
+          </article>
+        </section>
     </BaseLayout>
 </body>
 </html>
