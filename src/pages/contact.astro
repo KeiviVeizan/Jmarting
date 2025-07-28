@@ -6,21 +6,21 @@ const MoreInformationContact =[
     id:1,
     title:"Oficina central",
     description:"Telefono",
-    number:"/",
-    mail:"",
+    telf:[{num:"73717346", href:""}],
+    mail:[{gmail:"kveizanp@est.emi.edu.bo", href:"/"}],
   },
 {
     id:2,
     title:"",
     description:"",
-    number:""
+    telf:[{num:"73717346", href:""}],
 
   },
 {
     id:3,
     title:"",
     description:"",
-    number:""
+    telf:[{num:"73717346", href:""}],
 
   },
 
@@ -42,10 +42,34 @@ const { title = 'Default Title' } = Astro.props;
         <Encabezado image="/images/contacto-section.png" title="CONTACTO"/>
         <section class="inf1-contacto">
           <article>
-            <h5>COntactate</h5>
+            <fieldset>
+              <legend>Contactate</legend>
+              <div class="contact">
+                {
+                  MoreInformationContact.map((contact)=>(
+                    <div class={`inf-contact inf-contact${contact.id}`}>
+                      <h3>{contact.title}</h3>
+                      <p>{contact.description}</p>
+                      <div class="links">
+                        {
+                          contact.mail?.map((mails)=>(
+                            <a href={mails.href}>{mails.gmail}</a>
+                          ))
+                        }
+                        {
+                          contact.telf?.map((number)=>(
+                            <a href={number.href}>{number.num}</a>
+                          ))
+                        }
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </fieldset>
           </article>
           <article>
-            <form action="" method="get">
+            <form action="" method="get" class="about-contact">
             <fieldset>
                 <legend>Nos contactamos contigo</legend>
                 <input type="text" name="nombre" placeholder="Nombre" required="True">
@@ -60,3 +84,6 @@ const { title = 'Default Title' } = Astro.props;
     </BaseLayout>
 </body>
 </html>
+<style>
+  
+</style>
