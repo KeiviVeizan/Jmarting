@@ -1,64 +1,200 @@
 ---
-
 ---
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <div class="navegation">
-        <a href="/">
-          <img src="/logo-principal.png" alt="logo-principal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Responsive</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navegation">
+        <a href="/" class="logo">
+          <img src="/logo-principal.png" alt="Logo Marting" />
         </a>
-        <div class="head-right">
-           <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/about-us">Acerca de Nosotros</a></li>
-            <li><a href="/products">Productos</a></li>
-            <li><a href="/farmacovigilancia">Farmacovigilacia</a></li>
-            <li><a href="/notice&events">Noticias y Eventos</a></li>
-            <li><a href="/contact">Contacto</a></li>
-        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </div>
-    </nav>
-  </header>
-</body>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/about-us">Acerca de Nosotros</a></li>
+          <li><a href="/products">Productos</a></li>
+          <li><a href="/farmacovigilancia">Farmacovigilancia</a></li>
+          <li><a href="/notice&events">Noticias y Eventos</a></li>
+          <li><a href="/contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <script type="module">
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>
+
 <style>
-  *{
+  /* Reset y estilos base */
+  * {
     margin: 0;
     padding: 0;
-  }
-  body{
-    width: 100%;
-  }
-  header{
-    background-color: transparent;
-    border-bottom: .1rem solid #121212;
-    border-radius:2rem;
-    width: 90%;
-    margin: auto;
-  }
-  .navegation{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .navegation img{
-    width: 6rem;
-    height: 2rem;
-  }
-  .head-right ul{
-    list-style-type:none;
-  }
-  .head-right a{
-    text-decoration: none;
+    box-sizing: border-box;
   }
 
+  body {
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  header {
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #3f3f3f;
+    border-radius: 2rem;
+    background-color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .navegation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem;
+  }
+
+  .logo img {
+    width: 9rem;
+    height: auto;
+  }
+
+  .nav-links {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeInDown 0.4s ease-out forwards;
+  }
+
+  .nav-links li {
+    margin: 0.8rem 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #121212;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #3e5baf;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive: Tablets */
+  @media (min-width: 1024px) {
+    .hamburger {
+      display: none;
+    }
+
+    .nav-links {
+      position: static;
+      flex-direction: row;
+      display: flex !important;
+      gap: 1.5rem;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .nav-links li {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .nav-links a {
+      font-size: 1.1rem;
+    }
+
+    .logo img {
+      width: 10rem;
+    }
+  }
+
+  @media (min-width: 2000px) {
+    .nav-links a {
+      font-size: 1.25rem;
+    }
+
+    .navegation {
+      max-width: 1600px;
+    }
+  }
 </style>

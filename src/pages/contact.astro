@@ -5,30 +5,26 @@ const MoreInformationContact =[
   {
     id:1,
     title:"Oficina central",
-    description:"Telefono",
-    telf:[{num:"73717346", href:""}],
-    mail:[{gmail:"kveizanp@est.emi.edu.bo", href:"/"}],
+    telf:[{num:"73717346", href:"https://w.app/bhl93a"}],
+    mail:[{gmail:"kveizanp@est.emi.edu.bo", href:"/"}]
   },
 {
     id:2,
-    title:"",
-    description:"",
-    telf:[{num:"73717346", href:""}],
-
+    title:"Servicio Técnico",
+    telf:[{num:"78972229", href:"https://w.app/bhl93a"}],
+    mail:[{gmail:"kveizanp@est.emi.edu.bo", href:"/"}]
   },
 {
     id:3,
-    title:"",
-    description:"",
-    telf:[{num:"73717346", href:""}],
-
+    title:"Prueba",
+    telf:[{num:"73717346", href:"https://w.app/bhl93a"}],
+    mail:[{gmail:"kveizanp@est.emi.edu.bo", href:"/"}]
   },
 
 ]
 import Encabezado from "../Components/Encabezado.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const { title = 'Default Title' } = Astro.props;
 ---
 <html lang="es">
 <head>
@@ -41,7 +37,7 @@ const { title = 'Default Title' } = Astro.props;
     <BaseLayout>
         <Encabezado image="/images/contacto-section.png" title="CONTACTO"/>
         <section class="inf1-contacto">
-          <article>
+          <article class="inf-contact1">
             <fieldset>
               <legend>Contactate</legend>
               <div class="contact">
@@ -49,16 +45,22 @@ const { title = 'Default Title' } = Astro.props;
                   MoreInformationContact.map((contact)=>(
                     <div class={`inf-contact inf-contact${contact.id}`}>
                       <h3>{contact.title}</h3>
-                      <p>{contact.description}</p>
                       <div class="links">
                         {
                           contact.mail?.map((mails)=>(
-                            <a href={mails.href}>{mails.gmail}</a>
+                            <div class="correo">
+                              <h4>Correo: </h4>
+                              <a href={mails.href} target="_blank">{mails.gmail}</a>
+                            </div>
                           ))
                         }
+                        
                         {
                           contact.telf?.map((number)=>(
-                            <a href={number.href}>{number.num}</a>
+                            <div class="telefono">
+                              <h4>Telefono: </h4>
+                              <a href={number.href} target="_blank">{number.num}</a>
+                            </div>
                           ))
                         }
                       </div>
@@ -68,15 +70,17 @@ const { title = 'Default Title' } = Astro.props;
               </div>
             </fieldset>
           </article>
-          <article>
+          <article class="inf-contact2">
             <form action="" method="get" class="about-contact">
             <fieldset>
                 <legend>Nos contactamos contigo</legend>
-                <input type="text" name="nombre" placeholder="Nombre" required="True">
-                <input type="email" placeholder="Correo Electronico" name="correo" required="True">
-                <input type="number" placeholder="Numero de Telefono" name="telefono" required="true">
-                <textarea name="Mensaje" id="" placeholder="Mensaje" rows="3"></textarea>
-                <input type="submit" value="Enviar">
+                <div class="formulario-contact">
+                  <input type="text" name="nombre" placeholder="Nombre" required="True">
+                  <input type="email" placeholder="Correo Electronico" name="correo" required="True">
+                  <input type="number" placeholder="Numero de Telefono" name="telefono" required="true">
+                  <textarea name="Mensaje" id="" placeholder="Mensaje" rows="3"></textarea> <br>
+                  <input type="submit" value="Enviar" id="Enviar">
+                </div>
               </fieldset>
             </form>
           </article>
@@ -85,5 +89,81 @@ const { title = 'Default Title' } = Astro.props;
 </body>
 </html>
 <style>
-  
+  *{
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+  }
+  .inf1-contacto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  legend{
+    font-size: 1.5rem;
+    color:#3E458D;
+    font-family: "Lato", sans-serif;
+		font-weight: 900;
+  }
+  fieldset{
+    width: 300px;
+    border: 2px solid #F4B631;
+  }
+  article{
+    margin: 2rem 0rem;
+  }
+  .inf-contact{
+    padding: .5rem;
+  }
+  .correo, .telefono{
+    display: flex;
+    flex-direction: row;
+    margin: .5rem;
+  }
+  .inf-contact h3, h4{
+    color: #3E458D;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+  }
+  .links a{
+    color: #2d2d2d;
+    transition: color, .5s;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+  }
+  .links a:hover{
+    color: #F4B631;
+  }
+  .formulario-contact{
+    padding: .5rem;
+  }
+  .formulario-contact input, textarea{
+    margin:.5rem 0rem;
+  }
+  .formulario-contact #Enviar{
+    background-color: #3E458D;
+    padding: .5rem 2rem;
+    color: white;
+    border-radius: .3rem;
+    transition: background-color, .5s;
+  }
+  .formulario-contact #Enviar:hover{
+    background-color: #F4B631;
+    color: #3E458D;
+  }
+  @media(min-width:375px){
+
+  }
+  @media(min-width:425px){
+    
+  }
+  @media(min-width:768px){
+    .inf1-contacto{
+      justify-content: space-around;
+    }
+  }
+  @media(min-width:375px){
+    
+  }
 </style>

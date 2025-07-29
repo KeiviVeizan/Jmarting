@@ -77,6 +77,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	</head>
 	<body>
 			<BaseLayout>
+				<section class="inicio">
+					<img src="" alt="imagen">
+					<h1>Hola</h1>
+				</section>
 				<section>
 					<article class="section1-information-home">
 						{
@@ -123,6 +127,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <style>
 	body{
 		background: #F2F2F2;
+	}
+	.inicio{
+		width: 100%;
+		height: 100vh;
+		background-color: #3E458D;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.section1-information-home{
 		width: 90%;
