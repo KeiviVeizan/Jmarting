@@ -2,6 +2,35 @@
 import Encabezado from "../Components/Encabezado.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const MoreInformationProduct = [
+  {
+    id:1,
+    image:"/images/logo-guerbet.png",
+    link:"/Productos/empresas"
+  },
+  {
+    id:2,
+    image:"/images/logo-aptissen.webp",
+    link:"/Productos/producto"
+  },
+  {
+    id:3,
+    image:"/images/logo-temi.png",
+    link:"/Productos/profesional"
+  },
+  {
+    id:4,
+    image:"/images/logo-farmavone.png",
+    link:"/Productos/agemed"
+  },
+  {
+    id:5,
+    image:"/images/logo-mhj.png",
+    link:"/Productos/quejas"
+  }
+]
+
+
 const { title = 'Default Title' } = Astro.props;
 ---
 <html lang="es">
@@ -14,6 +43,90 @@ const { title = 'Default Title' } = Astro.props;
 <body>
     <BaseLayout>
         <Encabezado image="/images/product-section.png" title="PRODUCTOS"/>
+        <section class="product-inf">
+          {MoreInformationProduct.map((product)=>(
+            <a href={product.link} class="inf-link">
+              <article class={` inf-product inf-product${product.id}`}>
+                <img src={product.image} alt="Imagen de formulario">
+                <div class="product-before"></div>
+              </article>
+            </a>
+          )) 
+          }
+    </section>
     </BaseLayout>
 </body>
 </html>
+<style>
+  .product-inf{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+  }
+  .inf-product a{
+    width: 18rem;
+    height: 10rem;
+    object-fit: cover;
+    z-index: 3;
+
+  }
+  .inf-product{
+    position: relative;
+    width: 250px;
+    height: 25vh;
+    min-height: 180px;
+    max-height: 400px;
+    overflow: hidden;
+    margin: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 14px #3e3e3e;
+    transition: transform .5s ease ;
+  }
+  .inf-product:hover{
+    transform: scale(1.2);
+  }
+  .inf-product img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: -2;
+  }
+  .product-before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1d;
+    opacity: 0.7;
+    z-index: -1;
+    transition: opacity, 1s;
+  }
+  .product-before:hover{
+    opacity: 0.1;
+  }
+  .inf-link{
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  @media(min-width:375px){
+    .inf-product{
+      width: 20rem;
+    }
+    .inf-product a{
+      width: 20rem;
+    }
+  }
+    @media(min-width:425px){
+    .inf-product, .inf-product a|{
+      width: 22rem;
+    }
+  }
+</style>

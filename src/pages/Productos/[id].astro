@@ -1,0 +1,61 @@
+---
+
+
+export async function getStaticPaths() {
+  return [
+    { params: { id: "producto" } },
+    { params: { id: "empresas" } },
+    { params: { id: "profesional" } },
+    { params: { id: "agemed" } },
+    { params: { id: "quejas" } },
+  ];
+}
+// src/pages/formularios/[id].astro
+const { id } = Astro.params;
+
+const contentMap = {
+  producto: {
+    title: "Reportes de efecto del producto",
+    description: "Aquí puedes reportar los efectos del producto...",
+    image: "/images/reporte-producto.png"
+  },
+  empresas: {
+    title: "Formulario para empresas médicas",
+    description: "Este formulario está dirigido a empresas del área médica...",
+    image: "/images/reporte-medicas.png"
+  },
+  profesional: {
+    title: "Formulario de profesional de salud",
+    description: "Formulario específico para profesionales del área médica...",
+    image: "/images/reporte-profesional-salud.png"
+  },
+  agemed: {
+    title: "Farmacovigilancia AGEMED",
+    description: "Reporta cualquier evento adverso a través de AGEMED...",
+    image: "/images/farmacovigilancia-section.png"
+  },
+  quejas: {
+    title: "Quejas y Reclamos",
+    description: "Puedes presentar tus quejas y reclamos aquí...",
+    image: "/images/reporte-quejas-reclamos.png"
+  }
+};
+
+const selected = contentMap[id];
+if (!selected) {
+  throw new Error(`Formulario con id "${id}" no encontrado.`);
+}
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{selected.title}</title>
+  </head>
+  <body>
+    <h1>{selected.title}</h1>
+    <img src={selected.image} alt={`Imagen para ${selected.title}`} width="300"/>
+    <p>{selected.description}</p>
+    <!-- Aquí puedes meter el formulario dinámico también -->
+  </body>
+</html>
