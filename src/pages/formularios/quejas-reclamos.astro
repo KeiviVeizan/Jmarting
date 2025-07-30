@@ -1,0 +1,37 @@
+---
+import Encabezado from "../../Components/Encabezado.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+
+---
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quejas y Reclamos</title>
+</head>
+<body>
+  <BaseLayout>
+    <Encabezado image="/images/farmacovigilancia-section.png" title="QUEJAS Y RECLAMOS"/>
+    <section>
+        <form action="">
+            <fieldset>
+                <legend>Quejas y Reclamos</legend>
+                <label for="nombre">Nombre Completo: </label>
+                <input type="text" id="nombre" name="nombre" required="True" placeholder="Ejm. Jorge Perez">
+                <label for="org">Organización: </label>
+                <input type="text" id="org" name="organización" required="True" placeholder="Ejm. Importadora Marting">
+                <label for="correo">Correo Electronico</label>
+                <input type="email" id="correo" name="correo-electrónico" required="True" placeholder="Ejm. jorgeperez@gmail.com">
+                <label for="telefono">Telefono/Celuar</label>
+                <input type="number" name="telefono" id="telefono" required="True" placeholder="Ejm. 6738XXXX">
+                <label for="country">Cuidad/Pais</label>
+                <input type="text" name="ciudad-pais" id="country" required="True" placeholder="Ejm. La Paz - Bolivia">
+                <label for="queja">Quejas o Reclamos</label>
+                <textarea name="reclamos" id="queja" placeholder="Cuentanos que problemas tuviste..."></textarea>
+            </fieldset>
+        </form>
+    </section>
+  </BaseLayout>
+</body>
+</html>
