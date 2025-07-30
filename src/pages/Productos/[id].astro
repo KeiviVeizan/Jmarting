@@ -1,47 +1,117 @@
 ---
-
+import Encabezado from '../../Components/Encabezado.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   return [
-    { params: { id: "producto" } },
-    { params: { id: "empresas" } },
-    { params: { id: "profesional" } },
-    { params: { id: "agemed" } },
-    { params: { id: "quejas" } },
+    { params: { id: "guerbet" } },
+    { params: { id: "aptissen" } },
+    { params: { id: "mhj" } },
+    { params: { id: "farmavone" } },
+    { params: { id: "termis" } },
   ];
 }
-// src/pages/formularios/[id].astro
+
 const { id } = Astro.params;
 
 const contentMap = {
-  producto: {
-    title: "Reportes de efecto del producto",
-    description: "Aquí puedes reportar los efectos del producto...",
-    image: "/images/reporte-producto.png"
+  guerbet: {
+    title: "Productos Guerbet",
+    products: [
+      {
+        title: "Dotarem®",
+        description: "Ácido gadotérico – Gadoterato de meglumina Lanzado en 1989 en Francia, Dotarem® está actualmente disponible en más de 70 países",
+        image: "/images/logo-guerbet.png",
+        link: "https://go.guerbet.com/l/709593/2022-07-07/33y6sr"
+      },
+      {
+        title: "Artirem®",
+        description: "Ácido gadotérico Lanzado por primera vez en 2002 en Francia, Artirem® se comercializa en 15 países.",
+        image: "/images/logo-guerbet.png",
+        link: "https://go.guerbet.com/l/709593/2022-07-07/33y6sr"
+      },
+      {
+        title: "Artirem®",
+        description: "Ácido gadotérico Lanzado por primera vez en 2002 en Francia, Artirem® se comercializa en 15 países.",
+        image: "/images/logo-guerbet.png",
+        link: "https://go.guerbet.com/l/709593/2022-07-07/33y6sr"
+      },
+      {
+        title: "Artirem®",
+        description: "Ácido gadotérico Lanzado por primera vez en 2002 en Francia, Artirem® se comercializa en 15 países.",
+        image: "/images/logo-guerbet.png",
+        link: "https://go.guerbet.com/l/709593/2022-07-07/33y6sr"
+      },
+      {
+        title: "Artirem®",
+        description: "Ácido gadotérico Lanzado por primera vez en 2002 en Francia, Artirem® se comercializa en 15 países.",
+        image: "/images/logo-guerbet.png",
+        link: "https://go.guerbet.com/l/709593/2022-07-07/33y6sr"
+      },
+      {
+        title: "Artirem®",
+        description: "Ácido gadotérico Lanzado por primera vez en 2002 en Francia, Artirem® se comercializa en 15 países.",
+        image: "/images/logo-guerbet.png",
+        link: "https://go.guerbet.com/l/709593/2022-07-07/33y6sr"
+      },
+      {
+        title: "Artirem®",
+        description: "Ácido gadotérico Lanzado por primera vez en 2002 en Francia, Artirem® se comercializa en 15 países.",
+        image: "/images/logo-guerbet.png",
+        link: "https://go.guerbet.com/l/709593/2022-07-07/33y6sr"
+      }
+
+
+    ]
   },
-  empresas: {
-    title: "Formulario para empresas médicas",
-    description: "Este formulario está dirigido a empresas del área médica...",
-    image: "/images/reporte-medicas.png"
+  aptissen: {
+    title: "PRODUCTOS APTISSEN",
+    products: [
+      {
+        title: "Empresas Médicas",
+        description: "Este formulario está dirigido a empresas del área médica...",
+        image: "/images/reporte-medicas.png",
+        link: "/"
+      }
+    ]
   },
-  profesional: {
-    title: "Formulario de profesional de salud",
-    description: "Formulario específico para profesionales del área médica...",
-    image: "/images/reporte-profesional-salud.png"
+  mhj: {
+    title: "PRODUCTOS MHJ",
+    products: [
+      {
+        title: "Formulario de profesional de salud",
+        description: "Formulario específico para profesionales del área médica...",
+        image: "/images/reporte-profesional-salud.png",
+        link: "/"
+      }
+    ]
   },
-  agemed: {
-    title: "Farmacovigilancia AGEMED",
-    description: "Reporta cualquier evento adverso a través de AGEMED...",
-    image: "/images/farmacovigilancia-section.png"
+  farmavone: {
+    title: "PRODUCTOS FARMAVONE",
+    products:[
+      {
+        title: "Farmacovigilancia AGEMED",
+        description: "Reporta cualquier evento adverso a través de AGEMED...",
+        image: "/images/farmacovigilancia-section.png",
+        link: "/"
+      }
+    ]
   },
-  quejas: {
-    title: "Quejas y Reclamos",
-    description: "Puedes presentar tus quejas y reclamos aquí...",
-    image: "/images/reporte-quejas-reclamos.png"
-  }
+  termis: {
+    title: "PRODUCTOS TERMIS",
+    products:[
+      {
+        title: "Quejas y Reclamos",
+        description: "Puedes presentar tus quejas y reclamos aquí...",
+        image: "/images/reporte-quejas-reclamos.png",
+        link: "/"
+      }
+    ]
+  },
 };
 
 const selected = contentMap[id];
+
 if (!selected) {
   throw new Error(`Formulario con id "${id}" no encontrado.`);
 }
@@ -53,9 +123,21 @@ if (!selected) {
     <title>{selected.title}</title>
   </head>
   <body>
-    <h1>{selected.title}</h1>
-    <img src={selected.image} alt={`Imagen para ${selected.title}`} width="300"/>
-    <p>{selected.description}</p>
-    <!-- Aquí puedes meter el formulario dinámico también -->
+    <BaseLayout>
+      <Encabezado image="/images/product-section.png" title={selected.title} />
+
+      <section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 2rem;">
+        {
+          selected.products.map((item) => (
+              <article style="width: 300px; border: 1px solid #ccc; border-radius: 1rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 1rem; background: #fff;">
+                <img src={item.image} alt={item.title} style="width: 100%; height: auto;" />
+                <h3 style="margin-top: 1rem;">{item.title}</h3>
+                <p>{item.description}</p>
+                <a href={item.link} target="_blank" style="display: inline-block; margin-top: 0.5rem; color: blue;">Ver más</a>
+              </article>
+            ))
+        }
+      </section>
+    </BaseLayout>
   </body>
 </html>

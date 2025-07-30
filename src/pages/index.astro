@@ -286,7 +286,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			display: flex;
 			flex-direction: row;
 			justify-content: space-evenly;
-			
+		}
+		.card-home .back p {
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 6;
 		}
 		.home-information2{
 			flex-direction: row-reverse;
