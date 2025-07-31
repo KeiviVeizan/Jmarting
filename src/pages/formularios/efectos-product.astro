@@ -13,10 +13,41 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <body>
   <BaseLayout>
     <Encabezado image="/images/farmacovigilancia-section.png" title="EFECTOS DEL PRODUCTO"/>
-    <section>
+    <section class="form-paciente">
+        <h2>Formularios Para Pacientes</h2>
         <form action="">
             <fieldset>
-                <legend>Reporte</legend>
+                <legend>Pacientes</legend>
+                <label for="producto">Nombre del producto utilizado: </label>
+                <input type="text" name="producto-utilizado" id="producto" required="True">
+                <div class="text-area">
+                    <label for="efecto">¿Tuvo algún efecto a causa de tratamiento?</label>
+                    <select name="efecto-causa" id="efecto" required="True">
+                    </select>
+                    <label for="detalles">En caso de seleccionar otros detallar: </label>
+                    <textarea name="detalles" id="detalles" required="True"></textarea>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    <section class="form-profecional">
+        <form action="">
+            <fieldset>
+                <legend>Profesional de Área</legend>
+                <label for="producto">Nombre del producto utilizado: </label>
+                <input type="text" name="producto" id="producto" required="True">
+                <div class="text-area">
+                    <label for="resultado">¿El producto le dio un buen resultado?</label>
+                    <textarea name="resultado" id="resultado" placeholder="Cuentanos tu experiencia" required="Tre"></textarea>
+                    <label for="tiempo">¿Recibio el producto en buen tiempo?</label>
+                    <textarea name="tiempo-recibido" id="tiempo" placeholder="Si o No" required="True"></textarea>
+                </div>
+                <div class="text-area">
+                    <label for="inconveniente">¿Su paciente tuvo algún inconveniente?</label>
+                    <textarea name="inconveniente" id="inconveniente" placeholder="¿Que inconveniente tuvo?" required="Tre"></textarea>
+                    <label for="sugerencia">Tiene alguna sugerencia para Importadora Marting?</label>
+                    <textarea name="sugerencia" id="sugerencia" placeholder="Estaremos encantados de recibir tus sugerencias" required="false"></textarea>
+                </div>
             </fieldset>
         </form>
     </section>

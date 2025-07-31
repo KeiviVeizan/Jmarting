@@ -7,11 +7,272 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
+  <title>Formulario para Empresas Médicas</title>
 </head>
 <body>
   <BaseLayout>
     <Encabezado image="/images/farmacovigilancia-section.png" title="EMPRESAS MÉDICAS"/>
+    <section class="Form-empreas">
+        <h2>
+            REPORTE DE SOSPECHA DE REACCIONES ADVERSAS A MEDICAMENTOS POR LAS EMPRESAS FARMACEUTICAS
+        </h2>
+        <form action="">
+            <fieldset>
+                <legend>Empresas Médicas</legend>
+                <label for="">Nº DE NOTIFICACION DE LA EMPRESA</label>
+                <input type="number" name="numero-notificacion-empresa" id="" required="True">
+                <label for="">Nº DE NOTIFICACION</label>
+                <input type="number" name="numero-notificacion" id="" required="True">
+                <label for="">SELECCIONAR UNA OPCIÓN</label>
+                <select name="medicamento" id="" required="True"></select>
+                <label for="">RAM HA SIDO COMUNICADA POR OTRA VIA</label>
+                <select name="comunicado-por-otra-via" id="" required="True"></select>
+                <label for="">SI RESPONDIÓ SI, DEBE INDICAR LA VIA</label>
+                <textarea name="via-comunicada" id="" required="True"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>I. INFORMACION SOBRE LA REACCION ADVERSA</legend>
+                <label for="">Código de Identificación del Paciente</label>
+                <input type="text" name="codigo-paciente" id=""required=True>
+                <label for="">Sexo:</label>
+                <select name="sexo" id="" required="True">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                <label for="">Peso:</label>
+                <input type="search" name="peso" id="" required="True">
+                <label for="">Estatura:</label>
+                <input type="text" name="estatura" id="" required="True">
+                <label for="">Fecha de inicio de la RAM (dd/mm/aa)</label>
+                <input type="text" name="fecha de inicio" id="" required="True">
+                <label for="">DESCRIPCION DE LA(s) REACCION(es) ADVERSA(s)</label>
+                <textarea name="descripcion-reacciones" id="" required="True" placeholder="Incluye resultados relevantes de exámenes auxiliares y la fecha de finalización, si procede"></textarea>
+                <label for="">DESENLACE</label>
+                <select name="deselace" id="" required="True">
+                    <option value="Fatal">Fatal</option>
+                    <option value="Riesgo">Puso en grave riesgo la vida del paciente</option>
+                    <option value="Requirió hopitalización">Requirió hopitalización</option>
+                    <option value="Prolongó hospitalización">Prolongó hospitalización</option>
+                    <option value="incapacidad permanente">Produjo incapacidad permanente</option>
+                    <option value="Recuperación total">Recuperación total</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>II. INFORMACION DEL MEDICAMENTO SOSPECHOSO DE LA EMPRESA</legend>
+                <label for="">Nombre comercial o gen.</label>
+                <input type="text" name="nomnre-comercial" required="True">
+                <label for="">Fabricante y país</label>
+                <input type="text" name="fabricante" id="" required="True">
+                <label for="">Lote</label>
+                <input type="text" name="lote" id="" required="True">
+                <label for="">Dosis Diaria</label>
+                <input type="number" name="dosis-diaria" id="" required="True">
+                <label for="">Vía administrada</label>
+                <input type="text" name="via-administrada" id="" required="True">
+                <label for="">Motivo de Prescripción</label>
+                <input type="text" name="motivo-prescripcion" id="" required="True">
+                <label for="">Fecha inicio dd/mm/aa</label>
+                <input type="text" name="fecha-inicio" id="" required="True">
+                <label for="">Fecha final dd/mm/aa</label>
+                <input type="text" name="fecha-final" id="" required="True">
+                <label for="">¿Remitió la reacción al suspender medicación?</label>
+                <select name="remitio-reaccion-suspender" id="" required="True">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                    <option value="No procede">No Procede</option>
+                </select>
+                <label for="">¿Remitió la reacción al reducir la dosis?</label>
+                <select name="remitio-reaccion-reducir" id="" required="True">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                    <option value="No procede">No Procede</option>
+                </select>
+                 <label for="">¿Reapareció la reacción al administrar de nuevo el medicamento?</label>
+                <select name="remitio-reaccion-administrar" id="" required="True">
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                    <option value="No procede">No Procede</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>III. MEDICAMENTOS CONCOMITANTES E HISTORIA CLINICA</legend>
+                <label for="">Nombre comercial o genérico</label>
+                <input type="text" name="nombre-comercial" id="" required="True">
+                <label for="">Fabricante y Pais</label>
+                <input type="text" name="fabricante-pais" id="" required="True">
+                <label for="">Dosis Diaria</label>
+                <input type="text" name="dosis-diaria" id="" required="True">
+                <label for="">Via Administrativa</label>
+                <input type="text" name="via-administrativa" id="" required="True">
+                <label for="">Fecha de Inicio dd/mm/aa</label>
+                <input type="text" name="fecha-inicio" id="" required="True">
+                <label for="">Fecha de final dd/mm/aa</label>
+                <input type="text" name="fecha-inicio" id="" required="True">
+                <label for="">Datos importantes de la Historia Clínica</label>
+                <textarea name="datos-importantes-historia-clinica" id="" placeholder="Ej. Otros diagnósticos, alergias, embarazo, vacunas, transfusiones de sangre, cirugía, etc..." required="True"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>IV. INFORMACION SOBRE LA EMPRESA Y PROCEDENCIA DE LA RAM</legend>
+                <label for="">Nombre de la empresa y teléfono</label>
+                <textarea name="nombre-telefono-empresa" id="" required="True"></textarea>
+                <label for="">Responsable de FCVG de la Empresa</label>
+                <input type="text" name="responsable-fcvg" id="" required="true">
+                <label for="">Evaluación de la causalidad por parte del responsable de FCVG en la Empresa</label>
+                <input type="text" name="evaluacion-causalidad-fcvg" id="" required="true">
+                <label for="">Fecha recepción en la Empresa</label>
+                <input type="text" name="fecha-recepcion" id="" required="True">
+                <label for="">Fuente de información</label>
+                <select name="fuente-informacion" id="" required="True">
+                    <option value="Estudio">Estudio</option>
+                    <option value="Publicacion">Publicación</option>
+                </select>
+                <label for="">Tipo de informe</label>
+                <select name="tipo-informe" id="" required="True">
+                    <option value="Inicial">Inicial</option>
+                    <option value="Seguimiento">Seguimiento</option>
+                </select>
+                <label for="">Fecha de notificación al AGEMED</label>
+                <input type="text" name="fecha-notificacion-agemed" id="" required="True">
+                <label for="">Notificación Espontánea Iniciales</label>
+                <input type="text" name="notificacion-espontane" id="" required="True">
+                <label for="">Profesión</label>
+                <input type="text" name="profesion" id="" required="True">
+                <label for="">Origen</label>
+                <select name="origen" id="" required="True">
+                    <option value="Hospotalario">Hospotalario</option>
+                    <option value="Estrahospitalario">Estrahospitalario</option>
+                </select>
+                <label for="">País</label>
+                <input type="text" name="pais" id="" required="True">
+                <label for="">Departamento</label>
+                <input type="text" name="departamento" id="" required="True">
+                <label for="">Provincia</label>
+                <input type="text" name="provincia" id="" required="True">
+            </fieldset>
+            <input type="submit" value="ENVIAR DATOS AHORA" id="enviar">
+        </form>
+    </section>
   </BaseLayout>
 </body>
 </html>
+<style>* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 2rem;
+}
+
+.Form-empreas {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.Form-empreas h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+fieldset {
+  border: 2px solid #d1d1d1;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+input[type="submit"] {
+  background-color: #1aa38c;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #148571;
+}
+
+/* Agrupar inputs en filas para pantallas grandes */
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Cada label + input ocupa toda la línea en móvil */
+fieldset label,
+fieldset input,
+fieldset select,
+fieldset textarea {
+  flex: 1 1 100%;
+}
+
+/* En pantallas medianas y grandes: mitad o tercio según sea necesario */
+@media (min-width: 600px) {
+  fieldset label,
+  fieldset input,
+  fieldset select,
+  fieldset textarea {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (min-width: 992px) {
+  fieldset label,
+  fieldset input,
+  fieldset select,
+  fieldset textarea {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+}
+</style>
