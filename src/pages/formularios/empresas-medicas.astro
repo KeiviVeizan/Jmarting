@@ -299,7 +299,6 @@ legend {
   margin-bottom: 1rem;
 }
 
-/* Grupo de input+label */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -328,7 +327,7 @@ textarea {
 }
 
 input[type="submit"] {
-  background-color: #1aa38c;
+  background-color: #DA3A32;
   color: white;
   font-weight: bold;
   padding: 1rem;
@@ -341,24 +340,20 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #148571;
+  background-color: #F4B631;
 }
 
-/* RESPONSIVE DESIGN */
 
-/* Tablet: cada grupo ocupa 50% */
 @media (min-width: 600px) {
   .form-group {
     flex: 1 1 calc(50% - 1rem);
   }
 
-  /* Para asegurar que textareas o campos amplios no se reduzcan mucho */
   .form-group.full-width {
     flex: 1 1 100%;
   }
 }
 
-/* Laptop/Escritorio: cada grupo ocupa 33% */
 @media (min-width: 992px) {
   .form-group {
     flex: 1 1 calc(33.333% - 1rem);
