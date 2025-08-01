@@ -1,46 +1,42 @@
 ---
+import Encabezado from "../Components/Encabezado.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const MoreInformationNotice =[
   {
     id:1,
     title:"SIMPOSIO DE RADIOLOGÍA TORÁCICA PARA TECNÓLOGOS EN RADIOLOGÍA",
     description:"Del 26 al 30 de Septiembre de 2011. Auditorio «Cooperativa Madre Maestra».Tarija-Bolivia",
     image:"/images/noticias-section.png",
-    link:"",
   },
   {
     id:2,
     title:"XII CONGRESO BOLIVIANO DE RADIOLOGÍA",
     description:"29 y 30 de Septiembre y 1 de Octubre de 2011. Radiología Pediátrica – Radiología de Abdomen – Ecografía Gineco-obstétrica. Se llevará acabo en el Hotel Radisson en la ciudad de La Paz.",
     image:"/images/noticias-section.png",
-    link:"",
   },
   {
     id:3,
     title:"CONGRESO INTERNACIONAL - ADELANTOS EN IMAGENOLOGÍA PARA TECNÓLOGOS EN RADIOLOGÍA",
     description:"9,10 y 11 de Noviembre. La Paz,2011.",
     image:"/images/noticias-section.png",
-    link:"",
   },
   {
     id:4,
     title:"PRIMER CURSO EN NEURO-IMAGENOLOGÍA PARA TECNÓLOGOS EN RADIOLOGÍA",
     description:"22 y 23 de Julio. En el Auditorio Instituto Gastroeneterológico. Para mayor información contactarse con Osman Miranda 71297020. La Paz, 2011.",
     image:"/images/noticias-section.png",
-    link:"",
   },
   {
     id:5,
     title:"PRIMER CURSO DE IMAGENOLOGÍA EN GINECO-OBSTETRICIA",
     description:"4, 5 y 6 de Mayo de 2011 en el Auditórium del Instituto Gastroenterológico Boliviano Japonés a hrs 18:00 a 20:00. Evento organizado por la Jefatura de Enseñanza de la especialidad de Imagenología del Hospital de Clínicas.",
     image:"/images/noticias-section.png",
-    link:"",
   },
 ]
 
-import Encabezado from "../Components/Encabezado.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
 
-const { title = 'Default Title' } = Astro.props;
+
 ---
 <html lang="es">
 <head>
@@ -75,6 +71,7 @@ const { title = 'Default Title' } = Astro.props;
 </body>
 </html>
 <style>
+
   body h2{
         text-align: center;
         font-size: 2rem;
@@ -93,6 +90,7 @@ const { title = 'Default Title' } = Astro.props;
 		font-family: "Lato", sans-serif;
 		font-weight: 900;
 		font-size: 1.5rem;
+		color: #3E458D;
 	}
 	.event-inf p{
 		font-family: "Lato", sans-serif;
