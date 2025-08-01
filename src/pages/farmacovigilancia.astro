@@ -48,7 +48,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
     <Encabezado image="/images/farmacovigilancia-section.png" title="FARMACOVIGILANCIA"/>
     <section class="farma-inf">
       {MoreInformationForm.map((form)=>(
-        <a href={form.link} class="inf-link" target="_blank">
+        <a href={form.link} class="inf-link" target={form.link === "https://www.agemed.gob.bo/#farmacovigilancia/contenido"? "_blank" : "_self"}rel={form.link === "https://www.agemed.gob.bo/#farmacovigilancia/contenido" ? "noopener noreferrer" : undefined}>
           <article class={` inf-farma inf-farma${form.id}`}>
             <img src={form.image} alt="Imagen de formulario">
             <div class="form-before"></div>

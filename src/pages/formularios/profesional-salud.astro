@@ -13,6 +13,357 @@ const { title = 'Default Title' } = Astro.props;
 <body>
   <BaseLayout>
     <Encabezado image="/images/farmacovigilancia-section.png" title="PROFESIONAL DE SALUD"/>
+    <section class="form-profesiona">
+      <h2>NOTIFICACION DE SOSPECHA DE REACCIONES ADVERSAS A MEDICAMENTOS PARA PROFESIONALES DE SALUD - CONFIDENCIAL</h2>
+      <form action="">
+        <fieldset>
+          <legend>
+            A. DATOS DEL PACIENTE
+          </legend>
+          <div class="form-group">
+            <label for="nombre">Nombres o Iniciales</label>
+            <input type="text" name="nombre-inicial" id="nombre" required="True">
+          </div>
+          <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad" required="True">
+          </div>
+          <div class="form-group">
+            <label for="sexo"> Sexo:</label>
+            <select name="sexo" id="sexo " required="True">
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="peso">Peso (KG)</label>
+            <input type="number" step="any" name="peso" id="peso" required="True">
+          </div>
+          <div class="form-group">
+            <label for="historial">Historial Clínico y/o C.I.</label>
+            <input type="text" name="histioral-clinico" id="historial">
+          </div>
+          <div class="form-group">
+            <label for="establecimiento">Establecimiento</label>
+            <textarea name="establecimiento" id="establecimiento" required="True"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="diagnostico">Diagnóstico Principal</label>
+            <textarea name="diagnostico" id="diagnostico" required="True"></textarea>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>B. REACCIONES ADVERSAS SOSPECHADAS (Si Ud. desea notificar un error de medicación, problema de calidad u otro puede utilizar este formato</legend>
+          <div class="form-group">
+            <label for="descripción">Descripción de la relación adversa</label>
+            <textarea name="descripcion" id="descripción" required="True"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de Inicio de RAM</label>
+            <textarea name="fecha-inicio" id="fecha" required="True"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha Final de RAM: </label>
+            <textarea name="fecha-final" id="fecha" required="True"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ram"> Solo para RAM grave: </label>
+            <input type="text" name="ram-grave" id="ram" required="True">
+          </div>
+          <div class="form-group">
+            <label for="muerte">Si selecciono Muerte indique la fecha</label>
+            <input type="text" name="caso-muerte" id="muerte" required="True">
+          </div>
+          <div class="form-group">
+            <label for="descnlace">Desenlace</label>
+            <select name="descnlace" id="descnlace" required="True">
+              <option value="Recuperado">Recuperado</option>
+              <option value="Recuperado con secuela">Recuperado con secuela</option>
+              <option value="">No Recuperado</option>
+              <option value="Mortal">Mortal</option>
+              <option value="Desconocido">Desconocido</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="resultados">Resultados relevantes de exámenes de laboratorio (incluir fechas):</label>
+            <textarea name="resultados-relevantes" id="resultados" required="True"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="otros">Otros datos importantes de la historia clínica, incluyendo condiciones médicas preexistentes, patologías concomitantes</label>
+            <textarea name="otros-datos-importantes" id="otros" required="True"></textarea>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>C. MEDICAMENTOS CONCOMITANTES UTILIZADOS EN LOS 3 ÚLTIMOS MESES (excluir medicamentos para tratar la reacción adversa)</legend>
+          <div class="form-group">
+            <label for="nombre">Nombre comercial o genérico</label>
+            <input type="text" name="nombre-comercial" id="nombre" required="True">
+          </div>
+          <div class="form-group">
+            <label for="dosis">Dosis/ frecuencia</label>
+            <input type="text" name="dosis-frecuencia" id="dosis" required="True">
+          </div>
+          <div class="form-group">
+            <label for="via">Vía de Administración</label>
+            <input type="text" name="via-administracion" id="via" required="True">
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de inicio</label>
+            <input type="text" name="fecha-inicio" id="fecha" required="True">
+          </div>
+          <div class="form-group">
+            <label for="fecha-final">Fecha Final</label>
+            <input type="text" name="fecha-final" id="fecha-final" required="True">
+          </div>
+          <div class="form-group">
+            <label for="motivo">Motivo de prescripción</label>
+            <textarea name="motivo-prescripcion" id="motivo" required="True"></textarea>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>D. DATOS DEL NOTIFICADOR</legend>
+          <div class="form-group">
+            <label for="nombre">Nombres y apellidos:</label>
+            <input type="text" name="nombre-apellido" id="nombre" required="True">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Telefono:</label>
+            <input type="number" name="telefono" id="telefono" required="True">
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" name="correo" id="correo" required="True">
+          </div>
+          <div class="form-group">
+            <label for="profesion">Profesión:</label>
+            <input type="text" name="profesion" id="profesion" required="True">
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de notificación:</label>
+            <input type="text" name="fecha" id="fecha" required="True">
+          </div>
+          <div class="form-group">
+            <label for="numero">N° Notificación:</label>
+            <input type="text" name="numero" id="numero" required="True">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>E. MEDICAMENTO(S) SOSPECHOSO(S)</legend>
+          <div class="form-group">
+            <label for="nombre">Nombre comercial o genérico:</label>
+            <input type="text" name="nombre" id="nombre" required="True">
+          </div>
+          <div class="form-group">
+            <label for="laboratorio">Laboratorio:</label>
+            <input type="text" name="laboratorio" id="laboratorio" required="True">
+          </div>
+          <div class="form-group">
+            <label for="lote">Lote:</label>
+            <input type="text" name="lote" id="lote" required="True">
+          </div>
+          <div class="form-group">
+            <label for="dosis">Dosis/ frecuencia</label>
+            <input type="text" name="dosis" id="dosis" required="True">
+          </div>
+          <div class="form-group">
+            <label for="via">Vía de Administración:</label>
+            <input type="text"name="via" id="via" required="True">
+          </div>
+          <div class="form-group">
+            <label for="fecha-inicio">Fecha de Inicio:</label>
+            <input type="text" name="fecha-inicio" id="fecha-inicio" required="True">
+          </div>
+          <div class="form-group">
+            <label for="fecha-final">Fecha Final:</label>
+            <input type="text" name="fecha-final" id="fecha-final" required="True">
+          </div>
+          <div class="form-group">
+            <label for="motivo">Motivo de Prescripción</label>
+            <textarea name="motivo" id="motivo" required="True"></textarea>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Suspensión (Seleccionar una Opción)</legend>
+          <div class="form-group">
+            <label for="medicamento">¿Desapareció la reacción al suspender el medicamento?</label>
+            <select name="medicamento" id="medicamento" required="True">
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+              <option value="No Aplica">No Aplica</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reacción-dosis-desaparicion">¿Desapareció la reacción al disminuir la dosis?</label>
+            <select name="reacción-dosis-desaparicion" id="reacción-dosis-desaparicion" required="True">
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+              <option value="No Aplica">No Aplica</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Reexposición (Seleccionar una Opción)</legend>
+          <div class="form-group">
+            <label for="reaparicion-reaccion">¿Reapareció la reacción al administrar nuevamente el medicamento?</label>
+            <select name="reaparicion-reaccion" id="reaparicion-reaccion" required="True">
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+              <option value="No Aplica">No Aplica</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reaccion-medicamento">¿El paciente ha presentado anteriormente la reacción al medicamento?</label>
+            <select name="reaccion-medicamento" id="reaccion-medicamento" required="True">
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+              <option value="No Aplica">No Aplica</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tratamiento-reaccion">¿El paciente recibió tratamiento para la reacción?</label>
+            <select name="tratamiento-reaccion" id="tratamiento-reaccion" required="True">
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="especifique">Especifique</label>
+            <textarea name="especificacion" id="especifique"></textarea>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>En caso de sospecha de problemas de calidad indicar:</legend>
+          <div class="form-group">
+            <label for="numero">Nº Registro Sanitario:</label>
+            <input type="text" name="registro-sanitario" id="numero" required="True">
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha de vencimiento:</label>
+            <input type="text" name="fecha-vencimiento" id="fecha" required="True">
+          </div>
+        </fieldset>
+        <input type="submit" value="ENVIAR DATOS AHORA">
+      </form>
+    </section>
   </BaseLayout>
 </body>
 </html>
+<style>
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 2rem;
+}
+
+.form-profesiona {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.form-profesiona h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+fieldset {
+  border: 2px solid #d1d1d1;
+  padding: 1.5rem;
+  border-radius: 8px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+input[type="submit"] {
+  background-color: #DA3A32;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #F4B631;
+}
+
+
+@media (min-width: 600px) {
+  .form-group {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-group {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+}
+
+</style>

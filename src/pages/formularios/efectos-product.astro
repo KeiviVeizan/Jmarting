@@ -13,38 +13,52 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <body>
   <BaseLayout>
     <Encabezado image="/images/farmacovigilancia-section.png" title="EFECTOS DEL PRODUCTO"/>
-    <section class="form-paciente">
+    <section class="form-wrapper">
         <h2>Formularios Para Pacientes</h2>
         <form action="">
             <fieldset>
                 <legend>Pacientes</legend>
-                <label for="producto">Nombre del producto utilizado: </label>
-                <input type="text" name="producto-utilizado" id="producto" required="True">
-                <div class="text-area">
+                <div class="form-group">
+                    <label for="producto">Nombre del producto utilizado: </label>
+                    <input type="text" name="producto-utilizado" id="producto" required="True">
+                </div>
+                <div class="form-group">
                     <label for="efecto">¿Tuvo algún efecto a causa de tratamiento?</label>
                     <select name="efecto-causa" id="efecto" required="True">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
                     </select>
+                </div>
+                <div class="form-group">
                     <label for="detalles">En caso de seleccionar otros detallar: </label>
                     <textarea name="detalles" id="detalles" required="True"></textarea>
                 </div>
             </fieldset>
         </form>
     </section>
-    <section class="form-profecional">
+    <section class="form-wrapper">
         <form action="">
             <fieldset>
                 <legend>Profesional de Área</legend>
-                <label for="producto">Nombre del producto utilizado: </label>
-                <input type="text" name="producto" id="producto" required="True">
-                <div class="text-area">
+                <div class="form-group">
+                    <label for="producto">Nombre del producto utilizado: </label>
+                    <input type="text" name="producto" id="producto" required="True">
+                </div>
+                <div class="form-group">
                     <label for="resultado">¿El producto le dio un buen resultado?</label>
                     <textarea name="resultado" id="resultado" placeholder="Cuentanos tu experiencia" required="Tre"></textarea>
+                </div>
+                <div class="form-group">
                     <label for="tiempo">¿Recibio el producto en buen tiempo?</label>
                     <textarea name="tiempo-recibido" id="tiempo" placeholder="Si o No" required="True"></textarea>
                 </div>
-                <div class="text-area">
+                <div class="form-group">
                     <label for="inconveniente">¿Su paciente tuvo algún inconveniente?</label>
                     <textarea name="inconveniente" id="inconveniente" placeholder="¿Que inconveniente tuvo?" required="Tre"></textarea>
+                </div>
+                <div class="form-group">
                     <label for="sugerencia">Tiene alguna sugerencia para Importadora Marting?</label>
                     <textarea name="sugerencia" id="sugerencia" placeholder="Estaremos encantados de recibir tus sugerencias" required="false"></textarea>
                 </div>
@@ -54,3 +68,104 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 </BaseLayout>
 </body>
 </html>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 2rem;
+}
+
+.form-wrapper {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-wrapper h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  color: #da3a32;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+fieldset {
+  border: 2px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Responsividad */
+@media (min-width: 600px) {
+  .form-group {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-group {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+}
+</style>
