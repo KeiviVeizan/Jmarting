@@ -13,28 +13,148 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <body>
   <BaseLayout>
     <Encabezado image="/images/farmacovigilancia-section.png" title="QUEJAS Y RECLAMOS"/>
-    <section>
+    <section class="form-quejas">
         <form action="">
             <fieldset>
                 <legend>Quejas y Reclamos</legend>
-                <label for="nombre">Nombre Completo: </label>
-                <input type="text" id="nombre" name="nombre" required="True" placeholder="Ejm. Jorge Perez">
-                <label for="org">Organización: </label>
-                <input type="text" id="org" name="organización" required="True" placeholder="Ejm. Importadora Marting">
-                <label for="correo">Correo Electronico</label>
-                <input type="email" id="correo" name="correo-electrónico" required="True" placeholder="Ejm. jorgeperez@gmail.com">
-                <label for="telefono">Telefono/Celuar</label>
-                <input type="number" name="telefono" id="telefono" required="True" placeholder="Ejm. 6738XXXX">
-                <label for="country">Cuidad/Pais</label>
-                <input type="text" name="ciudad-pais" id="country" required="True" placeholder="Ejm. La Paz - Bolivia">
-                <label for="queja">Quejas o Reclamos</label>
-                <textarea name="reclamos" id="queja" placeholder="Cuentanos que problemas tuviste..."></textarea>
-
+                <div class="form-group">
+                  <label for="nombre">Nombre Completo: </label>
+                  <input type="text" id="nombre" name="nombre" required="True" placeholder="Ejm. Jorge Perez">
+                </div>
+                <div class="form-group">
+                  <label for="org">Organización: </label>
+                  <input type="text" id="org" name="organización" required="True" placeholder="Ejm. Importadora Marting">
+                </div>
+                <div class="form-group">
+                  <label for="correo">Correo Electronico</label>
+                  <input type="email" id="correo" name="correo-electrónico" required="True" placeholder="Ejm. jorgeperez@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Telefono/Celuar</label>
+                  <input type="number" name="telefono" id="telefono" required="True" placeholder="Ejm. 6738XXXX">
+                </div>
+                <div class="form-group">
+                  <label for="country">Cuidad/Pais</label>
+                  <input type="text" name="ciudad-pais" id="country" required="True" placeholder="Ejm. La Paz - Bolivia">
+                </div>
+                <div class="form-group">
+                  <label for="queja">Quejas o Reclamos</label>
+                  <textarea name="reclamos" id="queja" placeholder="Cuentanos que problemas tuviste..."></textarea>
+                </div>
                 <input type="submit" value="Enviar">
-                
             </fieldset>
         </form>
     </section>
   </BaseLayout>
 </body>
 </html>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 2rem;
+}
+
+.form-quejas {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+fieldset {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  color: #DA3A32;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type="submit"] {
+  background-color: #DA3A32;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #F4B631;
+}
+
+/* Responsive para tablet y escritorio */
+@media (min-width: 600px) {
+  .form-group {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-group {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+
+  .form-group.full-width {
+    flex: 1 1 100%;
+  }
+}
+</style>
