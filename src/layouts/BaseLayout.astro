@@ -11,6 +11,10 @@ import Header from "../Components/Header.astro"
 <body>
   <Header/>
   <main>
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+
     <slot/>
   </main>
   <Footer/>
@@ -26,4 +30,42 @@ import Header from "../Components/Header.astro"
       d.getElementsByTagName('head')[0].appendChild(script);
       }(document));
       };
+</script>
+<style>
+  #preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white; /* o #fff o #3E458D si quieres tu color principal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #F4B631;
+  border-top: 5px solid #3E458D;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+<script is:browser>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+    preloader.style.transition = "all 0.5s ease";
+  });
 </script>
