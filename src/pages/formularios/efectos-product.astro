@@ -8,7 +8,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
+  <link rel="icon" type="image/png+xml" href="/logo-simple.png" />
+  <title>Reporte de Efectos del Producto</title>
 </head>
 <body>
   <BaseLayout>
@@ -36,9 +37,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                     <textarea name="detalles" id="detalles" required="True"></textarea>
                 </div>
             </fieldset>
+            <input type="submit" id="enviar" value="Enviar Formulario">
         </form>
     </section>
     <section class="form-wrapper">
+      <h2>Formulario Para Profesional de Área</h2>
         <form action="https://formspree.io/f/mwpbzral" method="POST">
             <fieldset>
                 <legend>Profesional de Área</legend>
@@ -63,6 +66,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                     <textarea name="sugerencia" id="sugerencia" placeholder="Estaremos encantados de recibir tus sugerencias" required="false"></textarea>
                 </div>
             </fieldset>
+            <input type="submit" id="enviar" value="Enviar Formulario">
         </form>
     </section>
 </BaseLayout>
@@ -146,6 +150,22 @@ legend {
 textarea {
   resize: vertical;
   min-height: 80px;
+}
+input[type="submit"] {
+  background-color: #DA3A32;
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #F4B631;
 }
 
 /* Responsividad */

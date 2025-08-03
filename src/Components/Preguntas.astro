@@ -1,0 +1,112 @@
+---
+const PreguntasFrecuentes = [
+  {
+    id: 1,
+    pregunta: "¿Cuál es el horario de atención?",
+    respuesta: "Atendemos de lunes a viernes de 8:00 a 18:00."
+  },
+  {
+    id: 2,
+    pregunta: "¿Dónde se encuentran ubicados?",
+    respuesta: "Nuestra oficina central está en La Paz, Bolivia."
+  },
+  {
+    id: 3,
+    pregunta: "¿Cómo puedo comunicarme?",
+    respuesta: "Puedes contactarnos por WhatsApp o mediante el formulario."
+  }
+];
+---
+
+<section class="preguntas-section">
+  <h2>Preguntas Frecuentes</h2>
+  <div class="faq-container">
+    {
+      PreguntasFrecuentes.map((item) => (
+        <div class="faq-item" data-id={item.id}>
+          <div class="faq-question" data-id={item.id}>
+            <span>{item.pregunta}</span>
+            <span class="icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>{item.respuesta}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+.preguntas-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0rem 2rem 4.5rem;
+}
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.faq-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq-question {
+  background-color: transparent;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3E458D;
+  font-family: "Lato",sans-serif;
+  font-weight: 700;
+}
+.faq-answer {
+  background-color: #f9f9f9;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1rem;
+}
+.faq-answer p {
+  padding: 1rem 0;
+  margin: 0;
+  font-family: "Lato",sans-serif;
+  font-weight: 300;
+}
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 1rem;
+}
+.faq-item.active .icon {
+  transform: rotate(45deg);
+}
+.icon {
+  transition: transform 0.3s ease;
+  font-size: 1.5rem;
+  display: inline-block;
+  color: #DA3A32;
+}
+</style>
+
+<script is:browser>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".faq-item");
+
+    items.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", () => {
+        items.forEach((el) => {
+          if (el !== item) el.classList.remove("active");
+        });
+        item.classList.toggle("active");
+      });
+    });
+  });
+</script>

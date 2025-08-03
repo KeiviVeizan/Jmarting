@@ -1,4 +1,5 @@
 ---
+import Preguntas from '../Components/Preguntas.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const MoreInformationHome = [
 	{
@@ -124,6 +125,7 @@ const MoreInformationHome2 =[
 						</article>
 					))}
 				</section>
+				<Preguntas/>
 			</BaseLayout>		
 	</body>
 </html>
@@ -176,7 +178,7 @@ const MoreInformationHome2 =[
   }
 
   .inicio-content h1 {
-    color: #434C8C;
+    color: #f2f2f2;
     font-size: 2.5rem;
 	width: 90%;
     font-family: "Lato", sans-serif;
