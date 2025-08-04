@@ -195,10 +195,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		font-family: "Lato", sans-serif;
 		font-weight: 300;
 	}
+    .about-inf-text{
+        view-timeline-name: --text;
+		view-timeline-axis: block;
+
+		animation-timeline: --text;
+		animation-name: show;
+		animation-range: entry 25% cover 30%;
+		animation-fill-mode: both;
+    }
 	.about-inf img{
 		width: 18rem;
 		border-radius: 1rem;
 		box-shadow: 10px 10px 20px  #3E458D;
+		view-timeline-name: --image;
+		view-timeline-axis: block;
+
+		animation-timeline: --image;
+		animation-name: show;
+		animation-range: entry 25% cover 30%;
+		animation-fill-mode: both;
 	}
     .section2-inf-bottom{
         display: flex;
@@ -216,6 +232,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         border: 1px solid #3E458D;
         margin: 1.2rem;
         transition: transform 0.5s ease;
+        
+		view-timeline-name: --afiliados;
+		view-timeline-axis: block;
+
+		animation-timeline: --afiliados;
+		animation-name: show;
+		animation-range: entry 25% cover 30%;
+		animation-fill-mode: both;
     }
     .afiliados-inf a{
         width: 100%;
@@ -253,6 +277,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         border-radius: 4rem;
         margin: 1rem;
         background-color: white;
+
+		view-timeline-name: --team;
+		view-timeline-axis: block;
+
+		animation-timeline: --team;
+		animation-name: show;
+		animation-range: entry 25% cover 30%;
+		animation-fill-mode: both;
     }
     .team-work-inf img{
         width: 15rem;
@@ -284,6 +316,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
     .cargo-work img:hover{
         transform: scale(1.2);
+    }
+
+    @keyframes show {
+        from{
+            opacity: 0;
+            scale: 25%;
+        }
+        to{
+            opacity: 1;
+            scale: 100%;
+        }
     }
 
     @media(min-width:375px){
