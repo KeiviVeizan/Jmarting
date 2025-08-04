@@ -12,9 +12,8 @@ import Header from "../Components/Header.astro"
   <Header/>
   <main>
     <div id="preloader">
-      <div class="loader"></div>
+      <img id="loader-logo" src="/logo-simple.png" alt="Logo" />
     </div>
-
     <slot/>
   </main>
   <Footer/>
@@ -32,40 +31,63 @@ import Header from "../Components/Header.astro"
       };
 </script>
 <style>
-  #preloader {
+#preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white; /* o #fff o #3E458D si quieres tu color principal */
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.loader {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #F4B631;
-  border-top: 5px solid #3E458D;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+#loader-logo {
+  width: 80px;
+  height: auto;
+  animation: pulse 1s ease-in-out infinite;
+  transition: all 0.8s ease-in-out;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+/* Palpitación */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
   }
 }
 
+/* Clase para moverlo arriba a la izquierda */
+#preloader.loaded #loader-logo {
+  position: fixed;
+  top: 1rem; /* Igual a tu header */
+  left: 1rem;
+  width: 40px;
+  animation: none;
+  transform: scale(1);
+}
+
+/* Cuando termina la transición, ocultamos el preloader */
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 </style>
 <script is:browser>
   window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
-    preloader.style.opacity = "0";
-    preloader.style.visibility = "hidden";
-    preloader.style.transition = "all 0.5s ease";
+    preloader.classList.add("loaded");
+
+    // Quitamos el preloader después de la animación
+    setTimeout(() => {
+      preloader.remove();
+    }, 1000); // espera a que se desplace y desaparezca
   });
 </script>
+
