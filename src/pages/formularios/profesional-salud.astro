@@ -31,6 +31,7 @@ const { title = 'Default Title' } = Astro.props;
           <div class="form-group">
             <label for="sexo"> Sexo:</label>
             <select name="sexo" id="sexo " required="True">
+              <option value=""></option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
             </select>
@@ -60,23 +61,29 @@ const { title = 'Default Title' } = Astro.props;
           </div>
           <div class="form-group">
             <label for="fecha">Fecha de Inicio de RAM</label>
-            <textarea name="fecha-inicio" id="fecha" required="True"></textarea>
+            <input type="date" name="fecha-inicio" id="fecha" required="True">
           </div>
           <div class="form-group">
             <label for="fecha">Fecha Final de RAM: </label>
-            <textarea name="fecha-final" id="fecha" required="True"></textarea>
+            <input type="date" name="fecha-final" id="fecha" required="True">
           </div>
           <div class="form-group">
             <label for="ram"> Solo para RAM grave: </label>
-            <input type="text" name="ram-grave" id="ram" required="True">
+            <select name="ram-grave[]" id="ram" required=True multiple>
+              <option value="muerte">Muerte.</option>
+              <option value="riesgo-vida">Puso en grave riesgo la vida del paciente</option>
+              <option value="hospitalizacion">Produjo o prolongó su hospitalización</option>
+              <option value="discapacidad">Produjo discapacidad/incapacidad</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="muerte">Si selecciono Muerte indique la fecha</label>
-            <input type="text" name="caso-muerte" id="muerte" required="True">
+            <input type="date" name="caso-muerte" id="muerte" required="True">
           </div>
           <div class="form-group">
             <label for="descnlace">Desenlace</label>
             <select name="descnlace" id="descnlace" required="True">
+              <option value=""></option>
               <option value="Recuperado">Recuperado</option>
               <option value="Recuperado con secuela">Recuperado con secuela</option>
               <option value="">No Recuperado</option>
@@ -109,11 +116,11 @@ const { title = 'Default Title' } = Astro.props;
           </div>
           <div class="form-group">
             <label for="fecha">Fecha de inicio</label>
-            <input type="text" name="fecha-inicio" id="fecha" required="True">
+            <input type="date" name="fecha-inicio" id="fecha" required="True">
           </div>
           <div class="form-group">
             <label for="fecha-final">Fecha Final</label>
-            <input type="text" name="fecha-final" id="fecha-final" required="True">
+            <input type="date" name="fecha-final" id="fecha-final" required="True">
           </div>
           <div class="form-group">
             <label for="motivo">Motivo de prescripción</label>
@@ -140,7 +147,7 @@ const { title = 'Default Title' } = Astro.props;
           </div>
           <div class="form-group">
             <label for="fecha">Fecha de notificación:</label>
-            <input type="text" name="fecha" id="fecha" required="True">
+            <input type="date" name="fecha" id="fecha" required="True">
           </div>
           <div class="form-group">
             <label for="numero">N° Notificación:</label>
@@ -171,11 +178,11 @@ const { title = 'Default Title' } = Astro.props;
           </div>
           <div class="form-group">
             <label for="fecha-inicio">Fecha de Inicio:</label>
-            <input type="text" name="fecha-inicio" id="fecha-inicio" required="True">
+            <input type="date" name="fecha-inicio" id="fecha-inicio" required="True">
           </div>
           <div class="form-group">
             <label for="fecha-final">Fecha Final:</label>
-            <input type="text" name="fecha-final" id="fecha-final" required="True">
+            <input type="date" name="fecha-final" id="fecha-final" required="True">
           </div>
           <div class="form-group">
             <label for="motivo">Motivo de Prescripción</label>
@@ -187,6 +194,7 @@ const { title = 'Default Title' } = Astro.props;
           <div class="form-group">
             <label for="medicamento">¿Desapareció la reacción al suspender el medicamento?</label>
             <select name="medicamento" id="medicamento" required="True">
+              <option value=""></option>
               <option value="Si">Si</option>
               <option value="No">No</option>
               <option value="No Aplica">No Aplica</option>
@@ -195,6 +203,7 @@ const { title = 'Default Title' } = Astro.props;
           <div class="form-group">
             <label for="reacción-dosis-desaparicion">¿Desapareció la reacción al disminuir la dosis?</label>
             <select name="reacción-dosis-desaparicion" id="reacción-dosis-desaparicion" required="True">
+              <option value=""></option>
               <option value="Si">Si</option>
               <option value="No">No</option>
               <option value="No Aplica">No Aplica</option>
@@ -206,6 +215,7 @@ const { title = 'Default Title' } = Astro.props;
           <div class="form-group">
             <label for="reaparicion-reaccion">¿Reapareció la reacción al administrar nuevamente el medicamento?</label>
             <select name="reaparicion-reaccion" id="reaparicion-reaccion" required="True">
+              <option value=""></option>
               <option value="Si">Si</option>
               <option value="No">No</option>
               <option value="No Aplica">No Aplica</option>
@@ -214,6 +224,7 @@ const { title = 'Default Title' } = Astro.props;
           <div class="form-group">
             <label for="reaccion-medicamento">¿El paciente ha presentado anteriormente la reacción al medicamento?</label>
             <select name="reaccion-medicamento" id="reaccion-medicamento" required="True">
+              <option value=""></option>
               <option value="Si">Si</option>
               <option value="No">No</option>
               <option value="No Aplica">No Aplica</option>
@@ -222,6 +233,7 @@ const { title = 'Default Title' } = Astro.props;
           <div class="form-group">
             <label for="tratamiento-reaccion">¿El paciente recibió tratamiento para la reacción?</label>
             <select name="tratamiento-reaccion" id="tratamiento-reaccion" required="True">
+              <option value=""></option>
               <option value="Si">Si</option>
               <option value="No">No</option>
             </select>
@@ -239,7 +251,7 @@ const { title = 'Default Title' } = Astro.props;
           </div>
           <div class="form-group">
             <label for="fecha">Fecha de vencimiento:</label>
-            <input type="text" name="fecha-vencimiento" id="fecha" required="True">
+            <input type="date" name="fecha-vencimiento" id="fecha" required="True">
           </div>
         </fieldset>
         <input type="submit" value="ENVIAR DATOS AHORA">
@@ -264,7 +276,7 @@ body {
 
 .form-profesiona {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);

@@ -9,6 +9,7 @@ export async function getStaticPaths() {
     { params: { id: "mhj" } },
     { params: { id: "farmavone" } },
     { params: { id: "termis" } },
+    { params: { id: "EquiposMedicos"} },
   ];
 }
 
@@ -108,6 +109,54 @@ const contentMap = {
       }
     ]
   },
+  EquiposMedicos:{
+    title:"EQUIPOS MÉDICOS",
+    products:[
+      {
+        title:"OptiVantage",
+        description:"El inyector de CT de cabezal doble multiusos OptiVantage® es una solución para múltiples pacientes diseñada para inyectar agentes de contraste utilizados en exámenes médicos de CT. Esta completa solución multiusos incluye el inyector con jeringa OptiVantage®, una gama completa de jeringas y consumibles asociados (manyFill® day-set y línea de pacientes Secufill®), así como servicios y sistemas de apoyo, diseñados y certificados (1) para optimizar el rendimiento de la solución.",
+        image:"/images/optivantage.png",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+      },
+      {
+        title:"OptiVantage Multi-Use",
+        description:"OptiVantage® de un solo uso y sus consumibles dedicados. Es un plenamente conectado contraste dual-TC de la cabeza del inyector de entrega, diseñado para mantener el ritmo de aumento de las velocidades de escáner CT mientras que también soporta protocolos de inyección más complejas. OptiVantage ® proporciona flexibilidad y es compatible con jeringas precargadas o todos los viales de medios de contraste. Permite exámenes de TC personalizados, utilizando las funciones más avanzadas como OptiBolus®. Junto con el inyector OptiVantage ® , Guerbet ofrece una gama completa de consumibles y servicios diseñados y certificados (1) para optimizar el rendimiento de la solución.",
+        image:"/images/optivantage-multi-use.jpg",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+      },
+      {
+        title:"OptiOne",
+        description:"El inyector de administración de contraste OptiOne ® está diseñado para su uso en múltiples entornos de imágenes, como radioterapia, escáneres de trauma, mamografía y PET CT. Es un inyector de un solo cabezal con todas las funciones compatible con jeringas precargadas y consumibles, que combina la facilidad de uso con la funcionalidad multipropósito. Junto con el inyector OptiOne ® , Guerbet ofrece una gama completa de consumibles y servicios diseñados y certificados (1) para optimizar el rendimiento de la solución.",
+        image:"/images/optione.png",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+      },
+      {
+        title:"OptiStar Elite",
+        description:"SENCILLO, EFICIENTE, FIABLE OptiStar ® Elite le permitirá realizar exámenes de resonancia magnética de una manera optimizada con funciones diseñadas específicamente. Pedestal de instalación , montaje en techo, móvil. Velocidad de flujo Lado A: jeringas de 60 ml: 0,1–10,0 ml / seg; Jeringas de 10, 15, 20, 30 mL: 0,1–8,0 mL / seg. Lado B: 60 ml de consumibles de un solo uso, jeringas: 0,1–8,0 ml / seg; Jeringas de solución salina precargadas de 125 ml *: 0,1 a 8,0 ml / seg. Límite de presión Jeringas vacías de 60 ml: 150 psi; Jeringas precargadas de 10, 15, 20, 30 ml: 200 psi *; Jeringas de solución salina precargadas de 125 ml: 150 psi. Tamaños de jeringas Jeringas vacías de 60 ml; Jeringas precargadas de 10, 15, 20, 30 ml *; Jeringas de solución salina precargadas de 125 ml.",
+        image:"/images/optistar.png",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+      },
+      {
+        title:"Illumena Néo",
+        description:"El inyector Illumena ® Néo es un inyector de potencia de medio de contraste de un solo cabezal simple y confiable. Con un solo toque, el usuario puede cambiar fácilmente entre los modos de operación cardíaco, angiográfico, intervencionista y CT. Illumena ® Néo apoya a los profesionales de la salud con un sistema de administración de contraste. Está diseñado para sincronizarse con la mayoría de los principales sistemas de imágenes y realiza procedimientos de inyección única o múltiple. Junto con el inyector Illumena ® Néo, Guerbet ofrece una gama completa de consumibles y servicios.",
+        image:"/images/illumena.png",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+      },
+      {
+        title:"OptiStar Elite",
+        description:"SENCILLO, EFICIENTE, FIABLE OptiStar ® Elite le permitirá realizar exámenes de resonancia magnética de una manera optimizada con funciones diseñadas específicamente. Pedestal de instalación , montaje en techo, móvil. Velocidad de flujo Lado A: jeringas de 60 ml: 0,1–10,0 ml / seg; Jeringas de 10, 15, 20, 30 mL: 0,1–8,0 mL / seg. Lado B: 60 ml de consumibles de un solo uso, jeringas: 0,1–8,0 ml / seg; Jeringas de solución salina precargadas de 125 ml *: 0,1 a 8,0 ml / seg. Límite de presión Jeringas vacías de 60 ml: 150 psi; Jeringas precargadas de 10, 15, 20, 30 ml: 200 psi *; Jeringas de solución salina precargadas de 125 ml: 150 psi. Tamaños de jeringas Jeringas vacías de 60 ml; Jeringas precargadas de 10, 15, 20, 30 ml *; Jeringas de solución salina precargadas de 125 ml.",
+        image:"/images/optistar.png",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+      },
+      {
+        title:"Ready-Box",
+        description:"Calentador de medios de contraste Ready-Box® Una unidad liviana que proporciona una distribución uniforme del calor, lo que reduce la viscosidad y permite un mayor caudal a menor presión. Esto puede resultar en una mayor comodidad para el paciente mientras se administra el medio de contraste. * * Comité ACR de Medicamentos y Medios de Contraste. Manual de ACR sobre medios de contraste, versión 8. 2012; págs. 29-32.",
+        image:"/images/ready-box.jpg",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+      },
+    ]
+
+  }
 };
 
 const selected = contentMap[id];
@@ -120,20 +169,24 @@ if (!selected) {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+		<link rel="icon" type="image/png+xml" href="/logo-simple.png" />
     <title>{selected.title}</title>
   </head>
   <body>
     <BaseLayout>
       <Encabezado image="/images/product-section.png" title={selected.title} />
 
-      <section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 2rem;">
+      <section class="card">
         {
           selected.products.map((item) => (
-              <article style="width: 300px; border: 1px solid #ccc; border-radius: 1rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 1rem; background: #fff;">
-                <img src={item.image} alt={item.title} style="width: 100%; height: auto;" />
-                <h3 style="margin-top: 1rem;">{item.title}</h3>
+              <article class="cart-product">
+                <img src={item.image} alt={item.title}/>
+                <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <a href={item.link} target="_blank" style="display: inline-block; margin-top: 0.5rem; color: blue;">Ver más</a>
+                <a href={item.link} target="_blank" >Ver más</a>
               </article>
             ))
         }
@@ -141,3 +194,44 @@ if (!selected) {
     </BaseLayout>
   </body>
 </html>
+<style>
+  .card{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 2rem; 
+    padding: 2rem;
+  }
+  .cart-product{
+    width: 300px; 
+    border: 1px solid #ccc; 
+    border-radius: 1rem; 
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    padding: 1rem; 
+    background: #fff;
+    font-family: "Lato", sans-serif;
+  }
+  .cart-product img{
+    width: 100%; 
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  .cart-product h3{
+    margin-top: 1rem;
+    font-weight: 900;
+  }
+  .cart-product p{
+    font-weight: 300;
+    overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 6;
+  }
+  .cart-product a{
+    display: inline-block; 
+    margin-top: 0.5rem; 
+    color: blue;
+  }
+</style>

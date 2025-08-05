@@ -25,11 +25,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 </div>
                 <div class="form-group">
                     <label for="efecto">¿Tuvo algún efecto a causa de tratamiento?</label>
-                    <select name="efecto-causa" id="efecto" required="True">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                    <select name="efecto-causa[]" id="efecto" required="True" multiple>
+                        <option value="Nauseas">Nauseas</option>
+                        <option value="Vomitos">Vomitos</option>
+                        <option value="Dolor de Cabeza">Dolor de Cabeza</option>
+                        <option value="Alergias">Alergias</option>
+                        <option value="Sueño">Sueño</option>
+                        <option value="Otros">Otros</option>
                     </select>
                 </div>
                 <div class="form-group">

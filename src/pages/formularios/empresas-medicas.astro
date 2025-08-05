@@ -20,62 +20,65 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <fieldset>
                 <legend>Empresas Médicas</legend>
                 <div class="form-group">
-                    <label for="">Nº DE NOTIFICACION DE LA EMPRESA</label>
-                    <input type="number" name="numero-notificacion-empresa" id="" required="True">
+                    <label for="notificacion">Nº DE NOTIFICACION DE LA EMPRESA</label>
+                    <input type="number" name="numero-notificacion-empresa" id="notificacion" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Nº DE NOTIFICACION</label>
-                    <input type="number" name="numero-notificacion" id="" required="True">
+                    <label for="noti">Nº DE NOTIFICACION</label>
+                    <input type="number" name="numero-notificacion" id="noti" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">SELECCIONAR UNA OPCIÓN</label>
-                    <select name="medicamento" id="" required="True"></select>
+                    <label for="opcion">SELECCIONAR UNA OPCIÓN</label>
+                    <select name="medicamento" id="opcion" required="True">
+                        <option value=""></option>
+                        <option value="Medicamento-Estudio">Medicamento Registrado</option>
+                        <option value="Medicamento-Registrado">Medicamento en Estudio</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="">RAM HA SIDO COMUNICADA POR OTRA VIA</label>
-                    <select name="comunicado-por-otra-via" id="" required="True"></select>
+                    <label for="otra-via">RAM HA SIDO COMUNICADA POR OTRA VIA</label>
+                    <select name="comunicado-por-otra-via" id="otra-via" required="True">
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="">SI RESPONDIÓ SI, DEBE INDICAR LA VIA</label>
-                    <textarea name="via-comunicada" id="" required="True"></textarea>
+                    <label for="indicar">SI RESPONDIÓ SI, DEBE INDICAR LA VIA</label>
+                    <textarea name="via-comunicada" id="indicar" required="True"></textarea>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>I. INFORMACION SOBRE LA REACCION ADVERSA</legend>
                 <div class="form-group">
-                    <label for="">Código de Identificación del Paciente</label>
-                    <input type="text" name="codigo-paciente" id=""required=True>
+                    <label for="identificacion">Código de Identificación del Paciente</label>
+                    <input type="text" name="codigo-paciente" id="identificacion"required=True>
                 </div>
                 <div class="form-group">
-                    <label for="">Sexo:</label>
-                    <select name="sexo" id="" required="True">
+                    <label for="sexo">Sexo:</label>
+                    <select name="sexo" id="sexo" required="True">
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="">Peso:</label>
-                    <input type="search" name="peso" id="" required="True">
+                    <label for="peso">Peso:</label>
+                    <input type="number" step="any" name="peso" id="peso" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Peso:</label>
-                    <input type="search" name="peso" id="" required="True">
+                    <label for="estatura">Estatura:</label>
+                    <input type="number" step="any" name="estatura" id="estatura" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Estatura:</label>
-                    <input type="text" name="estatura" id="" required="True">
+                    <label for="fecha-inicio">Fecha de inicio de la RAM (dd/mm/aa)</label>
+                    <input type="date" name="fecha de inicio" id="fecha-inicio" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fecha de inicio de la RAM (dd/mm/aa)</label>
-                    <input type="text" name="fecha de inicio" id="" required="True">
+                    <label for="descripcion">DESCRIPCION DE LA(s) REACCION(es) ADVERSA(s)</label>
+                    <textarea name="descripcion-reacciones" id="descripcion" required="True" placeholder="Incluye resultados relevantes de exámenes auxiliares y la fecha de finalización, si procede"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="">DESCRIPCION DE LA(s) REACCION(es) ADVERSA(s)</label>
-                    <textarea name="descripcion-reacciones" id="" required="True" placeholder="Incluye resultados relevantes de exámenes auxiliares y la fecha de finalización, si procede"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="">DESENLACE</label>
-                    <select name="deselace" id="" required="True">
+                    <label for="desenlace">DESENLACE</label>
+                    <select name="deselace" id="desenlace" required="True">
                         <option value="Fatal">Fatal</option>
                         <option value="Riesgo">Puso en grave riesgo la vida del paciente</option>
                         <option value="Requirió hopitalización">Requirió hopitalización</option>
@@ -89,48 +92,50 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <fieldset>
                 <legend>II. INFORMACION DEL MEDICAMENTO SOSPECHOSO DE LA EMPRESA</legend>
                 <div class="form-group">
-                    <label for="">Nombre comercial o gen.</label>
-                    <input type="text" name="nomnre-comercial" required="True">
+                    <label for="name">Nombre comercial o gen.</label>
+                    <input type="text" name="nomnre-comercial" id="name" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fabricante y país</label>
-                    <input type="text" name="fabricante" id="" required="True">
+                    <label for="fabricante">Fabricante y país</label>
+                    <input type="text" name="fabricante" id="fabricante" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Lote</label>
-                    <input type="text" name="lote" id="" required="True">
+                    <label for="lote">Lote</label>
+                    <input type="text" name="lote" id="lote" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Dosis Diaria</label>
-                    <input type="number" name="dosis-diaria" id="" required="True">
+                    <label for="dosis">Dosis Diaria</label>
+                    <input type="number" name="dosis-diaria" id="dosis" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Vía administrada</label>
-                    <input type="text" name="via-administrada" id="" required="True">
+                    <label for="adm">Vía administrada</label>
+                    <input type="text" name="via-administrada" id="adm" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Motivo de Prescripción</label>
-                    <input type="text" name="motivo-prescripcion" id="" required="True">
+                    <label for="motivo">Motivo de Prescripción</label>
+                    <input type="text" name="motivo-prescripcion" id="motivo" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fecha inicio dd/mm/aa</label>
-                    <input type="text" name="fecha-inicio" id="" required="True">
+                    <label for="fecha-inicio">Fecha inicio dd/mm/aa</label>
+                    <input type="date" name="fecha-inicio" id="fecha-inicio" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fecha final dd/mm/aa</label>
-                    <input type="text" name="fecha-final" id="" required="True">
+                    <label for="fecha-final">Fecha final dd/mm/aa</label>
+                    <input type="date" name="fecha-final" id="fecha-final" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">¿Remitió la reacción al suspender medicación?</label>
-                    <select name="remitio-reaccion-suspender" id="" required="True">
+                    <label for="reaccion">¿Remitió la reacción al suspender medicación?</label>
+                    <select name="remitio-reaccion-suspender" id="reaccion" required="True">
+                        <option value=""></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                         <option value="No procede">No Procede</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="">¿Remitió la reacción al reducir la dosis?</label>
-                    <select name="remitio-reaccion-reducir" id="" required="True">
+                    <label for="reducir">¿Remitió la reacción al reducir la dosis?</label>
+                    <select name="remitio-reaccion-reducir" id="reducir" required="True">
+                        <option value=""></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                         <option value="No procede">No Procede</option>
@@ -139,6 +144,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 <div class="form-group">
                     <label for="">¿Reapareció la reacción al administrar de nuevo el medicamento?</label>
                     <select name="remitio-reaccion-administrar" id="" required="True">
+                        <option value=""></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                         <option value="No procede">No Procede</option>
@@ -148,96 +154,99 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
             <fieldset>
                 <legend>III. MEDICAMENTOS CONCOMITANTES E HISTORIA CLINICA</legend>
                 <div class="form-group">
-                    <label for="">Nombre comercial o genérico</label>
-                    <input type="text" name="nombre-comercial" id="" required="True">
+                    <label for="nombre-comercial">Nombre comercial o genérico</label>
+                    <input type="text" name="nombre-comercial" id="nombre-comercial" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fabricante y Pais</label>
-                    <input type="text" name="fabricante-pais" id="" required="True">
+                    <label for="fabricante">Fabricante y Pais</label>
+                    <input type="text" name="fabricante-pais" id="fabricante" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Dosis Diaria</label>
-                    <input type="text" name="dosis-diaria" id="" required="True">
+                    <label for="dosis">Dosis Diaria</label>
+                    <input type="text" name="dosis-diaria" id="dosis" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Via Administrativa</label>
-                    <input type="text" name="via-administrativa" id="" required="True">
+                    <label for="via-adm">Via Administrativa</label>
+                    <input type="text" name="via-administrativa" id="via-adm " required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fecha de Inicio dd/mm/aa</label>
-                    <input type="text" name="fecha-inicio" id="" required="True">
+                    <label for="fecha-inicio">Fecha de Inicio dd/mm/aa</label>
+                    <input type="date" name="fecha-inicio" id="fecha-inicio" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fecha de final dd/mm/aa</label>
-                    <input type="text" name="fecha-inicio" id="" required="True">
+                    <label for="fecha-final">Fecha de final dd/mm/aa</label>
+                    <input type="date" name="fecha-final" id="fecha-final" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Datos importantes de la Historia Clínica</label>
-                    <textarea name="datos-importantes-historia-clinica" id="" placeholder="Ej. Otros diagnósticos, alergias, embarazo, vacunas, transfusiones de sangre, cirugía, etc..." required="True"></textarea>
+                    <label for="datos-importantes">Datos importantes de la Historia Clínica</label>
+                    <textarea name="datos-importantes-historia-clinica" id="datos-importantes" placeholder="Ej. Otros diagnósticos, alergias, embarazo, vacunas, transfusiones de sangre, cirugía, etc..." required="True"></textarea>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>IV. INFORMACION SOBRE LA EMPRESA Y PROCEDENCIA DE LA RAM</legend>
                 <div class="form-group">
-                    <label for="">Nombre de la empresa y teléfono</label>
-                    <textarea name="nombre-telefono-empresa" id="" required="True"></textarea>
+                    <label for="nombre-empresa">Nombre de la empresa y teléfono</label>
+                    <textarea name="nombre-telefono-empresa" id="nombre-empresa" required="True"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="">Responsable de FCVG de la Empresa</label>
-                    <input type="text" name="responsable-fcvg" id="" required="true">
+                    <label for="responsable">Responsable de FCVG de la Empresa</label>
+                    <input type="text" name="responsable-fcvg" id="responsable" required="true">
                 </div>
                 <div class="form-group">
-                    <label for="">Evaluación de la causalidad por parte del responsable de FCVG en la Empresa</label>
-                    <input type="text" name="evaluacion-causalidad-fcvg" id="" required="true">
+                    <label for="evaluacion-causalidad">Evaluación de la causalidad por parte del responsable de FCVG en la Empresa</label>
+                    <input type="text" name="evaluacion-causalidad-fcvg" id="evaluacion-causalidad" required="true">
                 </div>
                 <div class="form-group">
-                    <label for="">Fecha recepción en la Empresa</label>
-                    <input type="text" name="fecha-recepcion" id="" required="True">
+                    <label for="fecha-recepcion">Fecha recepción en la Empresa</label>
+                    <input type="text" name="fecha-recepcion" id="fecha-recepcion" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Fuente de información</label>
-                    <select name="fuente-informacion" id="" required="True">
+                    <label for="fuente-informacion">Fuente de información</label>
+                    <select name="fuente-informacion" id="fuente-informacion" required="True">
+                        <option value=""></option>
                         <option value="Estudio">Estudio</option>
                         <option value="Publicacion">Publicación</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="">Tipo de informe</label>
-                    <select name="tipo-informe" id="" required="True">
+                    <label for="tipo-informe">Tipo de informe</label>
+                    <select name="tipo-informe" id="tipo-informe" required="True">
+                        <option value=""></option>
                         <option value="Inicial">Inicial</option>
                         <option value="Seguimiento">Seguimiento</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="">Fecha de notificación al AGEMED</label>
-                    <input type="text" name="fecha-notificacion-agemed" id="" required="True">
+                    <label for="fecha-noti">Fecha de notificación al AGEMED</label>
+                    <input type="text" name="fecha-notificacion-agemed" id="fecha-noti" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Notificación Espontánea Iniciales</label>
-                    <input type="text" name="notificacion-espontane" id="" required="True">
+                    <label for="noti">Notificación Espontánea Iniciales</label>
+                    <input type="text" name="notificacion-espontane" id="noti" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Profesión</label>
-                    <input type="text" name="profesion" id="" required="True">
+                    <label for="profesion">Profesión</label>
+                    <input type="text" name="profesion" id="profesion" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Origen</label>
-                    <select name="origen" id="" required="True">
+                    <label for="origen">Origen</label>
+                    <select name="origen" id="origen" required="True">
+                        <option value=""></option>
                         <option value="Hospotalario">Hospotalario</option>
                         <option value="Estrahospitalario">Estrahospitalario</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="">País</label>
-                    <input type="text" name="pais" id="" required="True">
+                    <label for="pais">País</label>
+                    <input type="text" name="pais" id="pais" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Departamento</label>
-                    <input type="text" name="departamento" id="" required="True">
+                    <label for="departamento">Departamento</label>
+                    <input type="text" name="departamento" id="departamento" required="True">
                 </div>
                 <div class="form-group">
-                    <label for="">Provincia</label>
-                    <input type="text" name="provincia" id="" required="True">
+                    <label for="provincia">Provincia</label>
+                    <input type="text" name="provincia" id="provincia" required="True">
                 </div>
             </fieldset>
             <input type="submit" value="ENVIAR DATOS AHORA" id="enviar">
@@ -262,7 +271,7 @@ body {
 
 .Form-empreas {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
