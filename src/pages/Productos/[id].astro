@@ -122,13 +122,13 @@ const contentMap = {
         title:"OptiVantage Multi-Use",
         description:"OptiVantage® de un solo uso y sus consumibles dedicados. Es un plenamente conectado contraste dual-TC de la cabeza del inyector de entrega, diseñado para mantener el ritmo de aumento de las velocidades de escáner CT mientras que también soporta protocolos de inyección más complejas. OptiVantage ® proporciona flexibilidad y es compatible con jeringas precargadas o todos los viales de medios de contraste. Permite exámenes de TC personalizados, utilizando las funciones más avanzadas como OptiBolus®. Junto con el inyector OptiVantage ® , Guerbet ofrece una gama completa de consumibles y servicios diseñados y certificados (1) para optimizar el rendimiento de la solución.",
         image:"/images/optivantage-multi-use.jpg",
-        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optivantagetm-multi-use"
       },
       {
         title:"OptiOne",
         description:"El inyector de administración de contraste OptiOne ® está diseñado para su uso en múltiples entornos de imágenes, como radioterapia, escáneres de trauma, mamografía y PET CT. Es un inyector de un solo cabezal con todas las funciones compatible con jeringas precargadas y consumibles, que combina la facilidad de uso con la funcionalidad multipropósito. Junto con el inyector OptiOne ® , Guerbet ofrece una gama completa de consumibles y servicios diseñados y certificados (1) para optimizar el rendimiento de la solución.",
         image:"/images/optione.png",
-        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optistarr-elite"
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/optionetm"
       },
       {
         title:"OptiStar Elite",
@@ -186,7 +186,7 @@ if (!selected) {
                 <img src={item.image} alt={item.title}/>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <a href={item.link} target="_blank" >Ver más</a>
+                <a href={item.link} target="_blank" >Ver más en Guerbert</a>
               </article>
             ))
         }
@@ -211,6 +211,13 @@ if (!selected) {
     padding: 1rem; 
     background: #fff;
     font-family: "Lato", sans-serif;
+
+    view-timeline-name: --card;
+    view-timeline-axis: block;
+    animation-timeline: --card;
+    animation-name: show;
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
   }
   .cart-product img{
     width: 100%; 
@@ -232,6 +239,22 @@ if (!selected) {
   .cart-product a{
     display: inline-block; 
     margin-top: 0.5rem; 
-    color: blue;
+    color: #3E458D;
+    transition: color .5s;
+  }
+  .cart-product a:hover{
+    color: #DA3A32;
+  }
+
+  @keyframes show {
+    from{
+      opacity: 0;
+      scale: 25%;
+    }
+    to{
+      opacity: 1;
+      scale: 100%;
+    }
+    
   }
 </style>
