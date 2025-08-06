@@ -16,7 +16,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         <h2>
             REPORTE DE SOSPECHA DE REACCIONES ADVERSAS A MEDICAMENTOS POR LAS EMPRESAS FARMACEUTICAS
         </h2>
-        <form action="https://formspree.io/f/mwpbzral">
+        <form action="https://formspree.io/f/mwpbzral" method="POST">
             <fieldset>
                 <legend>Empresas Médicas</legend>
                 <div class="form-group">
@@ -38,6 +38,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 <div class="form-group">
                     <label for="otra-via">RAM HA SIDO COMUNICADA POR OTRA VIA</label>
                     <select name="comunicado-por-otra-via" id="otra-via" required="True">
+                        <option value=""></option>
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                     </select>
@@ -56,6 +57,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 <div class="form-group">
                     <label for="sexo">Sexo:</label>
                     <select name="sexo" id="sexo" required="True">
+                        <option value=""></option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                     </select>
@@ -198,7 +200,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
                 </div>
                 <div class="form-group">
                     <label for="fecha-recepcion">Fecha recepción en la Empresa</label>
-                    <input type="text" name="fecha-recepcion" id="fecha-recepcion" required="True">
+                    <input type="date" name="fecha-recepcion" id="fecha-recepcion" required="True">
                 </div>
                 <div class="form-group">
                     <label for="fuente-informacion">Fuente de información</label>
