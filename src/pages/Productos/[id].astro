@@ -69,10 +69,22 @@ const contentMap = {
     title: "PRODUCTOS APTISSEN",
     products: [
       {
+        title: "SYNOLIS VA 40/80",
+        description: "Es un gel inyenctable patentado que contiene ácido hialurónico y sorbitol, y proporciona un alivio rápido del dolor",
+        image: "/images/aptissen-product-1.jpg",
+        link: "https://www.synolis.com/es/"
+      },
+      {
+        title: "SYNOLIS VA 80/160",
+        description: "SynolisTM es un gel inyectable patentado que contiene ácido hialurónico y sorbitol, y proporciona un alivio rápido del dolor.",
+        image: "/images/aptissen-product-2.jpg",
+        link: "https://www.synolis.com/es/"
+      },
+      {
         title: "Empresas Médicas",
-        description: "Este formulario está dirigido a empresas del área médica...",
-        image: "/images/reporte-medicas.png",
-        link: "/"
+        description: "es un fármaco intraarticular que proporciona propiedades viscoelásticas al líquido sinovial.",
+        image: "/images/aptissen-product-3.jpg",
+        link: "http://synolis.net/shop/injections/healavis-classic/"
       }
     ]
   },
@@ -186,7 +198,7 @@ if (!selected) {
                 <img src={item.image} alt={item.title}/>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <a href={item.link} target="_blank" >Ver más en Guerbert</a>
+                <a href={item.link} target="_blank" >Ver más información del producto</a>
               </article>
             ))
         }
