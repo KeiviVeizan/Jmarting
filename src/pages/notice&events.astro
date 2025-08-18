@@ -8,6 +8,7 @@ const MoreInformationNotice =[
     title:"SIMPOSIO DE RADIOLOGÍA TORÁCICA PARA TECNÓLOGOS EN RADIOLOGÍA",
     description:"Del 26 al 30 de Septiembre de 2011. Auditorio «Cooperativa Madre Maestra».Tarija-Bolivia",
     image:"/images/noticias-section.png",
+	link:"https://www.linkedin.com/",
   },
   {
     id:2,
@@ -65,6 +66,7 @@ const MoreInformationNotice =[
               <div class="event-inf-text">
                 <h3>{notice.title}</h3>
                 <p>{notice.description}</p>
+				<a href={notice.link} target="_blank">Incribirse al Curso</a>
               </div>
               <img src={notice.image} alt="Imagen de la noticia">
             </div>
