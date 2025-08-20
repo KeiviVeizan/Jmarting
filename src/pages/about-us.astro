@@ -51,7 +51,7 @@ const InformationTeamWork =[
         id:1,
         name:"JORGE MARTING",
         cargo:"Gerente General",
-        image:"/images/user.png",
+        image:"/images/jorge.png",
         link:""
 
     },
@@ -59,7 +59,7 @@ const InformationTeamWork =[
         id:2,
         name:"ALEJANDRA CAMARGO",
         cargo:"Secretária ejecutiva",
-        image:"/images/user.png",
+        image:"/images/alejandra.jpg",
         link:""
     },
     {
@@ -108,7 +108,7 @@ const InformationTeamWork =[
         id:9,
         name:"ADRIANA ESPEJO",
         cargo:"Aseguramiento de Calidad",
-        image:"/images/user.png",
+        image:"/images/adri.png",
         link:""
     },
     {
@@ -350,7 +350,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 		animation-fill-mode: both;
     }
     .team-work-inf img{
-        width: 15rem;
+        width: 100%; 
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        border-radius: 50%;
     }
     .team-work-inf h4{
         font-family: "Lato", sans-serif;
@@ -376,6 +380,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .cargo-work img{
         width: 25px;
         transition: transform 0.5s ease;
+        border-radius: 0%;
     }
     .cargo-work img:hover{
         transform: scale(1.2);
