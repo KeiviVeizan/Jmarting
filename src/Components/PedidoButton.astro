@@ -1,0 +1,104 @@
+---
+
+---
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+</head>
+<body>
+  <a href="https://wa.me/59173717346?text=Hola,%20quiero%20hacer%20un%20pedido"
+   class="pedido-float" target="_blank" rel="noopener noreferrer">
+  <div class="pedido-icon">
+    <img src="/logo-pedido.png" alt="Logo de Hacer pedido">
+  </div>
+  <span class="pedido-label">Hacer Pedido</span>
+</a>
+</body>
+</html>
+<style>
+    .pedido-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: white/*linear-gradient(135deg, #ff4d4d, #ff0000)*/;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  animation: bounceIn 0.8s ease;
+  overflow: visible;
+}
+
+/* Ícono carrito */
+.pedido-icon img{
+  width: 70px;
+  height: 50px;
+}
+
+/* Tooltip / etiqueta */
+.pedido-label {
+  position: absolute;
+  right: 75px;
+  background: #DA3A32;
+  color: #f1f1ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+/* Mostrar tooltip al hover */
+.pedido-float:hover .pedido-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animación de entrada */
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Vibración al hover */
+.pedido-float:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0); }
+  20% { transform: translate(-2px, 0) rotate(-5deg); }
+  40% { transform: translate(2px, 0) rotate(5deg); }
+  60% { transform: translate(-2px, 0) rotate(-5deg); }
+  80% { transform: translate(2px, 0) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}
+</style>
+<script>
+  // Mostrar el mensaje automáticamente cada 10s durante 3s
+  setInterval(() => {
+    const label = document.querySelector('.pedido-label');
+    if (label) {
+      label.style.opacity = "1";
+      label.style.transform = "translateX(0)";
+      setTimeout(() => {
+        label.style.opacity = "0";
+        label.style.transform = "translateX(10px)";
+      }, 3000); // se oculta después de 3 segundos
+    }
+  }, 10000); // cada 10 segundos
+</script>
