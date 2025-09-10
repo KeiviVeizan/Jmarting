@@ -10,6 +10,12 @@ export async function getStaticPaths() {
     { params: { id: "farmavone" } },
     { params: { id: "termis" } },
     { params: { id: "EquiposMedicos"} },
+    { params: { id: "TomografiaComputarizada"}}, 
+    { params: { id: "LaboratorioCateterismo"}},
+    { params: { id: "SolucionesDigitales"}}, 
+    { params: { id: "RadiologiaIntervencional"}},
+    { params: { id: "SaludMujer"}}
+
   ];
 }
 
@@ -205,8 +211,8 @@ const contentMap = {
     ]
 
   },
-  ResonanciaMagnetica:{
-    title: "RESONANCIA MAGNÉTICA",
+  TomografiaComputarizada:{
+    title: "TOMOGRAFÍA COMPUTARIZADA",
     products:[
       {
         title:"Xenetix® / ScanBag® de Xenetix®",
@@ -250,6 +256,104 @@ const contentMap = {
         image:"/images/ready-box.png",
         link:""
       }
+    ]
+  },
+  LaboratorioCateterismo:{
+    title:"LABORATORIO DE CATETERÍSMO",
+    products:[
+      {
+        title:"Xenetix® / ScanBag® de Xenetix®",
+        description:"Iobitridol En 1994 Xenetix® obtuvo su primera autorización de comercialización en Francia. Envasado originalmente en viales, también está disponible en forma de bolsa blanda de polipropileno, conocida como ScanBag® by Xenetix®.",
+        image:"/images/xentix.png",
+        link:"https://chile.guerbet.com/es-cl/products-solutions/contrast-agents/xenetixr"
+      },
+      {
+        title:"OptiRay®",
+        description:"loversol Optiray® estuvo disponible por primera vez en 1989 y también estuvo disponible en forma de jeringa precargada para inyección manual o automática en 1996 (Optiject®) en Francia, Bélgica, Luxemburgo y Suiza. Es conocido como Ultraject® en el resto del mundo.",
+        image:"/images/optiray_ioversol.png",
+        link:"https://www.guerbet.com/products-solutions/contrast-agents/optirayr"
+      },
+      {
+        title:"Illumena® Néo",
+        description:"Inyector de administración de contraste multimodo con modos cardíaco, angiográfico y CT. Junto con el inyector Illumena® Néo, Guerbet ofrece una gama completa de desechables y servicios diseñados y certificados para optimizar el rendimiento de la solución.",
+        image:"/images/illumena_neo.png",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/illumenar-neo"
+      },
+      {
+        title:"Ready-Box",
+        description:"Una unidad liviana que proporciona una distribución uniforme del calor y disminuye la viscosidad, lo que permite un mayor caudal a menor presión.  ",
+        image:"/images/guerbet-optivantage-mutli-use-logo.png",
+        link:"https://colombia.guerbet.com/es-co/products-solutions/injectors-accessories-consumables/optivantager"
+      },
+      {
+        title:"Consumibles para diagnóstico por imagen",
+        description:"Guerbet ofrece una gama completa de consumibles multiusos y de un solo uso para sistemas de administración de contraste de CT, Cath Lab y MRI, diseñados y certificados para optimizar el rendimiento de las soluciones.",
+        image:"/images/consumables.png",
+        link:"https://www.guerbet.com/products-solutions/injectors-accessories-consumables/consumables-diagnostic-imaging"
+      },
+    ]
+  },
+  SolucionesDigitales:{
+    title:"SOLUCIONES DIGITALES",
+    products:[
+      {
+        title:"Contrast & Care®",
+        description:"Contrast & Care® es una solución de administración de inyecciones de productos de contraste que permite a los centros de imágenes recopilar, archivar, examinar y compartir datos de inyecciones, incluidos datos sobre productos de contraste, eventos adversos, actividad del inyector, información sobre la tasa de filtración glomerular estimada y otros factores de riesgo antes de una examen clínico.",
+        image:"/images/contrast_care.png",
+        link:"https://www.guerbet.com/products-solutions"
+      },
+      {
+        title:"Dose & Care®",
+        description:"Dose & Care ™ es una solución digital de última generación para monitorear la exposición del paciente a los rayos X que recopila datos de todas las modalidades ionizantes (por ejemplo, TC, rayos X, fluoroscopia, mamografía) y proporciona un registro de la exposición del paciente.",
+        image:"/images/dose_care.png",
+        link:"https://www.guerbet.com/products-solutions"
+      }
+    ]
+  },
+  RadiologiaIntervencional:{
+    title:"RADIOLOGÍA INTERVENCIONAL",
+    products:[
+      {
+        title:"Lipiodol® Ultra Fluido",
+        description:"Ésteres etílicos yodados de ácidos grasos de aceite de semilla de amapola. Lipiodol® Ultra Fluid, descubierto por Marcel Guerbet en 1901, fue el primer agente de contraste yodado lanzado en el mundo. Se utilizó por primera vez en radiología en Francia en 1921. Actualmente, Lipiodol® Ultra Fluid se utiliza principalmente en radiología intervencionista y salud de la mujer. Lipiodol® Ultra Fluid está disponible en 47 países.",
+        image:"/images/lipiodol-1.png",
+        link:"https://www.guerbet.com/products-solutions/pharmaceutical-drugs/lipiodolr-ultra-fluid"
+      },
+      {
+        title:"Vectorio®",
+        description:"Vectorio® es un sistema exclusivo de mezcla e inyección para quimioembolización transarterial convencional (cTACE) que consta de un conjunto de dispositivos médicos Lipiodol® Ultra Fluid resistentes que incluyen jeringas, llaves de paso patentadas y dispositivos de muestreo.",
+        image:"/images/vectorio.png",
+        link:"https://www.guerbet.com/products-solutions"
+      },
+      {
+        title:"Microcatéteres DraKon ™",
+        description:"DraKon ™ es un microcatéter estándar adaptado para cualquier embolización periférica (incluido cTACE). DraKon ™ está autorizado para su comercialización en Estados Unidos y Europa. También están registrados en Australia, Brasil, Hong Kong, Israel, Nueva Zelanda, Perú, Tailandia y Turquía.",
+        image:"/images/drakon.png",
+        link:"https://www.guerbet.com/products-solutions"
+      },
+      {
+        title:"Microcatéteres SeQure®",
+        description:"SeQure® es un microcatéter para la embolización de vasos periféricos que está destinado a la infusión de medios de contraste en todos los vasos periféricos, la infusión de fármacos en la terapia intraarterial y la infusión de materiales embólicos.",
+        image:"/images/sequre.png",
+        link:"https://www.guerbet.com/products-solutions"
+      },
+    ]
+  },
+  SaludMujer:{
+    title:"SALUD DE LA MUJER",
+    products:[
+      {
+        title:"Lipiodol® Ultra Fluido",
+        description:"Ésteres etílicos yodados de ácidos grasos de aceite de semilla de amapola. Lipiodol® Ultra Fluid, descubierto por Marcel Guerbet en 1901, fue el primer agente de contraste yodado lanzado en el mundo. Se utilizó por primera vez en radiología en Francia en 1921. Actualmente, Lipiodol® Ultra Fluid se utiliza principalmente en radiología intervencionista y salud de la mujer. Lipiodol® Ultra Fluid está disponible en 47 países.",
+        image:"/images/lipiodol-1.png",
+        link:"https://www.guerbet.com/products-solutions/pharmaceutical-drugs/lipiodolr-ultra-fluid"
+      },
+      {
+        title:"Patente Azul V",
+        description:"Sal sódica Patent Blue V Patent Blue V, que no es un agente de contraste sino un tinte, se lanzó al mercado belga en 1971.",
+        image:"/images/patent_blue_v.png",
+        link:"https://www.guerbet.com/products-jsolutions/pharmaceutical-drugs/lipiodolr-ultra-fluid"
+      },
     ]
   }
 };
