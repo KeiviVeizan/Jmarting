@@ -355,6 +355,10 @@ const MoreInformationHome2 =[
 		letter-spacing: 1px;
 		font-family: "Lato", sans-serif;
 		font-weight: 300;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 6;
 	}
 	.card-home:hover .front{
 		transform:  perspective(600px) rotateY(180deg);
@@ -381,6 +385,12 @@ const MoreInformationHome2 =[
 		}
 	}
 	@media(min-width:768px){
+	.inicio-content p{
+		max-width: 50%;
+	}
+	.inicio-content h1{
+		font-size: 5rem;
+	}
 		.home-information img{
 			margin-top: 2rem;
 		}
@@ -397,12 +407,7 @@ const MoreInformationHome2 =[
 			flex-direction: row;
 			justify-content: space-evenly;
 		}
-		.card-home .back p {
-			overflow: hidden;
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 6;
-		}
+
 		.home-information2{
 			flex-direction: row-reverse;
 			text-align: right;
