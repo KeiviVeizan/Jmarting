@@ -267,15 +267,34 @@ const MoreInformationHome2 =[
 		align-items: center;
 		justify-content: center;
 		flex-wrap:wrap;
-		background: linear-gradient( to right, #fff,#F4B631);
+		background: linear-gradient(45deg, #fff9e6, #F4B631, #fff3b8, #F4B631, #fffbf0);
+		background-size: 200% 200%;
 
 		view-timeline-name: --section2;
 		view-timeline-axis: block;
 
 		animation-timeline: --section2;
-		animation-name: show;
-		animation-range: entry 25% cover 30%;
-		animation-fill-mode: both;
+		animation-name: gradientFlow;
+		animation-range: entry 0% exit 100%;
+		animation-fill-mode: none;
+	}
+
+	@keyframes gradientFlow {
+		0% {
+			background-position: 0% 50%;
+		}
+		25% {
+			background-position: 100% 50%;
+		}
+		50% {
+			background-position: 100% 100%;
+		}
+		75% {
+			background-position: 0% 100%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
 	}
 	.card-home{
 		position: relative;
