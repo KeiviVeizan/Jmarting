@@ -126,7 +126,7 @@ const MoreInformationHome2 =[
 					))}
 				</section>
 				<Preguntas/>
-			</BaseLayout>		
+			</BaseLayout>
 	</body>
 </html>
 <style>
@@ -184,6 +184,7 @@ const MoreInformationHome2 =[
     font-family: "Lato", sans-serif;
 	margin:0 ;
   }
+
   .inicio-content p{
 	width: 90%;
 	color: white;
@@ -470,3 +471,30 @@ const MoreInformationHome2 =[
 		}
 	}
 </style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  const titleElement = document.getElementById('netflix-title');
+
+  if (!titleElement) return;
+
+  // Obtener el texto original
+  const originalText = titleElement.textContent || '';
+
+  // Limpiar el contenido
+  titleElement.innerHTML = '';
+
+  // Convertir cada carácter en un span animable
+  originalText.split('').forEach((char, index) => {
+    const span = document.createElement('span');
+    span.className = 'letter';
+    // Mantener espacios como espacios, no spans vacíos
+    span.textContent = char === ' ' ? '\u00A0' : char;
+
+    // Delay escalonado: cada letra aparece 100ms después de la anterior
+    span.style.animationDelay = `${index * 0.1}s`;
+
+    titleElement.appendChild(span);
+  });
+});
+</script>

@@ -72,7 +72,7 @@ import PedidoButton from "../Components/PedidoButton.astro"
   pointer-events: none;
 }
 </style>
-<script is:browser>
+<script is:inline>
   window.addEventListener("load", () => {
     const preloader = document.getElementById("preloader");
     preloader.classList.add("loaded");

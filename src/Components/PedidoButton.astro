@@ -91,7 +91,7 @@
 <script>
   // Mostrar el mensaje automáticamente cada 10s durante 3s
   setInterval(() => {
-    const label = document.querySelector('.pedido-label');
+    const label = document.querySelector('.pedido-label') as HTMLElement;
     if (label) {
       label.style.opacity = "1";
       label.style.transform = "translateX(0)";

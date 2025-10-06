@@ -1,5 +1,5 @@
 ---
-import Id from "../pages/Productos/[id].astro";
+// import Id from "../pages/Productos/[id].astro";
 
 const PreguntasFrecuentes = [
   {
@@ -109,7 +109,7 @@ const PreguntasFrecuentes = [
 }
 </style>
 
-<script is:browser>
+<script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".faq-item");
 
