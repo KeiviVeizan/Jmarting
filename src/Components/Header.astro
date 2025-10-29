@@ -18,23 +18,39 @@
           <span></span>
         </div>
         <ul class="nav-links" id="nav-links">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/about-us">Acerca de Nosotros</a></li>
-          <li><a href="/products">Productos</a></li>
-          <li><a href="/farmacovigilancia">Farmacovigilancia</a></li>
-          <li><a href="/notice&events">Noticias y Eventos</a></li>
-          <li><a href="/contact">Contacto</a></li>
+          <li><a href="/" class="nav-link">Inicio</a></li>
+          <li><a href="/about-us" class="nav-link">Acerca de Nosotros</a></li>
+          <li><a href="/products" class="nav-link">Productos</a></li>
+          <li><a href="/farmacovigilancia" class="nav-link">Farmacovigilancia</a></li>
+          <li><a href="/notice&events" class="nav-link">Noticias y Eventos</a></li>
+          <li><a href="/contact" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
     </header>
 
-    <script type="module">
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.getElementById("nav-links");
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const links = document.querySelectorAll(".nav-link");
 
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("open");
-        navLinks.classList.toggle("active");
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          navLinks.classList.toggle("active");
+        });
+
+        // Marcar el link activo según la página actual
+        const currentPath = window.location.pathname;
+        
+        links.forEach(link => {
+          const linkPath = new URL(link.href).pathname;
+          
+          // Comparación exacta o si comienza con la ruta
+          if (currentPath === linkPath || 
+              (linkPath !== '/' && currentPath.startsWith(linkPath))) {
+            link.classList.add("active");
+          }
+        });
       });
     </script>
   </body>
@@ -108,9 +124,14 @@
     color: #121212;
     font-weight: 500;
     font-size: 1rem;
+    transition: color 0.3s ease;
   }
 
-
+  /* Link activo - página actual */
+  .nav-links a.active {
+    color: #3e5baf;
+    font-weight: 600;
+  }
 
   .hamburger {
     display: flex;
@@ -168,15 +189,12 @@
       padding: 0;
       background-color: transparent;
       box-shadow: none;
-      transition: color 0.3s ease;
-      text-decoration: underline;
-      text-decoration-color: #121212;
-      text-decoration-thickness: 2px ;
     }
+    
     .nav-links a:hover {
-    color: #3e5baf;
-    text-decoration-color: #3e5baf;
-  }
+      color: #3e5baf;
+    }
+    
     .nav-links li {
       margin: 0;
     }
