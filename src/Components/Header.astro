@@ -41,12 +41,12 @@
 
         // Marcar el link activo según la página actual
         const currentPath = window.location.pathname;
-        
+
         links.forEach(link => {
           const linkPath = new URL(link.href).pathname;
-          
+
           // Comparación exacta o si comienza con la ruta
-          if (currentPath === linkPath || 
+          if (currentPath === linkPath ||
               (linkPath !== '/' && currentPath.startsWith(linkPath))) {
             link.classList.add("active");
           }
