@@ -32,8 +32,14 @@
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 999;
-  animation: bounceIn 0.8s ease;
+  animation: bounceIn 0.8s ease, float 3s ease-in-out 1s infinite;
   overflow: visible;
+  transition: all 0.3s ease;
+}
+
+.pedido-float:hover {
+  box-shadow: 0 8px 20px rgba(218, 58, 50, 0.4);
+  transform: scale(1.1);
 }
 
 .pedido-icon img{
@@ -82,6 +88,15 @@
   60% { transform: translate(-2px, 0) rotate(-5deg); }
   80% { transform: translate(2px, 0) rotate(5deg); }
   100% { transform: translate(0, 0) rotate(0); }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 </style>
 <script>

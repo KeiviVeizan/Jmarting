@@ -7,7 +7,12 @@ import PedidoButton from "../Components/PedidoButton.astro"
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Component header, footer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png+xml" href="/logo-simple.png" />
+  <meta name="description" content="Somos importadora Marting y te traemos equipos y medios de contraste radiológico, productos de alta calidad para Imagenología Médica en Bolivia."/>
+  <title>Importadora Marting</title>
 </head>
 <body>
   <Header/>
@@ -42,16 +47,18 @@ import PedidoButton from "../Components/PedidoButton.astro"
   width: 80px;
   height: auto;
   animation: pulse 1s ease-in-out infinite;
-  transition: all 0.8s ease-in-out;
+  filter: drop-shadow(0 0 10px rgba(218, 58, 50, 0.3));
 }
 
 /* Palpitación */
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(218, 58, 50, 0.3));
   }
   50% {
     transform: scale(1.2);
+    filter: drop-shadow(0 0 20px rgba(218, 58, 50, 0.6));
   }
 }
 

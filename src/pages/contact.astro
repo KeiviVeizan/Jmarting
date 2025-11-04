@@ -130,11 +130,28 @@ article {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+article:nth-child(1) { animation-delay: 0.1s; }
+article:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 article:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(62, 69, 141, 0.2);
 }
 
 legend {
@@ -195,17 +212,20 @@ h4 {
 .formulario-contact input,
 .formulario-contact textarea {
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 6px;
   font-size: 0.95rem;
   font-family: inherit;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .formulario-contact input:focus,
 .formulario-contact textarea:focus {
   border-color: #3E458D;
   outline: none;
+  box-shadow: 0 0 0 3px rgba(62, 69, 141, 0.1);
+  transform: translateY(-2px);
 }
 
 #Enviar {
@@ -217,12 +237,38 @@ h4 {
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#Enviar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+#Enviar:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 #Enviar:hover {
   background-color: #F4B631;
   color: #3E458D;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(244, 182, 49, 0.4);
+}
+
+#Enviar:active {
+  transform: translateY(-1px);
 }
 
   @media(min-width:768px){

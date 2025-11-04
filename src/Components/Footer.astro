@@ -86,6 +86,19 @@ const footerInformationRigth = [
     footer{
         width: 95%;
         margin: auto;
+        opacity: 0;
+        animation: slideUp 0.8s ease-out forwards;
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     .information-rigth{
         display: grid;
@@ -108,10 +121,27 @@ const footerInformationRigth = [
         line-height: 1.5rem;
     }
     .footer-rigth-inf li{
-        transition: transform 0.5s ease;
+        transition: transform 0.3s ease;
     }
     .footer-rigth-inf li:hover{
-        transform: scale(1.07);
+        transform: translateX(5px);
+    }
+    .footer-rigth-inf a {
+        position: relative;
+        display: inline-block;
+    }
+    .footer-rigth-inf a::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: #3E458D;
+        transition: width 0.3s ease;
+    }
+    .footer-rigth-inf a:hover::before {
+        width: 100%;
     }
     .footer-rigth-inf h3{
         color: #3E458D;
@@ -130,11 +160,12 @@ const footerInformationRigth = [
     .footer-left a img{
         width: 24px;
         margin-right:1rem;
-        transition: transform .7s ease, box-shadow 0.3s ease;
+        transition: transform .4s ease, box-shadow 0.3s ease, filter 0.3s ease;
     }
     .footer-left a img:hover{
-        transform: scale(1.5);
+        transform: scale(1.5) rotate(10deg);
         box-shadow: 0 4px 18px rgba(41, 18, 158, 0.5);
+        filter: brightness(1.2);
     }
     .footer-left img{
         width: 12rem;

@@ -294,9 +294,10 @@ const InformationTeamWork =[
         height: 250px;
         overflow: hidden;
         border-radius: 50%;
-        border: 1px solid #3E458D;
+        border: 2px solid #3E458D;
         margin: 1.2rem;
-        transition: transform 0.5s ease;
+        transition: all 0.4s ease;
+        position: relative;
         
 		view-timeline-name: --afiliados;
 		view-timeline-axis: block;
@@ -323,9 +324,22 @@ const InformationTeamWork =[
     .afiliados-inf2 img, .afiliados-inf3 img, .afiliados-inf4 img{
         width: 80%;
     }
+    .afiliados-inf::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #3E458D, #F4B631);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.4s ease;
+    }
     .afiliados-inf:hover{
-        transform: scale(1.1) ;
-
+        transform: scale(1.1) translateY(-5px);
+        box-shadow: 0 10px 30px rgba(62, 69, 141, 0.3);
+    }
+    .afiliados-inf:hover::before {
+        opacity: 1;
     }
     .team-work {
         display: flex;
