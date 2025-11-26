@@ -2,6 +2,7 @@
 import Encabezado from '../../Components/Encabezado.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+
 export async function getStaticPaths() {
   return [
     { params: { id: "guerbet" } },
@@ -152,9 +153,21 @@ const contentMap = {
     title: "PRODUCTOS FARMAVONE",
     products:[
       {
-        title: "Farmacovigilancia AGEMED",
-        description: "Reporta cualquier evento adverso a través de AGEMED...",
-        image: "/images/farmacovigilancia-section.png",
+        title: "Producto Farmavone",
+        description: "Infoooo",
+        image: "/images/Farmavone/product-1 .jpg",
+        link: "/"
+      },
+      {
+        title: "Producto Farmavone",
+        description: "Infoooo",
+        image: "/images/Farmavone/product-2.jpg",
+        link: "/"
+      },
+      {
+        title: "Producto Farmavone",
+        description: "Infoooo",
+        image: "/images/Farmavone/product-3.jpg",
         link: "/"
       }
     ]
