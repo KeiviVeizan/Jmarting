@@ -21,7 +21,7 @@ const MoreInformationHome2 =[
 		id:1,
 		title: "Resonancia Magnética",
 		description:"La resonancia magnética (RM) es una técnica de imágenes médicas en el que se utiliza un campo magnético y ondas de radio generadas por computadora para crear imágenes detalladas de los órganos y tejidos del cuerpo.",
-		image:"/images/resonancia-magnetica.png",
+		image:"/images/img-servicios.png",
 		Link:[{name:"Ver Productros", href:"/Productos/ResonanciaMagnetica"}]
 	},
 	{
@@ -100,7 +100,9 @@ const MoreInformationHome2 =[
 						}
 					</article>
 				</section>	
-				<section class="section2-home">
+				<section class="section-dos">
+					<h2>Nuestro Productos Para Los siguientes Servicios</h2>
+					<article class="section2-home">
 					{MoreInformationHome2.map((home2)=>(
 						<article class={` card-home card-home${home2.id}`}>
 							<div class="face front">
@@ -124,6 +126,7 @@ const MoreInformationHome2 =[
 							</div>
 						</article>
 					))}
+					</article>
 				</section>
 				<Preguntas/>
 			</BaseLayout>
@@ -262,16 +265,26 @@ const MoreInformationHome2 =[
 			scale: 100%;
 		}
 	}
-
+	.section-dos{
+		background: linear-gradient(45deg, #fff9e6, #F4B631, #fff3b8, #F4B631, #fffbf0);
+		background-size: 200% 200%;
+	}
+	.section-dos h2{
+		text-align: center;
+		padding-top: 1.5rem;
+		font-family: 'Lato', sans-serif;
+		font-weight: 900;
+		font-size: 1.5rem;
+		max-width: 90%;
+		margin: auto;
+		font-size: 1.6rem;
+	}
 	.section2-home{
-		margin: 4rem 0rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-wrap:wrap;
-		background: linear-gradient(45deg, #fff9e6, #F4B631, #fff3b8, #F4B631, #fffbf0);
-		background-size: 200% 200%;
-
+		padding-bottom: 1rem;
 		view-timeline-name: --section2;
 		view-timeline-axis: block;
 
@@ -419,6 +432,9 @@ const MoreInformationHome2 =[
 			width: 75%;
 		}
 	}
+	.section2-home{
+		padding: 1rem 0rem;
+	}
 	@media (min-width:1024px){
 		.inicio-content h1{
 			font-size: 4rem;
@@ -441,6 +457,9 @@ const MoreInformationHome2 =[
 			width: 300px;
 			height: 350px;
 		}
+	}
+	.section-dos h2{
+		font-size: 2.3rem;
 	}
 	@media (min-width:1440px){
 		.inicio-content h1{
