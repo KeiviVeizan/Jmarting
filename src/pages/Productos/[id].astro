@@ -154,19 +154,19 @@ const contentMap = {
     products:[
       {
         title: "A+C Suspención",
-        description: "A+C Suspensión, un producto producido por Farmavone y fabricado por Marting, es un antibiótico de amplio espectro que combina amoxicilina 400 mg/5 mL y ácido clavulánico 57 mg/5 mL. Está formulado como polvo para preparar 70 mL de suspensión oral e incluye jeringa dosificadora. Su uso está indicado para tratar infecciones causadas por gérmenes sensibles a esta combinación, como otitis, sinusitis, faringoamigdalitis, bronquitis, neumonía, infecciones de piel y tejidos blandos, y del tracto urinario no complicado.",
+        description: "A+C Suspensión, un producto producido por Marting y fabricado por Farmavone, es un antibiótico de amplio espectro que combina amoxicilina 400 mg/5 mL y ácido clavulánico 57 mg/5 mL. Está formulado como polvo para preparar 70 mL de suspensión oral e incluye jeringa dosificadora. Su uso está indicado para tratar infecciones causadas por gérmenes sensibles a esta combinación, como otitis, sinusitis, faringoamigdalitis, bronquitis, neumonía, infecciones de piel y tejidos blandos, y del tracto urinario no complicado.",
         image: "/images/Farmavone/product-1 .jpg",
         link: "https://farmavone.com.py/en/#products"
       },
       {
         title: "A+C Comprimidos 875 x14",
-        description: "A+C Comprimidos 875 mg/125 mg – Caja x 14, producido por Farmavone y fabricado por Marting, es una presentación de amoxicilina y ácido clavulánico diseñada para tratamientos que requieren más días de terapia continua. Ofrece amplia cobertura frente a bacterias, incluidas las productoras de betalactamasas. Cada comprimido contiene 875 mg de amoxicilina y 125 mg de ácido clavulánico, y está indicado para infecciones respiratorias altas y bajas, urinarias, de piel y tejidos blandos, u otras causadas por gérmenes sensibles. Se presenta en caja con 14 comprimidos recubiertos.",
+        description: "A+C Comprimidos 875 mg/125 mg – Caja x 14, producido por Marting y fabricado por Farmavone, es una presentación de amoxicilina y ácido clavulánico diseñada para tratamientos que requieren más días de terapia continua. Ofrece amplia cobertura frente a bacterias, incluidas las productoras de betalactamasas. Cada comprimido contiene 875 mg de amoxicilina y 125 mg de ácido clavulánico, y está indicado para infecciones respiratorias altas y bajas, urinarias, de piel y tejidos blandos, u otras causadas por gérmenes sensibles. Se presenta en caja con 14 comprimidos recubiertos.",
         image: "/images/Farmavone/product-2.jpg",
         link: "https://farmavone.com.py/en/#products"
       },
       {
         title: "A+C Comprimidos 875 x7",
-        description: "A+C Comprimidos 875 mg/125 mg, un producto producido por Farmavone y fabricado por Marting, es una formulación de amoxicilina y ácido clavulánico en comprimidos recubiertos para adultos y adolescentes. Está indicada para tratar infecciones por microorganismos sensibles, como sinusitis, otitis media, bronquitis crónica exacerbada, neumonía adquirida en la comunidad, infecciones urinarias y de piel y tejidos blandos. Cada comprimido contiene 875 mg de amoxicilina y 125 mg de ácido clavulánico, y se presenta en caja con 7 unidades.",
+        description: "A+C Comprimidos 875 mg/125 mg, un producto producido por Marting y fabricado por Farmavone, es una formulación de amoxicilina y ácido clavulánico en comprimidos recubiertos para adultos y adolescentes. Está indicada para tratar infecciones por microorganismos sensibles, como sinusitis, otitis media, bronquitis crónica exacerbada, neumonía adquirida en la comunidad, infecciones urinarias y de piel y tejidos blandos. Cada comprimido contiene 875 mg de amoxicilina y 125 mg de ácido clavulánico, y se presenta en caja con 7 unidades.",
         image: "/images/Farmavone/product-3.jpg",
         link: "https://farmavone.com.py/en/#products"
       }
@@ -438,17 +438,18 @@ if (!selected) {
   <body>
     <BaseLayout>
       <Encabezado image="/images/product-section.png" title={selected.title} />
-
-      <section class="card">
+        <section class="card">
         {
           selected.products.map((item: any) => (
-              <article class="cart-product">
-                <img src={item.image} alt={item.title}/>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <a href={item.link} target="_blank" >Ver más información del producto</a>
-              </article>
-            ))
+            <article class={`cart-product ${id === 'farmavone' ? 'full-content' : ''}`}>
+              <img src={item.image} alt={item.title}/>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              {id !== 'farmavone' && (
+                <a href={item.link} target="_blank">Ver más información del producto</a>
+              )}
+            </article>
+          ))
         }
       </section>
     </BaseLayout>
@@ -501,6 +502,12 @@ if (!selected) {
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 6;
+    text-align: justify;
+  }
+  .cart-product.full-content p{
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
   }
   .cart-product a{
     display: inline-block;
