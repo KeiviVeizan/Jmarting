@@ -2,212 +2,227 @@
 import Encabezado from "../Components/Encabezado.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const MoreInformationAboutUs =[
+const MoreInformationAboutUs = [
     {
-        id:1,
-        title:"Historia y Futuro",
-        descrition:"Marting SRL nació en 2006 gracias a la visión y determinación de Jorge Marting, un emprendedor con amplia experiencia en el mercado médico y un profundo compromiso con mejorar la atención en salud. Lo que comenzó como una pequeña oficina impulsada por el apoyo de un amigo y un sueño lleno de desafíos, se transformó con esfuerzo, disciplina y pasión en una empresa sólida y reconocida por su integridad, profesionalismo y calidad. A lo largo de los años, Marting ha crecido y evolucionado, ampliando sus líneas de productos y servicios, adaptándose a los cambios del mercado y manteniendo siempre su propósito de generar bienestar para pacientes y profesionales. Más que una empresa, Marting representa la historia de un sueño hecho realidad: la prueba de que servir con excelencia puede dejar una huella profunda en la vida de las personas.",
-        image:"/images/about-img.jpg",
+        id: 1,
+        title: "Historia y Futuro",
+        descrition:
+            "Marting SRL nació en 2006 a partir de la visión y determinación del Señor Jorge Marting, emprendedor con más de 40 años de experiencia en el mercado farmacéutico y un firme compromiso con contribuir a una mejor atención en salud. Lo que inició como una pequeña oficina, impulsada por el apoyo de su familia y un sueño lleno de desafíos, se consolidó con esfuerzo, disciplina y pasión en una empresa reconocida por su integridad, profesionalismo y calidad. A lo largo de los años, Marting ha crecido y evolucionado, ampliando sus líneas de productos y servicios, adaptándose a las necesidades del mercado y manteniendo siempre un mismo propósito: aportar bienestar a pacientes y respaldo a los profesionales de la salud. Más que una empresa, Marting representa una historia de perseverancia y servicio, y refleja el valor de trabajar con excelencia y confianza para generar un impacto real en la vida de las personas.",
+        image: "/images/about-img.jpg",
     },
     {
-        id:2,
-        title:"Nuestra Misión",
-        descrition:"Trabajamos para que los profesionales de la salud en Bolivia cuenten con medios de contraste radiológico y equipos de imagenología médica confiables, seguros y de alta calidad, permitiendo diagnósticos más claros, oportunos y humanizados. Nuestro compromiso es apoyar el trabajo médico y el bienestar de los pacientes, contribuyendo a una atención integral que favorezca la prevención, la detección temprana y el tratamiento adecuado de enfermedades. Actuamos con responsabilidad, ética y un profundo respeto por la vida, aportando al fortalecimiento continuo del sistema de salud boliviano y al cuidado de nuestra sociedad.",
-        image:"/images/mision.png",
+        id: 2,
+        title: "Nuestra Misión",
+        descrition:
+            "Trabajamos para que los profesionales de la salud en Bolivia cuenten con medios de contraste radiológico y equipos de imagenología médica confiables, seguros y de alta calidad, permitiendo diagnósticos más claros, oportunos y humanizados. Nuestro compromiso es apoyar el trabajo médico y el bienestar de los pacientes, contribuyendo a una atención integral que favorezca la prevención, la detección temprana y el tratamiento adecuado de enfermedades. Actuamos con responsabilidad, ética y un profundo respeto por la vida, aportando al fortalecimiento continuo del sistema de salud boliviano y al cuidado de nuestra sociedad.",
+        image: "/images/mision.png",
     },
     {
-        id:3,
-        title:"Nuestra Visión",
-        descrition:"Ser la empresa líder y referente en el mercado boliviano de medios de contraste radiológico e imagenología médica, reconocida por nuestra excelencia, confiabilidad y compromiso con la innovación. Aspiramos a fortalecer el diagnóstico médico en todo el país, promoviendo soluciones que faciliten una atención de salud más precisa, segura y accesible. Buscamos consolidar relaciones duraderas con nuestros clientes y proveedores, basadas en la ética, la calidad y el servicio, contribuyendo al desarrollo continuo del sistema de salud y al bienestar integral de la sociedad boliviana.",
-        image:"/images/vision.png",
+        id: 3,
+        title: "Nuestra Visión",
+        descrition:
+            "Ser la empresa líder y referente en el mercado boliviano de medios de contraste radiológico e imagenología médica, reconocida por nuestra excelencia, confiabilidad y compromiso con la innovación. Aspiramos a fortalecer el diagnóstico médico en todo el país, promoviendo soluciones que faciliten una atención de salud más precisa, segura y accesible. Buscamos consolidar relaciones duraderas con nuestros clientes y proveedores, basadas en la ética, la calidad y el servicio, contribuyendo al desarrollo continuo del sistema de salud y al bienestar integral de la sociedad boliviana.",
+        image: "/images/vision.png",
     },
 ];
-const InformationAfiliados =[
+const InformationAfiliados = [
     {
-        id:1,
-        image:"/images/logo-guerbet.png",
-        link:"https://www.guerbet.com/"
+        id: 1,
+        image: "/images/logo-guerbet.png",
+        link: "https://www.guerbet.com/",
     },
-        {
-        id:2,
-        image:"/images/logo-aptissen.webp",
-        link:"https://www.aptissen.com/"
+    {
+        id: 2,
+        image: "/images/logo-aptissen.webp",
+        link: "https://www.aptissen.com/",
     },
-        {
-        id:3,
-        image:"/images/logo-mhj.png",
-        link:"https://mhjpharma.com/"
+    {
+        id: 3,
+        image: "/images/logo-mhj.png",
+        link: "https://mhjpharma.com/",
     },
-        {
-        id:4,
-        image:"/images/logo-farmavone.png",
-        link:"https://farmavone.com.py/en/"
+    {
+        id: 4,
+        image: "/images/logo-farmavone.png",
+        link: "https://farmavone.com.py/en/",
     },
-        {
-        id:5,
-        image:"/images/logo-temi.png",
-        link:"https://www.temislostalo.com.ar/"
+    {
+        id: 5,
+        image: "/images/logo-temi.png",
+        link: "https://www.temislostalo.com.ar/",
     },
 ];
-const InformationTeamWork =[
+const InformationTeamWork = [
     {
-        id:1,
-        name:"JORGE MARTING",
-        cargo:"Gerente General",
-        image:"/images/jorge.png",
-        link:""
-
+        id: 1,
+        name: "JORGE MARTING",
+        cargo: "Gerente General",
+        image: "/images/jorge.png",
+        link: "",
     },
     {
-        id:2,
-        name:"ALEJANDRA CAMARGO",
-        cargo:"Secretária ejecutiva",
-        image:"/images/alejandra.jpg",
-        link:""
+        id: 2,
+        name: "ALEJANDRA CAMARGO",
+        cargo: "Secretária ejecutiva",
+        image: "/images/alejandra.jpg",
+        link: "",
     },
     {
-        id:3,
-        name:"NATALIA VARELA",
-        cargo:"Gerencia de aseguramiento de calidad",
-        image:"/images/user.png",
-        link:""
+        id: 3,
+        name: "NATALIA VARELA",
+        cargo: "Gerencia de aseguramiento de calidad",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:4,
-        name:"CARLA REINAGA",
-        cargo:"Regente farmacéutica/LRPV",
-        image:"/images/user.png",
-        link:""
+        id: 4,
+        name: "CARLA REINAGA",
+        cargo: "Regente farmacéutica/LRPV",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:5,
-        name:"NATALIA VARELA",
-        cargo:"Gerencia comercial administrativa",
-        image:"/images/user.png",
-        link:""
+        id: 5,
+        name: "NATALIA VARELA",
+        cargo: "Gerencia comercial administrativa",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:6,
-        name:"ANDRES FLORES",
-        cargo:"Asesoría legal",
-        image:"/images/user.png",
-        link:""
-    },
-    { 
-        id:7,
-        name:"NATALIA BUCHON",
-        cargo:"Marketing",
-        image:"/images/user.png",
-        link:""
+        id: 6,
+        name: "ANDRES FLORES",
+        cargo: "Asesoría legal",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:8,
-        name:"NATALIA VARELLA",
-        cargo:"Mantenimiento Técnico",
-        image:"/images/user.png",
-        link:""
+        id: 7,
+        name: "NATALIA BUCHON",
+        cargo: "Marketing",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:9,
-        name:"ADRIANA ESPEJO",
-        cargo:"Aseguramiento de Calidad",
-        image:"/images/adri.png",
-        link:""
+        id: 8,
+        name: "NATALIA VARELLA",
+        cargo: "Mantenimiento Técnico",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:10,
-        name:"JUANA GUTIERREZ",
-        cargo:"Contabilidad y Finanzas",
-        image:"/images/user.png",
-        link:""
+        id: 9,
+        name: "ADRIANA ESPEJO",
+        cargo: "Aseguramiento de Calidad",
+        image: "/images/adri.png",
+        link: "",
     },
     {
-        id:11,
-        name:"ABRAHAM BALDERRAMA",
-        cargo:"Unidad de Software",
-        image:"/images/user.png",
-        link:""
+        id: 10,
+        name: "JUANA GUTIERREZ",
+        cargo: "Contabilidad y Finanzas",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:12,
-        name:"ALEX CAMARGO",
-        cargo:"Encargado de Almacenes",
-        image:"/images/user.png",
-        link:""
+        id: 11,
+        name: "ABRAHAM BALDERRAMA",
+        cargo: "Unidad de Software",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:13,
-        name:"SAMAEL LANGE",
-        cargo:"Representante de Ventas LaPaz/ElAlto",
-        image:"/images/user.png",
-        link:""
-    },{
-        id:14, 
-        name:"ANDRES FLORES",
-        cargo:"Representante de Ventas Oruro-Potosi-Sucre",
-        image:"/images/user.png",
-        link:""
+        id: 12,
+        name: "ALEX CAMARGO",
+        cargo: "Encargado de Almacenes",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:15,
-        name:"ANDES MARTING V.",
-        cargo:"Representante de Ventas Santa Cruz",
-        image:"/images/user.png",
-        link:""
+        id: 13,
+        name: "SAMAEL LANGE",
+        cargo: "Representante de Ventas LaPaz/ElAlto",
+        image: "/images/user.png",
+        link: "",
     },
     {
-        id:16,
-        name:"GUILLERMO LANGE",
-        cargo:"Representante de Ventas Cochabamba",
-        image:"/images/user.png",
-        link:""
-    }
+        id: 14,
+        name: "ANDRES FLORES",
+        cargo: "Representante de Ventas Oruro-Potosi-Sucre",
+        image: "/images/user.png",
+        link: "",
+    },
+    {
+        id: 15,
+        name: "ANDES MARTING V.",
+        cargo: "Representante de Ventas Santa Cruz",
+        image: "/images/user.png",
+        link: "",
+    },
+    {
+        id: 16,
+        name: "GUILLERMO LANGE",
+        cargo: "Representante de Ventas Cochabamba",
+        image: "/images/user.png",
+        link: "",
+    },
 ];
-
 ---
+
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png+xml" href="/logo-simple.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <title>Acerca de Nosotros</title>
-</head>
-<body>
-    <BaseLayout>
-        <Encabezado image="/images/Acerca-de-nosotros.png" title="ACERCA DE NOSOTROS"/>
-        <section class="section1-about-inf">
-            {
-                MoreInformationAboutUs.map((about)=>(
-                    <article class={`about-inf about-inf${about.id}`}>
-                        <div class="about-inf-text">
-                            <h3>{about.title}</h3>
-                            <p>{about.descrition}</p>
-                        </div>
-                        <img src={about.image} alt="Imagen de Acerca de Nosotros">
-                    </article> 
-                ))
-            }
-        </section>
-        <section class="section2-about-inf">
-            <h2>
-                Nuestras Empresas Afiliadas
-            </h2>
-            <article class="section2-inf-bottom">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png+xml" href="/logo-simple.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <title>Acerca de Nosotros</title>
+    </head>
+    <body>
+        <BaseLayout>
+            <Encabezado
+                image="/images/Acerca-de-nosotros.png"
+                title="ACERCA DE NOSOTROS"
+            />
+            <section class="section1-about-inf">
                 {
-                    InformationAfiliados.map((afiliados)=>(
-                        <div class={`afiliados-inf afiliados-inf${afiliados.id}`}>
-                            <a href={afiliados.link} target="_blank">
-                                <img src={afiliados.image} alt="Imagen de Las empresas afiliadas">
-                            </a>
-                        </div>
+                    MoreInformationAboutUs.map((about) => (
+                        <article class={`about-inf about-inf${about.id}`}>
+                            <div class="about-inf-text">
+                                <h3>{about.title}</h3>
+                                <p>{about.descrition}</p>
+                            </div>
+                            <img
+                                src={about.image}
+                                alt="Imagen de Acerca de Nosotros"
+                            />
+                        </article>
                     ))
                 }
-            </article>
-        </section>
-        <!--
+            </section>
+            <section class="section2-about-inf">
+                <h2>Nuestras Empresas Afiliadas</h2>
+                <article class="section2-inf-bottom">
+                    {
+                        InformationAfiliados.map((afiliados) => (
+                            <div
+                                class={`afiliados-inf afiliados-inf${afiliados.id}`}
+                            >
+                                <a href={afiliados.link} target="_blank">
+                                    <img
+                                        src={afiliados.image}
+                                        alt="Imagen de Las empresas afiliadas"
+                                    />
+                                </a>
+                            </div>
+                        ))
+                    }
+                </article>
+            </section>
+            <!--
         <section class="section3-about-inf">
             <h2>
                     Equipo de Trabajo
@@ -230,58 +245,58 @@ const InformationTeamWork =[
             </article>
         </section>
         -->
-    </BaseLayout>
-</body>
+        </BaseLayout>
+    </body>
 </html>
 <style>
-    body{
-        background: #F2F2F2;
+    body {
+        background: #f2f2f2;
     }
-    body h2{
+    body h2 {
         text-align: center;
         font-size: 2rem;
     }
-    .section1-about-inf{
-		width: 90%;
-		margin:auto;
-	}
-	.about-inf{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin: 2rem 0rem;
-	}
-	.about-inf h3{
-		font-family: "Lato", sans-serif;
-		font-weight: 900;
-        color: #3E458D;
-	}
-	.about-inf p{
-		font-family: "Lato", sans-serif;
-		font-weight: 300;
-	}
-    .about-inf-text{
-        view-timeline-name: --text;
-		view-timeline-axis: block;
-
-		animation-timeline: --text;
-		animation-name: show;
-		animation-range: entry 25% cover 30%;
-		animation-fill-mode: both;
+    .section1-about-inf {
+        width: 90%;
+        margin: auto;
     }
-	.about-inf img{
-		width: 18rem;
-		border-radius: 1rem;
-		box-shadow: 10px 10px 20px  #3E458D;
-		view-timeline-name: --image;
-		view-timeline-axis: block;
+    .about-inf {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 0rem;
+    }
+    .about-inf h3 {
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+        color: #3e458d;
+    }
+    .about-inf p {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+    }
+    .about-inf-text {
+        view-timeline-name: --text;
+        view-timeline-axis: block;
 
-		animation-timeline: --image;
-		animation-name: show;
-		animation-range: entry 25% cover 30%;
-		animation-fill-mode: both;
-	}
-    .section2-inf-bottom{
+        animation-timeline: --text;
+        animation-name: show;
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
+    }
+    .about-inf img {
+        width: 18rem;
+        border-radius: 1rem;
+        box-shadow: 10px 10px 20px #3e458d;
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+
+        animation-timeline: --image;
+        animation-name: show;
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
+    }
+    .section2-inf-bottom {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -289,25 +304,25 @@ const InformationTeamWork =[
         width: 90%;
         margin: auto;
     }
-    .afiliados-inf{
+    .afiliados-inf {
         width: 250px;
         height: 250px;
         overflow: hidden;
         border-radius: 50%;
-        border: 2px solid #3E458D;
+        border: 2px solid #3e458d;
         margin: 1.2rem;
         transition: all 0.4s ease;
         position: relative;
-        
-		view-timeline-name: --afiliados;
-		view-timeline-axis: block;
 
-		animation-timeline: --afiliados;
-		animation-name: show;
-		animation-range: entry 25% cover 30%;
-		animation-fill-mode: both;
+        view-timeline-name: --afiliados;
+        view-timeline-axis: block;
+
+        animation-timeline: --afiliados;
+        animation-name: show;
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
     }
-    .afiliados-inf a{
+    .afiliados-inf a {
         width: 100%;
         height: 100%;
         display: flex;
@@ -315,26 +330,28 @@ const InformationTeamWork =[
         justify-content: center;
         background: white;
     }
-    
-    .afiliados-inf img{
+
+    .afiliados-inf img {
         width: 100%;
         height: 100%;
         object-fit: contain;
     }
-    .afiliados-inf2 img, .afiliados-inf3 img, .afiliados-inf4 img{
+    .afiliados-inf2 img,
+    .afiliados-inf3 img,
+    .afiliados-inf4 img {
         width: 80%;
     }
     .afiliados-inf::before {
-        content: '';
+        content: "";
         position: absolute;
         inset: -2px;
         border-radius: 50%;
-        background: linear-gradient(45deg, #3E458D, #F4B631);
+        background: linear-gradient(45deg, #3e458d, #f4b631);
         opacity: 0;
         z-index: -1;
         transition: opacity 0.4s ease;
     }
-    .afiliados-inf:hover{
+    .afiliados-inf:hover {
         transform: scale(1.1) translateY(-5px);
         box-shadow: 0 10px 30px rgba(62, 69, 141, 0.3);
     }
@@ -346,37 +363,37 @@ const InformationTeamWork =[
         flex-wrap: wrap;
         justify-content: center;
     }
-    .team-work-inf{
+    .team-work-inf {
         width: 15rem;
         height: 20rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid #3E458D;
+        border: 1px solid #3e458d;
         padding: 1rem;
         border-radius: 2rem;
         margin: 1rem;
         background-color: white;
 
-		view-timeline-name: --team;
-		view-timeline-axis: block;
+        view-timeline-name: --team;
+        view-timeline-axis: block;
 
-		animation-timeline: --team;
-		animation-name: show;
-		animation-range: entry 25% cover 30%;
-		animation-fill-mode: both;
+        animation-timeline: --team;
+        animation-name: show;
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
     }
-    .team-work-inf img{
-        width: 100%; 
+    .team-work-inf img {
+        width: 100%;
         height: auto;
         aspect-ratio: 1/1;
         object-fit: contain;
         border-radius: 50%;
     }
-    .team-work-inf h4{
+    .team-work-inf h4 {
         font-family: "Lato", sans-serif;
-		font-weight: 900;
+        font-weight: 900;
         padding: 0;
         margin: 0;
         bottom: 0;
@@ -391,7 +408,7 @@ const InformationTeamWork =[
         margin: 0;
         bottom: 0;
     }
-    .cargo-work p{
+    .cargo-work p {
         font-family: "Lato", sans-serif;
         font-weight: 300;
         height: 3rem;
@@ -400,104 +417,102 @@ const InformationTeamWork =[
         text-align: left;
         margin: 0;
     }
-    .cargo-work img{
+    .cargo-work img {
         width: 25px;
         transition: transform 0.5s ease;
         border-radius: 0%;
     }
-    .cargo-work img:hover{
+    .cargo-work img:hover {
         transform: scale(1.2);
     }
 
     @keyframes show {
-        from{
+        from {
             opacity: 0;
             scale: 25%;
         }
-        to{
+        to {
             opacity: 1;
             scale: 100%;
         }
     }
 
-    @media(min-width:375px){
-        .about-inf img{
-			width: 20em;
-		}
+    @media (min-width: 375px) {
+        .about-inf img {
+            width: 20em;
+        }
     }
-    @media (min-width:425px){
-		.about-inf img{
-			width: 22rem;
-		}
-	}
-    @media(min-width:768px){
-		.about-inf img{
-			margin-top: 2rem;
-		}
-		.about-inf-text{
-			width: 75%;
-		}
-	}
-@media (min-width:1024px){
-        body h2{
+    @media (min-width: 425px) {
+        .about-inf img {
+            width: 22rem;
+        }
+    }
+    @media (min-width: 768px) {
+        .about-inf img {
+            margin-top: 2rem;
+        }
+        .about-inf-text {
+            width: 75%;
+        }
+    }
+    @media (min-width: 1024px) {
+        body h2 {
             font-size: 3rem;
         }
-		.about-inf{
-			display: flex;
-			flex-direction: row;
-			justify-content: space-evenly;
-			
-		}
-		.about-inf2{
-			flex-direction: row-reverse;
-			text-align: right;
-
-		}
-		.about-inf-text{
-			width: 50%;	
-		}
-        .team-work{
+        .about-inf {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .about-inf2 {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        .about-inf-text {
+            width: 50%;
+        }
+        .team-work {
             width: 80%;
             margin: auto;
         }
-        .team-work-inf{
+        .team-work-inf {
             width: 200px;
             border-radius: 2rem;
-            box-shadow: 0px 10px 12px #3E458D;
-            transition: transform .7s ease;
+            box-shadow: 0px 10px 12px #3e458d;
+            transition: transform 0.7s ease;
         }
-        .team-work-inf:hover{
+        .team-work-inf:hover {
             transform: scale(1.05);
         }
-        .team-work-inf img{
+        .team-work-inf img {
             width: 12rem;
         }
-        .cargo-work img{
+        .cargo-work img {
             width: 25px;
         }
-	}
-	@media (min-width:1440px){
-        body h2{
+    }
+    @media (min-width: 1440px) {
+        body h2 {
             font-size: 4.5rem;
         }
-		.about-inf{
-			margin: 8rem 0rem;
-		}
-		.about-inf img{
-			width: 35rem;
-		}
-		.about-inf-text{
-			width: 40%;
-		}
-		.about-inf-text h3{
-			font-size: 2rem;
-		}
-		.about-inf-text p{
-			font-size: 1.5rem;
+        .about-inf {
+            margin: 8rem 0rem;
         }
-        .section2-inf-bottom{
+        .about-inf img {
+            width: 35rem;
+        }
+        .about-inf-text {
+            width: 40%;
+        }
+        .about-inf-text h3 {
+            font-size: 2rem;
+        }
+        .about-inf-text p {
+            font-size: 1.5rem;
+        }
+        .section2-inf-bottom {
             width: 70%;
             margin-bottom: 4rem;
         }
-	}
+    }
 </style>

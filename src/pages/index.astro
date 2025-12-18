@@ -1,63 +1,89 @@
 ---
-import Preguntas from '../Components/Preguntas.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Preguntas from "../Components/Preguntas.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 const MoreInformationHome = [
 	{
-		id:1,
-		title:" Somos representante para Bolivia de Guerbert y Liebel Flarsheim",
-		description: "Somos una empresa importadora de medios de contraste radiológico y equipos, que ofrece productos y soluciones de alta calidad para Imagenología Médica en Bolivia. Trabajamos con empresas reconocidas alrededor del mundo para garantizar la calidad y variedad.",
-		image:"/images/Acerca-de-nosotros.png"
+		id: 1,
+		title: " Somos representante para Bolivia de Guerbert y Liebel Flarsheim",
+		description:
+			"La excelencia en imagenología comienza con un contraste de confianza. En Importadora Marting trabajamos con Guerbet, una de las líneas líderes en medios de contraste radiológico, seleccionada por su enfoque en calidad y control. A la par, desarrollamos nuestras líneas farma —antigripales, antibióticos y oncológicos— para apoyar el abastecimiento responsable y oportuno en Bolivia.",
+		image: "/images/Acerca-de-nosotros.png",
 	},
 	{
-		id:2,
-		title:" Equipos y Medios de Contraste Radiológico.",
-		description: "Queremos que tengas la capacidad de generar estudios de diagnóstico y tratamiento dirigidos por imagen y contraste radiológico, realizados con tecnología médica a la vanguardia, por un equipo de profesionales altamente capacitados que en estrecha comunicación con los médicos tratantes, cuidando la realización del procedimiento minimizando riesgos para el paciente y emitiendo resultados confiables y oportunos.",
-		image:"/images/inicio-img2.jpg"
+		id: 2,
+		title: " Equipos y Medios de Contraste Radiológico.",
+		description:
+			"Queremos que tengas la capacidad de generar estudios de diagnóstico y tratamiento dirigidos por imagen y contraste radiológico, realizados con tecnología médica a la vanguardia, por un equipo de profesionales altamente capacitados que en estrecha comunicación con los médicos tratantes, cuidando la realización del procedimiento minimizando riesgos para el paciente y emitiendo resultados confiables y oportunos.",
+		image: "/images/inicio-img2.jpg",
 	},
-
 ];
-const MoreInformationHome2 =[
+const MoreInformationHome2 = [
 	{
-		id:1,
+		id: 1,
 		title: "Resonancia Magnética",
-		description:"La resonancia magnética (RM) es una técnica de imágenes médicas en el que se utiliza un campo magnético y ondas de radio generadas por computadora para crear imágenes detalladas de los órganos y tejidos del cuerpo.",
-		image:"/images/img-servicios.png",
-		Link:[{name:"Ver Productos", href:"/Productos/ResonanciaMagnetica"}]
+		description:
+			"La resonancia magnética (RM) es una técnica de imágenes médicas en el que se utiliza un campo magnético y ondas de radio generadas por computadora para crear imágenes detalladas de los órganos y tejidos del cuerpo.",
+		image: "/images/img-servicios.png",
+		Link: [
+			{ name: "Ver Productos", href: "/Productos/ResonanciaMagnetica" },
+		],
 	},
 	{
-		id:2,
+		id: 2,
 		title: "Tomografía Computarizada",
-		description:"La tomografía computarizada (TC) es una tecnología para diagnóstico con  imágenes. Utiliza un equipo de rayos X especial para crear imágenes  transversales del cuerpo. Durante un procedimiento de TC, el paciente  permanece inmóvil sobre una mesa.",
-		image:"/images/tomografia-computorizada.png",
-		Link:[{name:"Ver Productos", href:"/Productos/TomografiaComputarizada"}]
+		description:
+			"La tomografía computarizada (TC) es una tecnología para diagnóstico con  imágenes. Utiliza un equipo de rayos X especial para crear imágenes  transversales del cuerpo. Durante un procedimiento de TC, el paciente  permanece inmóvil sobre una mesa.",
+		image: "/images/tomografia-computorizada.png",
+		Link: [
+			{
+				name: "Ver Productos",
+				href: "/Productos/TomografiaComputarizada",
+			},
+		],
 	},
 	{
-		id:3,
+		id: 3,
 		title: "Laboratorios de Cateterismo",
-		description:"El cateterismo cardíaco es un procedimiento que se usa para diagnosticar y tratar ciertas enfermedades cardiovasculares. Durante un cateterismo  cardíaco, se inserta un «catéter» en una arteria o vena hasta llegar al  corazón.",
-		image:"/images/laboratorios-cateterismo.png",
-		Link:[{name:"Ver Productos", href:"/Productos/LaboratorioCateterismo"}]
+		description:
+			"El cateterismo cardíaco es un procedimiento que se usa para diagnosticar y tratar ciertas enfermedades cardiovasculares. Durante un cateterismo  cardíaco, se inserta un «catéter» en una arteria o vena hasta llegar al  corazón.",
+		image: "/images/laboratorios-cateterismo.png",
+		Link: [
+			{
+				name: "Ver Productos",
+				href: "/Productos/LaboratorioCateterismo",
+			},
+		],
 	},
 	{
-		id:4,
+		id: 4,
 		title: "Soluciones Digitales",
-		description:"Entre nuestras Soluciones Digitales encontrarás a Contrast & Care®  la cual es una solución de administración de inyecciones de productos de contraste radiológico que permite a los centros de imágenes recopilar,  archivar, examinar los datos sobre productos de contraste, eventos  adversos, etc",
-		image:"/images/soluciones-digitales.png",
-		Link:[{name:"Ver Productos", href:"/Productos/SolucionesDigitales"}]
+		description:
+			"Entre nuestras Soluciones Digitales encontrarás a Contrast & Care®  la cual es una solución de administración de inyecciones de productos de contraste radiológico que permite a los centros de imágenes recopilar,  archivar, examinar los datos sobre productos de contraste, eventos  adversos, etc",
+		image: "/images/soluciones-digitales.png",
+		Link: [
+			{ name: "Ver Productos", href: "/Productos/SolucionesDigitales" },
+		],
 	},
 	{
-		id:5,
+		id: 5,
 		title: "Radiología intervencional",
-		description:"Utilizan técnicas de imagen para ejecutar procedimientos mínimamente  invasivos. El objetivo de la radiología intervencionista es diagnosticar o tratar  patologías con una técnica mínimamente invasiva. Se utilizan imágenes  para dirigir los procedimientos de contraste radiológico.",
-		image:"/images/radiologia-intervencional.png",
-		Link:[{name:"Ver Productos", href:"/Productos/RadiologiaIntervencional"}]
+		description:
+			"Utilizan técnicas de imagen para ejecutar procedimientos mínimamente  invasivos. El objetivo de la radiología intervencionista es diagnosticar o tratar  patologías con una técnica mínimamente invasiva. Se utilizan imágenes  para dirigir los procedimientos de contraste radiológico.",
+		image: "/images/radiologia-intervencional.png",
+		Link: [
+			{
+				name: "Ver Productos",
+				href: "/Productos/RadiologiaIntervencional",
+			},
+		],
 	},
 	{
-		id:6,
+		id: 6,
 		title: "Salud de la Mujer",
-		description:"En cuanto a lo relacionado a la imagenología médica tenemos al Lipiodol® que es un Éstere etílico yodado de ácidos grasos de aceite de semilla  de amapola. Descubierto por Marcel Guerbet en 1901, fue el primer agente de contraste yodado lanzado en el mundo.",
-		image:"/images/sallud-mujer.jpg",
-		Link:[{name:"Ver Productos", href:"/Productos/SaludMujer"}]
+		description:
+			"En cuanto a lo relacionado a la imagenología médica tenemos al Lipiodol® que es un Éstere etílico yodado de ácidos grasos de aceite de semilla  de amapola. Descubierto por Marcel Guerbet en 1901, fue el primer agente de contraste yodado lanzado en el mundo.",
+		image: "/images/sallud-mujer.jpg",
+		Link: [{ name: "Ver Productos", href: "/Productos/SaludMujer" }],
 	},
 ];
 ---
@@ -65,78 +91,97 @@ const MoreInformationHome2 =[
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="icon" type="image/png+xml" href="/logo-simple.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Somos importadora Marting y te traemos equipos y medios de contraste radiológico, productos de alta calidad para Imagenología Médica en Bolivia."/>
+		<meta
+			name="description"
+			content="Somos importadora Marting y te traemos equipos y medios de contraste radiológico, productos de alta calidad para Imagenología Médica en Bolivia."
+		/>
 		<title>Importadora Marting</title>
 	</head>
 	<body>
-			<BaseLayout>
-				<section class="inicio">
-					<img src="/images/image-principal.png" alt="imagen">
-					<div class="inicio-overlay"></div>
-					<div class="inicio-content">
-						<h1>Importadora Marting</h1>
-						<p>Medios de Contraste Radiológico y Equipos para Imagenología Médica en Bolivia.</p>
-						<a href="https://wa.me/59177552039?text=Hola,%20quiero%20hacer%20un%20pedido">Hacer Pedido</a>
-					</div>
-				</section>
-				<section>
-					<article class="section1-information-home">
-						{
-							MoreInformationHome.map((home)=>(
-								<div class={`home-information home-information${home.id}`}>
-									<div class="home-information-text">
-										<h3>{home.title}</h3>
-										<p>{home.description}</p>
+		<BaseLayout>
+			<section class="inicio">
+				<img src="/images/image-principal.png" alt="imagen" />
+				<div class="inicio-overlay"></div>
+				<div class="inicio-content">
+					<h1>Importadora Marting</h1>
+					<p>
+						Medios de Contraste Radiológico y Equipos para
+						Imagenología Médica en Bolivia.
+					</p>
+					<a
+						href="https://wa.me/59177552039?text=Hola,%20quiero%20hacer%20un%20pedido"
+						>Hacer Pedido</a
+					>
+				</div>
+			</section>
+			<section>
+				<article class="section1-information-home">
+					{
+						MoreInformationHome.map((home) => (
+							<div
+								class={`home-information home-information${home.id}`}
+							>
+								<div class="home-information-text">
+									<h3>{home.title}</h3>
+									<p>{home.description}</p>
+								</div>
+								<img src={home.image} alt="" />
+							</div>
+						))
+					}
+				</article>
+			</section>
+			<section class="section-dos">
+				<h2>Nuestro Productos Para Los siguientes Servicios</h2>
+				<article class="section2-home">
+					{
+						MoreInformationHome2.map((home2) => (
+							<article class={` card-home card-home${home2.id}`}>
+								<div class="face front">
+									<img
+										src={home2.image}
+										alt="Imagen del producto"
+									/>
+									<h3>{home2.title}</h3>
+								</div>
+								<div class="face back">
+									<h3>{home2.title}</h3>
+									<p>{home2.description}</p>
+									<div class="link">
+										{home2.Link?.map((Link) => (
+											<ul>
+												<li>
+													<a href={Link.href}>
+														{Link.name}
+													</a>
+												</li>
+											</ul>
+										))}
 									</div>
-									<img src={home.image} alt="">
 								</div>
-							))
-						}
-					</article>
-				</section>	
-				<section class="section-dos">
-					<h2>Nuestro Productos Para Los siguientes Servicios</h2>
-					<article class="section2-home">
-					{MoreInformationHome2.map((home2)=>(
-						<article class={` card-home card-home${home2.id}`}>
-							<div class="face front">
-								<img src={home2.image} alt="Imagen del producto">
-								<h3>{home2.title}</h3>
-							</div>
-							<div class="face back">
-								<h3>{home2.title}</h3>
-								<p>{home2.description}</p>
-								<div class="link">
-										{
-											home2.Link?.map((Link)=>(
-												<ul>
-													<li>
-														<a href={Link.href}>{Link.name}</a>
-													</li>
-												</ul>
-											))
-										}
-								</div>
-							</div>
-						</article>
-					))}
-					</article>
-				</section>
-				<Preguntas/>
-			</BaseLayout>
+							</article>
+						))
+					}
+				</article>
+			</section>
+			<Preguntas />
+		</BaseLayout>
 	</body>
 </html>
 <style>
-	body{
-		background: #F2F2F2;
+	body {
+		background: #f2f2f2;
 	}
-	.inicio{
+	.inicio {
 		width: 100%;
 		height: 100vh;
 		height: 100dvh;
@@ -147,90 +192,90 @@ const MoreInformationHome2 =[
 		overflow: hidden;
 	}
 
-  .inicio img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: -2;
-  }
-
-  .inicio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1c1c1d;
-    opacity: 0.6;
-    z-index: -1;
-  }
-
-  .inicio-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-	flex-direction: column;
-  }
-
-  .inicio-content h1 {
-    color: #f2f2f2;
-    font-size: 2.5rem;
-	width: 90%;
-    font-family: "Lato", sans-serif;
-	margin:0 ;
-  }
-
-  .inicio-content p{
-	width: 90%;
-	color: white;
-	font-size: 1.2rem;
-	font-family: "Lato", sans-serif;
-	font-weight: 300;
-  }
-  .inicio-content a{
-	background-color: #DA3A32;
-	padding: 1rem 2rem;
-	text-decoration: none;
-	color: white;
-	font-family: "Lato", sans-serif;
-	font-weight: 700;
-	border-radius: .7rem;
-	box-shadow: 0px 10px 14px #1c1c1d;
-	transition: transform .5s ease;
-  }
-  .inicio-content a:hover{
-	transform: scale(1.1);
-	background-color: #F4B631;
-	color: #3E458D;
-  }
-	.section1-information-home{
-		width: 90%;
-		margin:auto;
+	.inicio img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		z-index: -2;
 	}
-	.home-information{
+
+	.inicio-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #1c1c1d;
+		opacity: 0.6;
+		z-index: -1;
+	}
+
+	.inicio-content {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.inicio-content h1 {
+		color: #f2f2f2;
+		font-size: 2.5rem;
+		width: 90%;
+		font-family: "Lato", sans-serif;
+		margin: 0;
+	}
+
+	.inicio-content p {
+		width: 90%;
+		color: white;
+		font-size: 1.2rem;
+		font-family: "Lato", sans-serif;
+		font-weight: 300;
+	}
+	.inicio-content a {
+		background-color: #da3a32;
+		padding: 1rem 2rem;
+		text-decoration: none;
+		color: white;
+		font-family: "Lato", sans-serif;
+		font-weight: 700;
+		border-radius: 0.7rem;
+		box-shadow: 0px 10px 14px #1c1c1d;
+		transition: transform 0.5s ease;
+	}
+	.inicio-content a:hover {
+		transform: scale(1.1);
+		background-color: #f4b631;
+		color: #3e458d;
+	}
+	.section1-information-home {
+		width: 90%;
+		margin: auto;
+	}
+	.home-information {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		margin: 2rem 0rem;
 	}
-	.home-information h3{
+	.home-information h3 {
 		font-family: "Lato", sans-serif;
 		font-weight: 900;
 		font-size: 1.5rem;
 	}
-	.home-information p{
+	.home-information p {
 		font-family: "Lato", sans-serif;
 		font-weight: 300;
 	}
-	.home-information-text{
+	.home-information-text {
 		view-timeline-name: --text;
 		view-timeline-axis: block;
 
@@ -238,52 +283,57 @@ const MoreInformationHome2 =[
 		animation-name: show;
 		animation-range: entry 25% cover 50%;
 		animation-fill-mode: both;
-
-
 	}
-	.home-information img{
+	.home-information img {
 		width: 18rem;
 		border-radius: 1rem;
-		box-shadow: 10px 10px 20px  #3E458D;
-		
+		box-shadow: 10px 10px 20px #3e458d;
+
 		view-timeline-name: --image;
 		view-timeline-axis: block;
 
 		animation-timeline: --image;
 		animation-name: show;
 		animation-range: entry 25% cover 30%;
-		animation-fill-mode:both;
+		animation-fill-mode: both;
 	}
 
 	@keyframes show {
-		from{
+		from {
 			opacity: 0;
-			scale:25%
+			scale: 25%;
 		}
-		to{
+		to {
 			opacity: 1;
 			scale: 100%;
 		}
 	}
-	.section-dos{
-		background: linear-gradient(45deg, #fff9e6, #F4B631, #fff3b8, #F4B631, #fffbf0);
+	.section-dos {
+		background: linear-gradient(
+			45deg,
+			#fff9e6,
+			#f4b631,
+			#fff3b8,
+			#f4b631,
+			#fffbf0
+		);
 		background-size: 200% 200%;
 	}
-	.section-dos h2{
+	.section-dos h2 {
 		text-align: center;
 		padding-top: 1.5rem;
-		font-family: 'Lato', sans-serif;
+		font-family: "Lato", sans-serif;
 		font-weight: 900;
 		font-size: 1.5rem;
 		max-width: 90%;
 		margin: auto;
 		font-size: 1.6rem;
 	}
-	.section2-home{
+	.section2-home {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-wrap:wrap;
+		flex-wrap: wrap;
 		padding-bottom: 1rem;
 		view-timeline-name: --section2;
 		view-timeline-axis: block;
@@ -311,81 +361,81 @@ const MoreInformationHome2 =[
 			background-position: 0% 50%;
 		}
 	}
-	.card-home{
+	.card-home {
 		position: relative;
-		width:280px;
+		width: 280px;
 		height: 400px;
 		margin: 20px;
 	}
-	.card-home .face{
+	.card-home .face {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		backface-visibility: hidden;
 		border-radius: 2rem;
 		overflow: hidden;
-		transition: .5s;
+		transition: 0.5s;
 	}
-	.card-home .front{
+	.card-home .front {
 		transform: perspective(600px) rotateY(0deg);
-		box-shadow: 0 5px 10px #3E458D;
+		box-shadow: 0 5px 10px #3e458d;
 	}
-	.card-home .front img{
+	.card-home .front img {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 	}
-	.card-home .front h3{
+	.card-home .front h3 {
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		height: 4rem;
 		line-height: 60px;
 		color: #fff;
-		background: rgba(0, 0, 0, .4);
+		background: rgba(0, 0, 0, 0.4);
 		text-align: center;
 		font-family: "Lato", sans-serif;
 		font-weight: 900;
 	}
-	.card-home .back{
+	.card-home .back {
 		transform: perspective(600px) rotateY(180deg);
-		background: #3E458D;
+		background: #3e458d;
 		color: #f3f3f3;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		text-align: center;
-		box-shadow: 0 5px 10px #3E458D;
+		box-shadow: 0 5px 10px #3e458d;
 		padding: 10px;
 		box-sizing: border-box;
 	}
-	.card-home .back .link{
+	.card-home .back .link {
 		border-top: solid 1px #f3f3f3;
 		height: 50px;
 		line-height: 30px;
 	}
-	.card-home .back .link ul{
-		list-style-type:none;
+	.card-home .back .link ul {
+		list-style-type: none;
 		padding: 0;
 	}
-	.card-home .back .link a{
+	.card-home .back .link a {
 		color: #f3f3f3;
-		transition: color, .5s;
+		transition: color, 0.5s;
 		font-family: "Lato", sans-serif;
 		font-weight: 900;
 	}
-	.card-home .back .link a:hover{
-		color: #F4B631;
+	.card-home .back .link a:hover {
+		color: #f4b631;
 	}
- 	.card-home .back h3{
+	.card-home .back h3 {
 		font-size: 2rem;
 		margin-top: 20px;
 		letter-spacing: 2px;
 		font-family: "Lato", sans-serif;
 		font-weight: 900;
 	}
-	.card-home .back p{
+	.card-home .back p {
 		letter-spacing: 1px;
 		font-family: "Lato", sans-serif;
 		font-weight: 300;
@@ -394,126 +444,124 @@ const MoreInformationHome2 =[
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 6;
 	}
-	.card-home:hover .front{
-		transform:  perspective(600px) rotateY(180deg);
+	.card-home:hover .front {
+		transform: perspective(600px) rotateY(180deg);
 	}
-	.card-home:hover .back{
-		transform:  perspective(600px) rotateY(360deg);
+	.card-home:hover .back {
+		transform: perspective(600px) rotateY(360deg);
 	}
 
-
-	@media (min-width:375px){
-		.home-information img{
+	@media (min-width: 375px) {
+		.home-information img {
 			width: 20rem;
 		}
-		.card-home{
+		.card-home {
 			width: 310px;
 		}
 	}
-	@media (min-width:425px){
-		.home-information img{
+	@media (min-width: 425px) {
+		.home-information img {
 			width: 22rem;
 		}
-		.card-home{
+		.card-home {
 			width: 330px;
 		}
 	}
-	@media(min-width:768px){
-	.inicio-content p{
-		max-width: 50%;
-	}
-	.inicio-content h1{
-		font-size: 5rem;
-	}
-		.home-information img{
+	@media (min-width: 768px) {
+		.inicio-content p {
+			max-width: 50%;
+		}
+		.inicio-content h1 {
+			font-size: 5rem;
+		}
+		.home-information img {
 			margin-top: 2rem;
 		}
-		.home-information-text{
+		.home-information-text {
 			width: 75%;
 		}
 	}
-	.section2-home{
+	.section2-home {
 		padding: 1rem 0rem;
 	}
-	@media (min-width:1024px){
-		.inicio-content h1{
+	@media (min-width: 1024px) {
+		.inicio-content h1 {
 			font-size: 4rem;
 		}
-		.home-information{
+		.home-information {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-evenly;
 		}
 
-		.home-information2{
+		.home-information2 {
 			flex-direction: row-reverse;
 			text-align: right;
-
 		}
-		.home-information-text{
-			width: 50%;	
+		.home-information-text {
+			width: 50%;
 		}
-		.card-home{
+		.card-home {
 			width: 300px;
 			height: 350px;
 		}
 	}
-	.section-dos h2{
+	.section-dos h2 {
 		font-size: 2.3rem;
 	}
-	@media (min-width:1440px){
-		.inicio-content h1{
+	@media (min-width: 1440px) {
+		.inicio-content h1 {
 			font-size: 6rem;
 			width: 50%;
 		}
-		.inicio-content p{
+		.inicio-content p {
 			font-size: 2rem;
 			width: 50%;
 		}
-		.home-information{
+		.home-information {
 			margin: 8rem 0rem;
 		}
-		.home-information img{
+		.home-information img {
 			width: 35rem;
 		}
-		.home-information-text{
+		.home-information-text {
 			width: 40%;
 		}
-		.home-information-text h3{
+		.home-information-text h3 {
 			font-size: 2rem;
 		}
-		.home-information-text p{
+		.home-information-text p {
 			font-size: 1.5rem;
 		}
-		.card-home{
+		.card-home {
 			width: 345px;
 		}
 	}
 </style>
 
 <script is:inline>
-document.addEventListener('DOMContentLoaded', function() {
-  const titleElement = document.getElementById('netflix-title');
+	document.addEventListener("DOMContentLoaded", function () {
+		const titleElement = document.getElementById("netflix-title");
 
-  if (!titleElement) return;
+		if (!titleElement) return;
 
-  // Obtener el texto original
-  const originalText = titleElement.textContent || '';
+		// Obtener el texto original
+		const originalText = titleElement.textContent || "";
 
-  // Limpiar el contenido
-  titleElement.innerHTML = '';
+		// Limpiar el contenido
+		titleElement.innerHTML = "";
 
-  // Convertir cada carácter en un span animable
-  originalText.split('').forEach((char, index) => {
-    const span = document.createElement('span');
-    span.className = 'letter';
-    // Mantener espacios como espacios, no spans vacíos
-    span.textContent = char === ' ' ? '\u00A0' : char;
+		// Convertir cada carácter en un span animable
+		originalText.split("").forEach((char, index) => {
+			const span = document.createElement("span");
+			span.className = "letter";
+			// Mantener espacios como espacios, no spans vacíos
+			span.textContent = char === " " ? "\u00A0" : char;
 
-    // Delay escalonado: cada letra aparece 100ms después de la anterior
-    span.style.animationDelay = `${index * 0.1}s`;
+			// Delay escalonado: cada letra aparece 100ms después de la anterior
+			span.style.animationDelay = `${index * 0.1}s`;
 
-    titleElement.appendChild(span);
-  });
-});
+			titleElement.appendChild(span);
+		});
+	});
 </script>
