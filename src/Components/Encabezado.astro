@@ -16,10 +16,10 @@ const { image, title } = Astro.props;
   </head>
   <body>
     <section class="Encabezado-section">
-      <img src={image} alt="Imagen de fondo de la sección" />
+      <img src={image} alt="Imagen de fondo de la sección" class="encabezado-img" />
       <div class="Encabezado-overlay"></div>
       <div class="Encabezado-content">
-        <h2>{title}</h2>
+        <h2 class="animate-slide">{title}</h2>
       </div>
     </section>
   </body>

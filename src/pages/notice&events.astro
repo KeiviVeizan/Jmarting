@@ -52,11 +52,11 @@ const MoreInformationNotice =[
     <BaseLayout>
     <Encabezado image="/images/noticias-section.png" title="NOTICIAS Y EVENTOS"/>
     <section class="notice-information">
-      <h2>Eventos Pasados</h2>
+      <h2 class="animate-title">Eventos Pasados<span class="title-line"></span></h2>
       <article class="past-event">
         {
           MoreInformationNotice.map((notice)=>(
-            <div class={`event-inf event-inf${notice.id}`}>
+            <div class={`event-inf event-inf${notice.id} ${notice.id % 2 !== 0 ? 'animate-slide-left' : 'animate-slide-right'}`}>
               <div class="event-inf-text">
                 <h3>{notice.title}</h3>
                 <p>{notice.description}</p>

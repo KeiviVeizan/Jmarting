@@ -190,7 +190,7 @@ const InformationTeamWork = [
             <section class="section1-about-inf">
                 {
                     MoreInformationAboutUs.map((about) => (
-                        <article class={`about-inf about-inf${about.id}`}>
+                        <article class={`about-inf about-inf${about.id} ${about.id % 2 !== 0 ? 'animate-slide-left' : 'animate-slide-right'}`}>
                             <div class="about-inf-text">
                                 <h3>{about.title}</h3>
                                 <p>{about.descrition}</p>
@@ -198,18 +198,18 @@ const InformationTeamWork = [
                             <img
                                 src={about.image}
                                 alt="Imagen de Acerca de Nosotros"
-                            />
+                                                            />
                         </article>
                     ))
                 }
             </section>
             <section class="section2-about-inf">
-                <h2>Nuestras Empresas Afiliadas</h2>
-                <article class="section2-inf-bottom">
+                <h2 class="animate-title">Nuestras Empresas Afiliadas<span class="title-line"></span></h2>
+                <article class="section2-inf-bottom animate-card">
                     {
                         InformationAfiliados.map((afiliados) => (
                             <div
-                                class={`afiliados-inf afiliados-inf${afiliados.id}`}
+                                class={`afiliados-inf card-home afiliados-inf${afiliados.id}`}
                             >
                                 <a href={afiliados.link} target="_blank">
                                     <img
@@ -274,6 +274,7 @@ const InformationTeamWork = [
     .about-inf p {
         font-family: "Lato", sans-serif;
         font-weight: 300;
+        text-align: justify;
     }
     .about-inf-text {
         view-timeline-name: --text;

@@ -45,10 +45,10 @@ const MoreInformationForm = [
 <body>
     <BaseLayout>
     <Encabezado image="/images/farmacovigilancia-section.png" title="FARMACOVIGILANCIA"/>
-    <section class="farma-inf">
+    <section class="farma-inf animate-card">
       {MoreInformationForm.map((form)=>(
         <a href={form.link} class="inf-link" target={form.link === "https://www.agemed.gob.bo/#farmacovigilancia/contenido"? "_blank" : "_self"}rel={form.link === "https://www.agemed.gob.bo/#farmacovigilancia/contenido" ? "noopener noreferrer" : undefined}>
-          <article class={` inf-farma inf-farma${form.id}`}>
+          <article class={` inf-farma card-home inf-farma${form.id}`}>
             <img src={form.image} alt="Imagen de formulario">
             <div class="form-before"></div>
             <div class="form-title">
@@ -56,7 +56,7 @@ const MoreInformationForm = [
             </div>
           </article>
         </a>
-      )) 
+      ))
       }
     </section>
     </BaseLayout>

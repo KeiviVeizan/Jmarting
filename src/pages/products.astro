@@ -47,15 +47,15 @@ const { title = 'Default Title' } = Astro.props;
 <body>
     <BaseLayout>
         <Encabezado image="/images/product-section.png" title="PRODUCTOS"/>
-        <section class="product-inf">
+        <section class="product-inf animate-card">
           {MoreInformationProduct.map((product)=>(
             <a href={product.link} class="inf-link">
-              <article class={` inf-product inf-product${product.id}`}>
+              <article class={` inf-product card-home inf-product${product.id}`}>
                 <img src={product.image} alt="Imagen de formulario">
                 <div class="product-before"></div>
               </article>
             </a>
-          )) 
+          ))
           }
     </section>
     </BaseLayout>

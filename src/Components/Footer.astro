@@ -39,7 +39,7 @@ const footerInformationRigth = [
 </head>
 <body>
     <hr>
-  <footer>
+  <footer class="animate-footer">
     <div class="footer-left">
         <img src="/logo-principal.png" alt="Logo-Jmarting">
         <p>
@@ -86,19 +86,6 @@ const footerInformationRigth = [
     footer{
         width: 95%;
         margin: auto;
-        opacity: 0;
-        animation: slideUp 0.8s ease-out forwards;
-    }
-
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
     .information-rigth{
         display: grid;

@@ -129,20 +129,20 @@ const MoreInformationHome2 = [
 					{
 						MoreInformationHome.map((home) => (
 							<div
-								class={`home-information home-information${home.id}`}
+								class={`home-information home-information${home.id} ${home.id % 2 !== 0 ? 'animate-slide-left' : 'animate-slide-right'}`}
 							>
 								<div class="home-information-text">
 									<h3>{home.title}</h3>
 									<p>{home.description}</p>
 								</div>
-								<img src={home.image} alt="" />
+								<img src={home.image} alt=""  />
 							</div>
 						))
 					}
 				</article>
 			</section>
-			<section class="section-dos">
-				<h2>Nuestro Productos Para Los siguientes Servicios</h2>
+			<section class="section-dos animate-card">
+				<h2 class="animate-title">Nuestro Productos Para Los siguientes Servicios<span class="title-line"></span></h2>
 				<article class="section2-home">
 					{
 						MoreInformationHome2.map((home2) => (
@@ -275,6 +275,7 @@ const MoreInformationHome2 = [
 	.home-information p {
 		font-family: "Lato", sans-serif;
 		font-weight: 300;
+		text-align: justify;
 	}
 	.home-information-text {
 		view-timeline-name: --text;
@@ -444,6 +445,7 @@ const MoreInformationHome2 = [
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 6;
+		text-align: justify;
 	}
 	.card-home:hover .front {
 		transform: perspective(600px) rotateY(180deg);
@@ -499,6 +501,9 @@ const MoreInformationHome2 = [
 			flex-direction: row-reverse;
 			text-align: right;
 		}
+		.home-information p {
+			text-align: justify;
+		}
 		.home-information-text {
 			width: 50%;
 		}
@@ -539,30 +544,3 @@ const MoreInformationHome2 = [
 		}
 	}
 </style>
-
-<script is:inline>
-	document.addEventListener("DOMContentLoaded", function () {
-		const titleElement = document.getElementById("netflix-title");
-
-		if (!titleElement) return;
-
-		// Obtener el texto original
-		const originalText = titleElement.textContent || "";
-
-		// Limpiar el contenido
-		titleElement.innerHTML = "";
-
-		// Convertir cada carácter en un span animable
-		originalText.split("").forEach((char, index) => {
-			const span = document.createElement("span");
-			span.className = "letter";
-			// Mantener espacios como espacios, no spans vacíos
-			span.textContent = char === " " ? "\u00A0" : char;
-
-			// Delay escalonado: cada letra aparece 100ms después de la anterior
-			span.style.animationDelay = `${index * 0.1}s`;
-
-			titleElement.appendChild(span);
-		});
-	});
-</script>

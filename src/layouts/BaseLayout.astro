@@ -13,8 +13,39 @@ import PedidoButton from "../Components/PedidoButton.astro"
   <link rel="icon" type="image/png+xml" href="/logo-simple.png" />
   <meta name="description" content="Somos importadora Marting y te traemos equipos y medios de contraste radiológico, productos de alta calidad para Imagenología Médica en Bolivia."/>
   <title>Importadora Marting</title>
+  <style is:global>
+    /* Estado inicial oculto para elementos animados */
+    .split-letter {
+      display: inline-block;
+      opacity: 0;
+    }
+    .animate-fade,
+    .animate-slide,
+    .animate-slide-left,
+    .animate-slide-right,
+    .animate-title,
+    .animate-footer {
+      opacity: 0;
+    }
+    .animate-card .card-home {
+      opacity: 0;
+    }
+    .animate-reveal {
+      opacity: 0;
+    }
+    /* Línea decorativa para títulos animados */
+    .title-line {
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #da3a32;
+      margin: 0.5rem auto 0;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+  </style>
 </head>
-<body>
+<body class="preloader-active">
   <Header/>
   <main>
     <div id="preloader">
@@ -28,6 +59,13 @@ import PedidoButton from "../Components/PedidoButton.astro"
 </body>
 </html>
 <style>
+/* Bloquear scroll mientras el preloader está activo */
+body.preloader-active {
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+}
+
 #preloader {
   position: fixed;
   top: 0;
@@ -84,10 +122,15 @@ import PedidoButton from "../Components/PedidoButton.astro"
     const preloader = document.getElementById("preloader");
     preloader.classList.add("loaded");
 
-    // Quitamos el preloader después de la animación
     setTimeout(() => {
       preloader.remove();
-    }, 1000); // espera a que se desplace y desaparezca
+      // Desbloquear scroll y forzar al top
+      document.body.classList.remove("preloader-active");
+      window.scrollTo(0, 0);
+    }, 1000);
   });
+</script>
+<script>
+  import '../scripts/animations.js';
 </script>
 
