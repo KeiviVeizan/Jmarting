@@ -5,7 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const MoreInformationProduct = [
   {
     id:1,
-    image:"/images/logo-guerbet.png",
+    image:"/images/logo-guerbet.webp",
     link:"/Productos/guerbet"
   },
   {
@@ -15,21 +15,21 @@ const MoreInformationProduct = [
   },
   {
     id:3,
-    image:"/images/logo-temi.png",
+    image:"/images/logo-temi.webp",
     link:"/Productos/termis"
   },
   {
     id:4,
-    image:"/logo-principal.png",
+    image:"/logo-principal.webp",
     link:"/Productos/farmavone"
   },
   {
     id:5,
-    image:"/images/logo-mhj.png",
+    image:"/images/logo-mhj.webp",
     link:"/Productos/mhj"
   },{
     id:6,
-    image:"/images/equipos-medicos.png",
+    image:"/images/equipos-medicos.webp",
     link:"/Productos/EquiposMedicos"
   }
 ]
@@ -40,13 +40,13 @@ const { title = 'Default Title' } = Astro.props;
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png+xml" href="/logo-simple.png" />
+  <link rel="icon" type="image/png+xml" href="/logo-simple.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productos</title>
 </head>
 <body>
     <BaseLayout>
-        <Encabezado image="/images/product-section.png" title="PRODUCTOS"/>
+        <Encabezado image="/images/product-section.webp" title="PRODUCTOS"/>
         <section class="product-inf animate-card">
           {MoreInformationProduct.map((product)=>(
             <a href={product.link} class="inf-link">

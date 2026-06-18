@@ -1,278 +1,339 @@
 ---
-
-
-const MoreInformationContact =[
+const MoreInformationContact = [
   {
-    id:1,
-    title:"Oficina central",
-    telf:[{num:" 591-(2)2711554", href:"https://wa.me/59122711554"}],
-    mail:[{gmail:"Natalia_varela@jmarting.com", href:"mailto:Natalia_varela@jmarting.com"}]
-  },
-{
-    id:2,
-    title:"Servicio Técnico",
-    telf:[{num:"78972229 ", href:"https://wa.me/59178972229"}],
-    mail:[{gmail:"Natalia_varela@jmarting.com", href:"mailto:Natalia_varela@jmarting.com"}]
+    id: 1,
+    title: "Oficina central",
+    telf: [
+      { num: " 591-(2)2711554", href: "https://wa.me/59122711554" },
+      { num: "78972225", href: "https://wa.me/59178972225" },
+      { num: "78972220", hrer: "https://wa.me/59178972220" },
+    ],
+    mail: [
+      {
+        gmail: "Natalia_varela@jmarting.com",
+        href: "mailto:Natalia_varela@jmarting.com",
+      },
+      {
+        gmail: "Jorge_marting@jmarting.com",
+        href: "mailto:Jorge_marting@jmarting.com",
+      },
+    ],
   },
   {
-    id:3,
-    title:"Cochabamba",
-    telf:[{num:"78972223", href:"https://wa.me/59178972223"}],
-    mail:[{gmail:"guillermo_lange@jmarting.com", href:"mailto:guillermo_lange@jmarting.com"}]
+    id: 2,
+    title: "Servicio Técnico",
+    telf: [{ num: "78972229 ", href: "https://wa.me/59178972229" }],
+    mail: [
+      {
+        gmail: "Natalia_varela@jmarting.com",
+        href: "mailto:Natalia_varela@jmarting.com",
+      },
+    ],
   },
   {
-    id:4,
-    title:"Santa Cruz",
-    telf:[{num:"69954389", href:"https://wa.me/59169954389"}],
-    mail:[{gmail:"Oignacioguardiap@gmail.com", href:"mailto:Oignacioguardiap@gmail.com"}]
+    id: 3,
+    title: "Cochabamba",
+    telf: [{ num: "78972223", href: "https://wa.me/59178972223" }],
+    mail: [
+      {
+        gmail: "guillermo_lange@jmarting.com",
+        href: "mailto:guillermo_lange@jmarting.com",
+      },
+    ],
   },
-    {
-    id:5,
-    title:"Sucre",
-    telf:[{num:"78972221", href:"https://wa.me/59178972221"}],
-    mail:[{gmail:"petyvarela@yahoo.com", href:"mailto:petyvarela@yahoo.com"}]
+  {
+    id: 4,
+    title: "Santa Cruz",
+    telf: [
+      { num: "69954389", href: "https://wa.me/59169954389" },
+      { num: "78972224", href: "https://wa.me/59178972224" },
+    ],
+    mail: [
+      {
+        gmail: "Oignacioguardiap@gmail.com",
+        href: "mailto:Oignacioguardiap@gmail.com",
+      },
+      {
+        gmail: "Ovidia_monje@jmarting.com",
+        href: "mailto:Ovidia_monje@jmarting.com",
+      },
+    ],
   },
-
-]
+  {
+    id: 5,
+    title: "Sucre",
+    telf: [{ num: "78972221", href: "https://wa.me/59178972221" }],
+    mail: [
+      { gmail: "petyvarela@yahoo.com", href: "mailto:petyvarela@yahoo.com" },
+    ],
+  },
+];
 import Encabezado from "../Components/Encabezado.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 ---
+
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png+xml" href="/logo-simple.png" />
-  <title>Contacto</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png+xml" href="/logo-simple.webp" />
+    <title>Contacto</title>
+  </head>
+  <body>
     <BaseLayout>
-        <Encabezado image="/images/contacto-section.png" title="CONTACTO"/>
-        <section class="inf1-contacto">
-          <article class="inf-contact1 animate-slide-left">
-            <fieldset>
-              <legend>Contactate</legend>
-              <div class="contact">
-                {
-                  MoreInformationContact.map((contact)=>(
-                    <div class={`inf-contact inf-contact${contact.id}`}>
-                      <h3>{contact.title}</h3>
-                      <div class="links">
-                        {
-                          contact.mail?.map((mails)=>(
-                            <div class="correo">
-                              <h4>Correo: </h4>
-                              <a href={mails.href} target="_blank">{mails.gmail}</a>
-                            </div>
-                          ))
-                        }
-                        
-                        {
-                          contact.telf?.map((number)=>(
-                            <div class="telefono">
-                              <h4>Telefono: </h4>
-                              <a href={number.href} target="_blank">{number.num}</a>
-                            </div>
-                          ))
-                        }
-                      </div>
+      <Encabezado image="/images/contacto-section.webp" title="CONTACTO" />
+      <section class="inf1-contacto">
+        <article class="inf-contact1 animate-slide-left">
+          <fieldset>
+            <legend>Contactate</legend>
+            <div class="contact">
+              {
+                MoreInformationContact.map((contact) => (
+                  <div class={`inf-contact inf-contact${contact.id}`}>
+                    <h3>{contact.title}</h3>
+                    <div class="links">
+                      {contact.mail?.map((mails) => (
+                        <div class="correo">
+                          <h4>Correo: </h4>
+                          <a href={mails.href} target="_blank">
+                            {mails.gmail}
+                          </a>
+                        </div>
+                      ))}
+
+                      {contact.telf?.map((number) => (
+                        <div class="telefono">
+                          <h4>Telefono: </h4>
+                          <a href={number.href} target="_blank">
+                            {number.num}
+                          </a>
+                        </div>
+                      ))}
                     </div>
-                  ))
-                }
+                  </div>
+                ))
+              }
+            </div>
+          </fieldset>
+        </article>
+        <article class="inf-contact2 animate-slide-right">
+          <form
+            action="https://formsubmit.co/andesmartin@gmail.com"
+            method="POST"
+            class="about-contact"
+          >
+            <fieldset>
+              <legend>Nos contactamos contigo</legend>
+              <div class="formulario-contact">
+                <input
+                  type="text"
+                  name="nombre"
+                  placeholder="Nombre"
+                  required="True"
+                />
+                <input
+                  type="email"
+                  placeholder="Correo Electronico"
+                  name="correo"
+                  required="True"
+                />
+                <input
+                  type="number"
+                  placeholder="Numero de Telefono"
+                  name="telefono"
+                  required="true"
+                />
+                <textarea name="Mensaje" id="" placeholder="Mensaje" rows="3"
+                ></textarea>
+                <br />
+                <input type="submit" value="Enviar" id="Enviar" />
               </div>
             </fieldset>
-          </article>
-          <article class="inf-contact2 animate-slide-right">
-            <form action="https://formsubmit.co/andesmartin@gmail.com" method="POST" class="about-contact">
-            <fieldset>
-                <legend>Nos contactamos contigo</legend>
-                <div class="formulario-contact">
-                  <input type="text" name="nombre" placeholder="Nombre" required="True">
-                  <input type="email" placeholder="Correo Electronico" name="correo" required="True">
-                  <input type="number" placeholder="Numero de Telefono" name="telefono" required="true">
-                  <textarea name="Mensaje" id="" placeholder="Mensaje" rows="3"></textarea> <br>
-                  <input type="submit" value="Enviar" id="Enviar">
-                </div>
-              </fieldset>
-            </form>
-          </article>
-        </section>
+          </form>
+        </article>
+      </section>
     </BaseLayout>
-</body>
+  </body>
 </html>
 <style>
   * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  font-family: "Lato", sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  padding: 2rem;
-}
+  body {
+    font-family: "Lato", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 2rem;
+  }
 
-.inf1-contacto {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
+  .inf1-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
 
-article {
-  flex: 1 1 350px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-article:nth-child(1) { animation-delay: 0.1s; }
-article:nth-child(2) { animation-delay: 0.2s; }
-
-@keyframes fadeInUp {
-  from {
+  article {
+    flex: 1 1 350px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
     opacity: 0;
-    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  article:nth-child(1) {
+    animation-delay: 0.1s;
   }
-}
+  article:nth-child(2) {
+    animation-delay: 0.2s;
+  }
 
-article:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(62, 69, 141, 0.2);
-}
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-legend {
-  font-size: 1.4rem;
-  color: #3E458D;
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
+  article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(62, 69, 141, 0.2);
+  }
 
-fieldset {
-  border: 2px solid #F4B631;
-  border-radius: 10px;
-  padding: 1.5rem;
-}
+  legend {
+    font-size: 1.4rem;
+    color: #3e458d;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
 
-.inf-contact {
-  margin-bottom: 1rem;
-}
+  fieldset {
+    border: 2px solid #f4b631;
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
 
-.inf-contact h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #3E458D;
-}
+  .inf-contact {
+    margin-bottom: 1rem;
+  }
 
-.correo,
-.telefono {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
+  .inf-contact h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #3e458d;
+  }
 
-h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #3E458D;
-}
+  .correo,
+  .telefono {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 
-.links a {
-  font-size: 0.95rem;
-  color: #2d2d2d;
-  font-weight: 400;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+  h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3e458d;
+  }
 
-.links a:hover {
-  color: #F4B631;
-}
+  .links a {
+    font-size: 0.95rem;
+    color: #2d2d2d;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-.formulario-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+  .links a:hover {
+    color: #f4b631;
+  }
 
-.formulario-contact input,
-.formulario-contact textarea {
-  padding: 0.8rem;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-family: inherit;
-  transition: all 0.3s ease;
-  position: relative;
-}
+  .formulario-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-.formulario-contact input:focus,
-.formulario-contact textarea:focus {
-  border-color: #3E458D;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(62, 69, 141, 0.1);
-  transform: translateY(-2px);
-}
+  .formulario-contact input,
+  .formulario-contact textarea {
+    padding: 0.8rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+  }
 
-#Enviar {
-  background-color: #3E458D;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+  .formulario-contact input:focus,
+  .formulario-contact textarea:focus {
+    border-color: #3e458d;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(62, 69, 141, 0.1);
+    transform: translateY(-2px);
+  }
 
-#Enviar::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.5s, height 0.5s;
-}
+  #Enviar {
+    background-color: #3e458d;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
 
-#Enviar:hover::before {
-  width: 300px;
-  height: 300px;
-}
+  #Enviar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.5s,
+      height 0.5s;
+  }
 
-#Enviar:hover {
-  background-color: #F4B631;
-  color: #3E458D;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(244, 182, 49, 0.4);
-}
+  #Enviar:hover::before {
+    width: 300px;
+    height: 300px;
+  }
 
-#Enviar:active {
-  transform: translateY(-1px);
-}
+  #Enviar:hover {
+    background-color: #f4b631;
+    color: #3e458d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(244, 182, 49, 0.4);
+  }
 
-  @media(min-width:768px){
-    .inf1-contacto{
+  #Enviar:active {
+    transform: translateY(-1px);
+  }
+
+  @media (min-width: 768px) {
+    .inf1-contacto {
       justify-content: space-around;
     }
   }
