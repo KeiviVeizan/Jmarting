@@ -48,4 +48,4 @@ User-agent: *
 Crawl-delay: 1
 
 # Sitemap (IMPORTANTE: actualiza con tu dominio real antes de desplegar)
-Sitemap: https://www.tudominio.com/sitemap-index.xml
+Sitemap: https://www.jmarting.com   /sitemap-index.xml

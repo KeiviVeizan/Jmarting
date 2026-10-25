@@ -16,7 +16,7 @@ export async function getStaticPaths() {
     { params: { id: "SolucionesDigitales"}}, 
     { params: { id: "RadiologiaIntervencional"}},
     { params: { id: "SaludMujer"}},
-    { params: { id: "ResonanciaMagnetica"}}
+    { params: { id: "ResonanciaMagnetica"}},
 
   ];
 }
@@ -198,7 +198,76 @@ const contentMap = {
         description: "A+C Comprimidos 875 mg/125 mg, un producto producido por Marting y fabricado por Farmavone, es una formulación de amoxicilina y ácido clavulánico en comprimidos recubiertos para adultos y adolescentes. Está indicada para tratar infecciones por microorganismos sensibles, como sinusitis, otitis media, bronquitis crónica exacerbada, neumonía adquirida en la comunidad, infecciones urinarias y de piel y tejidos blandos. Cada comprimido contiene 875 mg de amoxicilina y 125 mg de ácido clavulánico, y se presenta en caja con 7 unidades.",
         image: "/images/Farmavone/product-3.webp",
         link: "https://farmavone.com.py/en/#products"
-      }
+      },
+      {
+        title: "A+C Comprimidos 875 x7",
+        description: "A+C Comprimidos 875 mg/125 mg, un producto producido por Marting y fabricado por Farmavone, es una formulación de amoxicilina y ácido clavulánico en comprimidos recubiertos para adultos y adolescentes. Está indicada para tratar infecciones por microorganismos sensibles, como sinusitis, otitis media, bronquitis crónica exacerbada, neumonía adquirida en la comunidad, infecciones urinarias y de piel y tejidos blandos. Cada comprimido contiene 875 mg de amoxicilina y 125 mg de ácido clavulánico, y se presenta en caja con 7 unidades.",
+        image: "/images/Farmavone/product-3.webp",
+        link: "https://farmavone.com.py/en/#products"
+      },
+      {
+        title:"CFX Pediátrico 250 mg/5 mL",
+        description:"CFX Pediátrico 250 es un antibacteriano a base de cefalexina 250 mg/5 mL, cefalosporina de primera generación indicada para el tratamiento de infecciones causadas por microorganismos sensibles, incluyendo infecciones respiratorias, de piel y tejidos blandos, urinarias, dentales, faringitis estreptocócica y otitis media. Su presentación permite preparar 100 mL de suspensión oral e incluye jeringa dosificadora, facilitando una administración precisa de acuerdo con la dosis indicada por el médico. Presentación con sabor limón, especialmente desarrollada para uso pediátrico",
+        image:"/images/Farmavone/",
+        link:"",
+      },
+      {
+        title:"CFX Pediátrico 500 mg/5 mL",
+        description:"CFX Pediátrico 500 contiene cefalexina 500 mg/5 mL en polvo para suspensión oral. Está indicado para el tratamiento de infecciones producidas por microorganismos sensibles, como infecciones de las vías respiratorias superiores e inferiores, piel y tejidos blandos, vías urinarias e infecciones dentales. Su concentración permite administrar la cantidad de cefalexina prescrita utilizando un menor volumen de suspensión respecto a la presentación de 250 mg/5 mL. Se presenta en frasco para preparar 100 mL e incluye jeringa dosificadora para una medición adecuada.",
+        image:"/images/Farmavone/",
+        link:"",
+      },
+      {
+        title:"CFX Comprimidos 1 g",
+        description:"CFX Comprimidos es un antibacteriano de uso sistémico formulado con cefalexina 1 g por comprimido, una cefalosporina de primera generación. Está indicado para el tratamiento de infecciones causadas por microorganismos sensibles, incluyendo infecciones respiratorias, de piel y tejidos blandos, infecciones urinarias no complicadas e infecciones dentales, de acuerdo con la valoración y prescripción del profesional de salud. Su presentación de 1 g por comprimido permite disponer de una concentración elevada en una sola unidad y viene en caja con 10 comprimidos ranurados",
+        image:"/images/Farmavone/product-3.webp",
+        link:"",
+        comingSoon: true
+      },
+      {
+        title:"",
+        description:"",
+        image:"",
+        link:"",
+        comingSoon: true
+      },
+      {
+        title:"",
+        description:"",
+        image:"",
+        link:"",
+        comingSoon: true
+      },
+      {
+        title:"",
+        description:"",
+        image:"",
+        link:"",
+        comingSoon: true
+      },
+      {
+        title:"",
+        description:"",
+        image:"",
+        link:"",
+        comingSoon: true
+      },
+      {
+        title:"",
+        description:"",
+        image:"",
+        link:"",
+        comingSoon: true
+      },
+      {
+        title:"",
+        description:"",
+        image:"",
+        link:"",
+        comingSoon: true
+      },
+      
+
     ]
   },
   termis: {
@@ -470,13 +539,29 @@ if (!selected) {
         <section class="card">
         {
           selected.products.map((item: any) => (
-            <article class={`cart-product ${id === 'farmavone' ? 'full-content' : ''}`}>
+            <article class={`cart-product ${id === 'farmavone' ? 'full-content' : ''}${item.comingSoon ? 'coming-soon' : ''}`}>
+              {item.comingSoon && (
+              <span class="badge">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                PRÓXIMAMENTE
+              </span>
+              )}
               <img src={item.image} alt={item.title}/>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              {id !== 'farmavone' && (
+              {
+              item.comingSoon ? (
+              <div class="notify">
+                <span>¡Mantente al tanto!</span>
+                <small>Te avisaremos cuando esté disponible.</small>
+              </div>
+              ) : (
+              id !== 'farmavone' && (
                 <a href={item.link} target="_blank">Ver más información del producto</a>
-              )}
+              ))}
             </article>
           ))
         }
@@ -547,6 +632,44 @@ if (!selected) {
   .cart-product a:hover{
     color: #DA3A32;
   }
+
+  .cart-product.coming-soon {
+    position: relative;
+  }
+
+  .cart-product .badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .4rem .8rem;
+    border-radius: 999px;
+    background: #DA3A32;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+  }
+
+  .cart-product .notify {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding: .8rem 1rem;
+    border-radius: .8rem;
+    background: #F0F2FF;
+    color: #3E458D;
+    font-weight: 700;
+  }
+
+  .cart-product .notify small {
+    font-weight: 400;
+    font-size: .8rem;
+  }
+
 
   @keyframes show {
     from{
