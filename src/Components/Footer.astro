@@ -38,40 +38,42 @@ const footerInformationRigth = [
   <title>footer</title>
 </head>
 <body>
+  <footer class="footer-main">
     <hr>
-  <footer class="animate-footer">
-    <div class="footer-left">
-        <img src="/logo-principal.webp" alt="Logo-Jmarting">
-        <p>
-            Trabajamos con empresas reconocidas alrededor del mundo para garatizar la calidad y variedad.
-        </p>
-        <ul>
-            <li><a href="https://www.instagram.com/synolisvabolivia?igsh=MXUwdnlkaWlxaDdvMw==" target="_blank"><img src="/images/logo-instagram.svg" alt="Instagram"></a></li>
-            <li><a href="/" target="_blank"><img src="/images/logo-linkedin.svg" alt="Linkeding"></a></li>
-            <li><a href="https://wa.me/59177552039?text=Hola,%20quiero%20comunicarme%20con...%20para..." target="_blank"><img src="/images/logo-whatsapp.svg" alt="Whatsapp"></a></li>
-            <li><a href="https://www.tiktok.com/@portal.del.corazon?_r=1&_t=ZM-910nv23MA3g" target="_blank"><img src="/images/tiktok-img.webp" alt="TikTok"></a></li>
-        </ul>
-    </div>
-    <div class="footer-rigth">
-        <div class="information-rigth">
-            {footerInformationRigth.map((footer) =>(
-                <div class={`footer-rigth-inf footer-rigth-inf${footer.id}`}>
-                    <h3>{footer.title}</h3>
-                    <div class="description-right">
-                        <ul>
-                            {
-                                footer.options?.map((options) =>(
-                                    <li>
-                                        <a href={options.href}>{options.name}</a>
-                                    </li>
-                                )) 
-                            }
-                        </ul>
+    <div class="animate-footer">
+        <div class="footer-left">
+            <img src="/logo-principal.webp" alt="Logo-Jmarting">
+            <p>
+                Trabajamos con empresas reconocidas alrededor del mundo para garatizar la calidad y variedad.
+            </p>
+            <ul>
+                <li><a href="https://www.instagram.com/synolisvabolivia?igsh=MXUwdnlkaWlxaDdvMw==" target="_blank"><img src="/images/logo-instagram.svg" alt="Instagram"></a></li>
+                <li><a href="/" target="_blank"><img src="/images/logo-linkedin.svg" alt="Linkeding"></a></li>
+                <li><a href="https://wa.me/59177552039?text=Hola,%20quiero%20comunicarme%20con...%20para..." target="_blank"><img src="/images/logo-whatsapp.svg" alt="Whatsapp"></a></li>
+                <li><a href="https://www.tiktok.com/@portal.del.corazon?_r=1&_t=ZM-910nv23MA3g" target="_blank"><img src="/images/tiktok-img.webp" alt="TikTok"></a></li>
+            </ul>
+        </div>
+        <div class="footer-rigth">
+            <div class="information-rigth">
+                {footerInformationRigth.map((footer) =>(
+                    <div class={`footer-rigth-inf footer-rigth-inf${footer.id}`}>
+                        <h3>{footer.title}</h3>
+                        <div class="description-right">
+                            <ul>
+                                {
+                                    footer.options?.map((options) =>(
+                                        <li>
+                                            <a href={options.href}>{options.name}</a>
+                                        </li>
+                                    )) 
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            ))
+                ))
 
-            }
+                }
+            </div>
         </div>
     </div>
   </footer>
@@ -79,13 +81,19 @@ const footerInformationRigth = [
 </html>
 <style>
     hr{
-        width: 95%;
+        width: 100%;
+        border: none;
         border-top: .1rem solid #3E458D;
-        0rem;        
+        margin: 0rem 0rem 1rem 0rem;        
     }
-    footer{
+    .footer-main{
         width: 95%;
-        margin: auto;
+        margin: 1rem auto;
+        align-self: end;
+    }
+    .animate-footer{
+        width: 100%;
+        margin: 0;
     }
     .information-rigth{
         display: grid;
@@ -159,7 +167,7 @@ const footerInformationRigth = [
         margin-top: 1rem;
     }
     @media (min-width:768px){
-        footer{
+        .animate-footer{
             display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
@@ -176,5 +184,10 @@ const footerInformationRigth = [
             width: 50%;
         }
 
+    }
+    @media(min-width: 1440px){
+        .animate-footer{
+            justify-content: space-evenly;
+        }
     }
 </style>
